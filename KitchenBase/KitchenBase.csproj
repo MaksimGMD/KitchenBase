@@ -75,6 +75,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ProductsType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ProductsWeight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,9 @@
     </Compile>
     <Compile Include="Pages\Positions.xaml.cs">
       <DependentUpon>Positions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductsType.xaml.cs">
+      <DependentUpon>ProductsType.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductsWeight.xaml.cs">
       <DependentUpon>ProductsWeight.xaml</DependentUpon>
