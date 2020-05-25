@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\KitchenBase\KitchenBase\App.xaml
-2416478187
+3552150082
 
-7-574249192
+8326982481
 13-1505183044
-MainWindow.xaml;Pages\Positions.xaml;
+MainWindow.xaml;Pages\Positions.xaml;Pages\ProductsWeight.xaml;
 
-False
+True
 
