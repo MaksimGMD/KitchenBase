@@ -1,11 +1,11 @@
-﻿<Window x:Class="KitchenBase.Pages.ProductsWeight"
+﻿<Window x:Class="KitchenBase.Pages.Menu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
-        Title="ProductsWeight" Height="720" Width="1280" Background="#20202A">
+        Title="Menu" Height="720" Width="1280" Background="#20202A">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"></RowDefinition>
@@ -16,22 +16,37 @@
             <ColumnDefinition Width="40*"></ColumnDefinition>
             <ColumnDefinition Width="60*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Name="lblProductWeightTitle" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Вес продуктов для приготовления" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+        <Label Name="lblMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Меню" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>
-        <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1">
-            <Label Name="lblProductWeight" Content="Вес продуктов для приготовления (гр.)"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+        <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="2">
+            <Label Name="lblNameBlud" Content="Наименование блюда"  HorizontalContentAlignment="Center"
+               FontSize="30" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 0 70 0" Height="50" >
-                <TextBox Name="tbWeight" FontSize="30"></TextBox>
+                <TextBox Name="tbNameBluda" FontSize="30"></TextBox>
             </Border>
+            
+            <Label Name="lblTime" Content="Время приготовления (мин)"  HorizontalContentAlignment="Center"
+               FontSize="30" Foreground="White" FontFamily="Century Gothic" Margin ="0 15 0 0">
+            </Label>
+            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 0 70 0" Height="50" >
+                <TextBox Name="tbTime" FontSize="30"></TextBox>
+            </Border>
+
+            <Label Name="lblCena" Content="Цена"  HorizontalContentAlignment="Center"
+               FontSize="30" Foreground="White" FontFamily="Century Gothic" Margin ="0 15 0 0">
+            </Label>
+            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 0 70 0" Height="50" >
+                <TextBox Name="tbCena" FontSize="30"></TextBox>
+            </Border>
+
             <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Click="BtInsert_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="90 20 90 0"></Button>
             <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" Click="BtUpdate_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="90 20 90 0"></Button>
             <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" Click="BtDelete_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="90 20 90 0"></Button>
         </StackPanel>
         <StackPanel  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
-            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 40 70 0" Height="50" >
+            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 45 70 0" Height="50" >
                 <TextBox Name="tbSearch" FontSize="30"></TextBox>
             </Border>
             <UniformGrid Rows="1" Margin ="70 20 70 0">
@@ -39,7 +54,7 @@
                 <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Click="BtFilter_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 10 0"></Button>
                 <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Click="BtCancel_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="10 0 0 0"></Button>
             </UniformGrid>
-            <DataGrid Name="dgProductsWeight" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16" Margin ="70 20 70 0"></DataGrid>
+            <DataGrid Name="dgPosition" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16" Margin ="70 20 70 0"></DataGrid>
         </StackPanel>
     </Grid>
 </Window>
