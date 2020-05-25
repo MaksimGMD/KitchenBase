@@ -83,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Stuff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\Menu.xaml.cs">
@@ -96,6 +100,9 @@
     </Compile>
     <Compile Include="Pages\ProductsWeight.xaml.cs">
       <DependentUpon>ProductsWeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Stuff.xaml.cs">
+      <DependentUpon>Stuff.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
