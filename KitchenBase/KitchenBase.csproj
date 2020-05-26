@@ -83,6 +83,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Page Include="Pages\Orders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+=======
+<<<<<<< HEAD
+    <Page Include="Pages\Orders.xaml">
+=======
+>>>>>>> 8ca1addf804f53d755d6fee82ede007bbef111d3
+>>>>>>> c7761466e683dfcbf777aa5d3cd5cb3edd197cf2
     <Page Include="Pages\OrdersDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +134,19 @@
     <Compile Include="Pages\Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Compile Include="Pages\Orders.xaml.cs">
+      <DependentUpon>Orders.xaml</DependentUpon>
+    </Compile>
+=======
+<<<<<<< HEAD
+    <Compile Include="Pages\Orders.xaml.cs">
+      <DependentUpon>Orders.xaml</DependentUpon>
+=======
+>>>>>>> 8ca1addf804f53d755d6fee82ede007bbef111d3
+>>>>>>> c7761466e683dfcbf777aa5d3cd5cb3edd197cf2
     <Compile Include="Pages\OrdersDetails.xaml.cs">
       <DependentUpon>OrdersDetails.xaml</DependentUpon>
     </Compile>
