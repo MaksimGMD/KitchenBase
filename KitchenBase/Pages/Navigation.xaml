@@ -8,23 +8,29 @@
         Title="Navigation" Height="720" Width="1280" Background="#20202A">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*" ></RowDefinition>
-            <RowDefinition Height="80*" ></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition  Width="20*"></ColumnDefinition>
-            <ColumnDefinition  Width="60*"></ColumnDefinition>
-            <ColumnDefinition  Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
-        <Label Name="lblNavigation" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="Навигация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+        <Label Name="lblNavigation" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Навигация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>
-        <StackPanel  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1">
-            <Button Name="btInformationStuff" Content="Информация о персонале" Foreground="#eeebf5" Background="#6c43af"  Height="60" FontSize="50" FontFamily="Century Gothic" Margin ="0 20 0 0"></Button>
-            <Button Name="btTypeProduct" Content="Тип продуктов" Foreground="#eeebf5" Background="#6c43af" Height="60" FontSize="50" FontFamily="Century Gothic" Margin ="0 20 0 0"></Button>
-            <Button Name="btMenu" Content="Меню" Foreground="#eeebf5" Background="#6c43af"  Height="60" FontSize="50" FontFamily="Century Gothic" Margin ="0 20 0 0"></Button>
-            <Button Name="btProductsWeight" Content="Вес продуктов для приготовления" Foreground="#eeebf5" Background="#6c43af"  Height="60" FontSize="45" FontFamily="Century Gothic" Margin ="0 20 0 0"></Button>
-            <Button Name="btPosition" Content="Должность" Foreground="#eeebf5" Background="#6c43af"  Height="60" FontSize="50" FontFamily="Century Gothic" Margin ="0 20 0 0"></Button>
-        </StackPanel>
+        <Button Name="btInformationStuff" Content="Информация о персонале" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"  FontSize="45" FontFamily="Century Gothic"></Button>
+        <Button Name="btTypeProduct" Content="Тип продуктов" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" FontSize="45" FontFamily="Century Gothic" ></Button>
+        <Button Name="btMenu" Content="Меню" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="45" FontFamily="Century Gothic" ></Button>
+        <Button Name="btProductsWeight" Content="Вес продуктов для приготовления" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" FontSize="45" FontFamily="Century Gothic" ></Button>
+        <Button Name="btPosition" Content="Должность" Foreground="#eeebf5" Background="#6c43af" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" FontSize="45" FontFamily="Century Gothic"></Button>
     </Grid>
 </Window>

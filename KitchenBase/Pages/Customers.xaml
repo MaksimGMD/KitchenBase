@@ -77,9 +77,9 @@
             </Border>
 
             <UniformGrid Rows="1" Margin ="0 20 0 0">
-                <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Click="BtInsert_Click" Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="0 0 20 0"  ></Button>
-                <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" Click="BtUpdate_Click" Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="0 0 10 0" ></Button>
-                <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" Click="BtDelete_Click" Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="10 0 0 0"></Button>
+                <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="0 0 20 0"  ></Button>
+                <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="0 0 10 0" ></Button>
+                <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="10 0 0 0"></Button>
             </UniformGrid>
         </StackPanel>
         <StackPanel  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
@@ -87,9 +87,9 @@
                 <TextBox Name="tbSearch" FontSize="30"></TextBox>
             </Border>
             <UniformGrid Rows="1" Margin ="70 20 70 0">
-                <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af" Click="BtSearch_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 20 0" ></Button>
-                <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Click="BtFilter_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 10 0"></Button>
-                <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Click="BtCancel_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="10 0 0 0"></Button>
+                <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 20 0" ></Button>
+                <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 10 0"></Button>
+                <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="10 0 0 0"></Button>
             </UniformGrid>
             <DataGrid Name="dgCustomers" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16" Margin ="70 20 70 0"></DataGrid>
         </StackPanel>
