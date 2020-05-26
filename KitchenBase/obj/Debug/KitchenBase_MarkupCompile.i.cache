@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\KitchenBase\KitchenBase\App.xaml
-11167361770
+131102776687
 
-16-226300385
+19-1702433657
 13-1505183044
-MainWindow.xaml;Pages\Authorization.xaml;Pages\Customers.xaml;Pages\Menu.xaml;Pages\Navigation.xaml;Pages\OrdersDetails.xaml;Pages\Positions.xaml;Pages\ProductRecords.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;Pages\Stuff.xaml;
+MainWindow.xaml;Pages\Authorization.xaml;Pages\Customers.xaml;Pages\DB_Configuration.xaml;Pages\Menu.xaml;Pages\Navigation.xaml;Pages\Orders.xaml;Pages\OrdersDetails.xaml;Pages\Positions.xaml;Pages\ProductRecords.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;Pages\Stuff.xaml;
 
 True
 

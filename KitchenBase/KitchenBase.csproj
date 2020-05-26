@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Configuration_Class.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -72,6 +73,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Customers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DB_Configuration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,6 +123,9 @@
     </Compile>
     <Compile Include="Pages\Customers.xaml.cs">
       <DependentUpon>Customers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DB_Configuration.xaml.cs">
+      <DependentUpon>DB_Configuration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
