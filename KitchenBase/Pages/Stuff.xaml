@@ -16,7 +16,7 @@
             <ColumnDefinition Width="40*"></ColumnDefinition>
             <ColumnDefinition Width="60*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Name="lblEmployee" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Информация о персонале" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+        <Label Name="lblEmployee" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Информация о персоналеf" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>
         <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="2"  Margin ="30 0 30 0" >
