@@ -20,9 +20,7 @@ C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductsWeight.g.cs
 <<<<<<< HEAD
 =======
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Stuff.g.cs
-<<<<<<< HEAD
 >>>>>>> b01d435c0b424f0791bd63e01abe9a1730ecc453
-=======
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Navigation.g.cs
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductRecords.g.cs
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Menu.baml
@@ -34,9 +32,7 @@ C:\KitchenBase\KitchenBase\obj\Debug\Pages\Navigation.baml
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductRecords.baml
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Customers.g.cs
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Customers.baml
-<<<<<<< HEAD
 >>>>>>> f9fa018bfa15d9517a6f7d83c43cf0af56a42b60
-=======
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Authorization.g.cs
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Authorization.baml
 >>>>>>> 9d0feed847d89a07d0aea40532cf6fd4460ba90a
