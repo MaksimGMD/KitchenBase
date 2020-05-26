@@ -12,9 +12,13 @@ DEBUG;TRACE
 C:\KitchenBase\KitchenBase\App.xaml
 91534679384
 
+<<<<<<< HEAD
+14388205814
+=======
 131230565181
+>>>>>>> 395813dc1245b9bcae832d222a47ebaca46c0791
 13-1505183044
 MainWindow.xaml;Pages\Customers.xaml;Pages\Menu.xaml;Pages\Navigation.xaml;Pages\Positions.xaml;Pages\ProductRecords.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;Pages\Stuff.xaml;
 
-False
+True
 
