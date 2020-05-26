@@ -44,73 +44,73 @@
                FontSize="60" Foreground="White">
         </Label>
         <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="20" >
-            <UniformGrid Rows="20" Columns="1">
+            <UniformGrid Rows="19" Columns="1">
             <Label Name="lblSurname" Content="Фамилия"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbSurname" FontSize="26"></TextBox>
+                <TextBox Name="tbSurname" FontSize="24"></TextBox>
             </Border>
 
             <Label Name="lblName" Content="Имя"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbName" FontSize="26"></TextBox>
+                <TextBox Name="tbName" FontSize="24"></TextBox>
             </Border>
 
             <Label Name="lblMiddleName" Content="Отчество"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbMiddleName" FontSize="26"></TextBox>
+                <TextBox Name="tbMiddleName" FontSize="24"></TextBox>
             </Border>
 
             <Label Name="lblEmail" Content="Элетронная почта"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbEmail" FontSize="26"></TextBox>
+                <TextBox Name="tbEmail" FontSize="24"></TextBox>
             </Border>
 
             <Label Name="lblPhoneNumber" Content="Номер телефона"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
-                <TextBox Name="tbPhoneNumber" FontSize="26"></TextBox>
+                <TextBox Name="tbPhoneNumber" FontSize="24"></TextBox>
             </Border>
 
             <Label Name="lblPosition" Content="Должность"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
-                <ComboBox Name="CbPosition"> </ComboBox>
+                    <ComboBox Name="CbPosition" FontSize="24"> </ComboBox>
             </Border>
 
             <Label Name="lblLogin" Content="Логин"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbLogin" FontSize="26"></TextBox>
+                <TextBox Name="tbLogin" FontSize="24"></TextBox>
             </Border>
 
             <Label Name="lblPassword" Content="Пароль"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
-                <TextBox Name="tbPassword" FontSize="26"></TextBox>
+                <TextBox Name="tbPassword" FontSize="24"></TextBox>
             </Border>
 
             <Label Name="lblPasswordConfirm" Content="Подтверждения пароля"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
-                <TextBox Name="tbPasswordConfirm" FontSize="26"></TextBox>
+                <TextBox Name="tbPasswordConfirm" FontSize="24"></TextBox>
             </Border>
                     <UniformGrid Rows="1" >
-                        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Height="40" FontSize="25" FontFamily="Century Gothic"   ></Button>
-                        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="25" FontFamily="Century Gothic" ></Button>
-                        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="25" FontFamily="Century Gothic" ></Button>
+                        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic"   ></Button>
+                        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" ></Button>
+                        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" ></Button>
                     </UniformGrid>
             </UniformGrid>
         </StackPanel>

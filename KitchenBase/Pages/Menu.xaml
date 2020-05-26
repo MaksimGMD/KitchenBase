@@ -8,53 +8,68 @@
         Title="Menu" Height="720" Width="1280" Background="#20202A">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"></RowDefinition>
-            <RowDefinition Height="50*"></RowDefinition>
-            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="18*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            
             <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
             <ColumnDefinition Width="60*"></ColumnDefinition>
+            <ColumnDefinition Width="60*"></ColumnDefinition>
+            <ColumnDefinition Width="60*"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Name="lblMenu" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Меню" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+        <Label Name="lblMenu" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" Content="Меню" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>
-        <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="2">
-            <Label Name="lblNameBlud" Content="Наименование блюда"  HorizontalContentAlignment="Center"
-               FontSize="30" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 0 70 0" Height="50" >
-                <TextBox Name="tbNameBluda" FontSize="30"></TextBox>
-            </Border>
-            
-            <Label Name="lblTime" Content="Время приготовления (мин)"  HorizontalContentAlignment="Center"
-               FontSize="30" Foreground="White" FontFamily="Century Gothic" Margin ="0 15 0 0">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 0 70 0" Height="50" >
-                <TextBox Name="tbTime" FontSize="30"></TextBox>
-            </Border>
 
-            <Label Name="lblCena" Content="Цена"  HorizontalContentAlignment="Center"
-               FontSize="30" Foreground="White" FontFamily="Century Gothic" Margin ="0 15 0 0">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 0 70 0" Height="50" >
-                <TextBox Name="tbCena" FontSize="30"></TextBox>
-            </Border>
+                <Label Name="lblNameBluda" Content="Наименование блюда"  
+               FontSize="30" Foreground="White" FontFamily="Century Gothic" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" >
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                    <TextBox Name="tbNameBluda" FontSize="30"></TextBox>
+                </Border>
 
-            <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="90 20 90 0"></Button>
-            <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="90 20 90 0"></Button>
-            <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="90 20 90 0"></Button>
-        </StackPanel>
-        <StackPanel  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
-            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 45 70 0" Height="50" >
-                <TextBox Name="tbSearch" FontSize="30"></TextBox>
-            </Border>
-            <UniformGrid Rows="1" Margin ="70 20 70 0">
-                <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 20 0" ></Button>
-                <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 10 0"></Button>
-                <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="10 0 0 0"></Button>
-            </UniformGrid>
-            <DataGrid Name="dgMenu" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16" Margin ="70 20 70 0"></DataGrid>
-        </StackPanel>
+                <Label Name="lblTime" Content="Время приготовления (мин)"  
+               FontSize="30" Foreground="White" FontFamily="Century Gothic"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+                    <TextBox Name="tbTime" FontSize="30"></TextBox>
+                </Border>
+
+                <Label Name="lblCena" Content="Цена"  
+               FontSize="30" Foreground="White" FontFamily="Century Gothic" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3">
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3">
+                    <TextBox Name="tbCena" FontSize="30"></TextBox>
+                </Border>
+        
+                <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" FontSize="25" FontFamily="Century Gothic"   ></Button>
+                <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"   Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" FontSize="25" FontFamily="Century Gothic" ></Button>
+                <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"   Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" FontSize="25" FontFamily="Century Gothic" ></Button>
+
+                <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="1">
+                    <TextBox Name="tbSearch" FontSize="40"></TextBox>
+                </Border>
+
+                <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="4"  FontSize="30" FontFamily="Century Gothic"  ></Button>
+                <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="5" FontSize="30" FontFamily="Century Gothic"></Button>
+                <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="6" FontSize="30" FontFamily="Century Gothic" ></Button>
+        
+        
+
+        <DataGrid Name="dgCustomers" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
     </Grid>
 </Window>
