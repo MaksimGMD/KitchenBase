@@ -5,20 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
+<<<<<<< HEAD
         Title="Orders" Height="450" Width="800" Background="#20202A">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25*"></RowDefinition>
+=======
+        Title="Orders" Height="720" Width="1280" Background="#20202A">
+    <Grid>
+        <Grid.RowDefinitions>
+>>>>>>> 8ca1addf804f53d755d6fee82ede007bbef111d3
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="20*"></RowDefinition>
+<<<<<<< HEAD
+=======
+            <RowDefinition Height="70"></RowDefinition>
+>>>>>>> 8ca1addf804f53d755d6fee82ede007bbef111d3
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="20*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+<<<<<<< HEAD
             <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="150*"/>
@@ -28,4 +39,15 @@
         </Label>
         
     </Grid>
+=======
+            <ColumnDefinition Width="50*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="150*"></ColumnDefinition>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="lblActiveOrder" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Активные заказы" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+               FontSize="60" Foreground="White">
+        </Label>
+        </Grid>
+>>>>>>> 8ca1addf804f53d755d6fee82ede007bbef111d3
 </Window>
