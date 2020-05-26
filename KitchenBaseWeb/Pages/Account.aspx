@@ -74,8 +74,8 @@
                     </div>
                 </div>
                 <asp:Button ID="btEdit" runat="server" Text="Редактировать" CssClass="button" ToolTip="Редактировать личные данные" CausesValidation="False"/>
-                <asp:Button ID="btSave" runat="server" Text="Сохранить" CssClass="button" ToolTip="Сохранить изменения"/>
-                <asp:Button ID="btCansel" runat="server" Text="Отмена" Visible="false" CssClass="button" ToolTip="Отменить редактирование" CausesValidation="False" />
+                <asp:Button ID="btSave" runat="server" Text="Сохранить" CssClass="button" ToolTip="Сохранить изменения" Visible="false"/>
+                <asp:Button ID="btCansel" runat="server" Text="Отмена" Visible="false" CssClass="button" ToolTip="Отменить редактирование" CausesValidation="False"/>
             </div>
         </div>
     </form>
