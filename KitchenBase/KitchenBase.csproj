@@ -83,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Orders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\OrdersDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +124,9 @@
     </Compile>
     <Compile Include="Pages\Navigation.xaml.cs">
       <DependentUpon>Navigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Orders.xaml.cs">
+      <DependentUpon>Orders.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\OrdersDetails.xaml.cs">
       <DependentUpon>OrdersDetails.xaml</DependentUpon>
