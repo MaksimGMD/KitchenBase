@@ -27,3 +27,5 @@ C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductsWeight.baml
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Stuff.baml
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Navigation.baml
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductRecords.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Customers.g.cs
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Customers.baml
