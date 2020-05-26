@@ -8,97 +8,123 @@
         Title="Stuff" Height="900" Width="1280" Background="#20202A">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="50*"></RowDefinition>
-            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="18*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
             <ColumnDefinition Width="60*"></ColumnDefinition>
+            <ColumnDefinition Width="60*"></ColumnDefinition>
+            <ColumnDefinition Width="60*"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Name="lblEmployee" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Информация о персонале" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+        <Label Name="lblEmployee" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" Content="Информация о персонале" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>
-        <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="2"  Margin ="30 0 30 0" >
+        <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="20" >
+            <UniformGrid Rows="20" Columns="1">
             <Label Name="lblSurname" Content="Фамилия"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1" >
                 <TextBox Name="tbSurname" FontSize="26"></TextBox>
             </Border>
 
             <Label Name="lblName" Content="Имя"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1" >
                 <TextBox Name="tbName" FontSize="26"></TextBox>
             </Border>
 
             <Label Name="lblMiddleName" Content="Отчество"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1" >
                 <TextBox Name="tbMiddleName" FontSize="26"></TextBox>
             </Border>
 
             <Label Name="lblEmail" Content="Элетронная почта"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1" >
                 <TextBox Name="tbEmail" FontSize="26"></TextBox>
             </Border>
 
             <Label Name="lblPhoneNumber" Content="Номер телефона"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1">
                 <TextBox Name="tbPhoneNumber" FontSize="26"></TextBox>
             </Border>
 
             <Label Name="lblPosition" Content="Должность"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1">
                 <ComboBox Name="CbPosition"> </ComboBox>
             </Border>
 
             <Label Name="lblLogin" Content="Логин"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1" >
                 <TextBox Name="tbLogin" FontSize="26"></TextBox>
             </Border>
 
             <Label Name="lblPassword" Content="Пароль"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1">
                 <TextBox Name="tbPassword" FontSize="26"></TextBox>
             </Border>
 
             <Label Name="lblPasswordConfirm" Content="Подтверждения пароля"  
-               FontSize="26" Foreground="White" FontFamily="Century Gothic">
+               FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" Height="35" >
+            <Border BorderBrush="#6c43af" BorderThickness="1">
                 <TextBox Name="tbPasswordConfirm" FontSize="26"></TextBox>
             </Border>
-
-            <UniformGrid Rows="1" Margin ="0 20 0 0">
-                <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Click="BtInsert_Click" Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="0 0 20 0"  ></Button>
-                <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" Click="BtUpdate_Click" Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="0 0 10 0" ></Button>
-                <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" Click="BtDelete_Click" Height="40" FontSize="25" FontFamily="Century Gothic" Margin ="10 0 0 0"></Button>
+                    <UniformGrid Rows="1" >
+                        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Height="40" FontSize="25" FontFamily="Century Gothic"   ></Button>
+                        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="25" FontFamily="Century Gothic" ></Button>
+                        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"  Height="40" FontSize="25" FontFamily="Century Gothic" ></Button>
+                    </UniformGrid>
             </UniformGrid>
         </StackPanel>
-        <StackPanel  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1">
-            <Border BorderBrush="#6c43af" BorderThickness="1" Margin ="70 40 70 0" Height="50" >
+        <StackPanel  Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Border BorderBrush="#6c43af" BorderThickness="1" >
                 <TextBox Name="tbSearch" FontSize="30"></TextBox>
             </Border>
-            <UniformGrid Rows="1" Margin ="70 20 70 0">
-                <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af" Click="BtSearch_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 20 0" ></Button>
-                <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Click="BtFilter_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="0 0 10 0"></Button>
-                <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Click="BtCancel_Click" Height="40" FontSize="30" FontFamily="Century Gothic" Margin ="10 0 0 0"></Button>
+            <UniformGrid Rows="1">
+                <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic"  ></Button>
+                <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic"></Button>
+                <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic" ></Button>
             </UniformGrid>
-            <DataGrid Name="dgStuff" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16" Margin ="70 20 70 0"></DataGrid>
         </StackPanel>
+        
+        <DataGrid Name="dgStuff" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
     </Grid>
 </Window>

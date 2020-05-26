@@ -1,12 +1,19 @@
 ﻿
 
 FC:\KitchenBase\KitchenBase\MainWindow.xaml;;
+FC:\KitchenBase\KitchenBase\Pages\Customers.xaml;;
 FC:\KitchenBase\KitchenBase\Pages\Menu.xaml;;
+FC:\KitchenBase\KitchenBase\Pages\Navigation.xaml;;
 FC:\KitchenBase\KitchenBase\Pages\Positions.xaml;;
+FC:\KitchenBase\KitchenBase\Pages\ProductRecords.xaml;;
 FC:\KitchenBase\KitchenBase\Pages\ProductsType.xaml;;
 FC:\KitchenBase\KitchenBase\Pages\ProductsWeight.xaml;;
 <<<<<<< HEAD
 =======
 FC:\KitchenBase\KitchenBase\Pages\Stuff.xaml;;
+<<<<<<< HEAD
 >>>>>>> b01d435c0b424f0791bd63e01abe9a1730ecc453
+=======
+FC:\KitchenBase\KitchenBase\Pages\Customers.xaml;;
+>>>>>>> f9fa018bfa15d9517a6f7d83c43cf0af56a42b60
 

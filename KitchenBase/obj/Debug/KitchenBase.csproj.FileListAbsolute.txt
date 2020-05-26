@@ -20,4 +20,18 @@ C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductsWeight.g.cs
 <<<<<<< HEAD
 =======
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Stuff.g.cs
+<<<<<<< HEAD
 >>>>>>> b01d435c0b424f0791bd63e01abe9a1730ecc453
+=======
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Navigation.g.cs
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductRecords.g.cs
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Menu.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Positions.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductsType.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductsWeight.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Stuff.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Navigation.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\ProductRecords.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Customers.g.cs
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\Customers.baml
+>>>>>>> f9fa018bfa15d9517a6f7d83c43cf0af56a42b60

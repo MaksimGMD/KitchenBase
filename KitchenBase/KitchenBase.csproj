@@ -67,11 +67,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Customers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Navigation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Positions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProductRecords.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,11 +101,20 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Customers.xaml.cs">
+      <DependentUpon>Customers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Navigation.xaml.cs">
+      <DependentUpon>Navigation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Positions.xaml.cs">
       <DependentUpon>Positions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductRecords.xaml.cs">
+      <DependentUpon>ProductRecords.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductsType.xaml.cs">
       <DependentUpon>ProductsType.xaml</DependentUpon>
