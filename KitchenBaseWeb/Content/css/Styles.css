@@ -72,3 +72,32 @@ a {
 .form-control {
     border-radius: unset;
 }
+
+.navbar {
+    background: #171723;
+}
+
+.button-Reserv {
+    color: #eeebf5;
+    background: #6c43af;
+    border: none;
+    transition: 0.5s;
+    font-size: 24px;
+    margin-top: 40px;
+    margin-right: 25px;
+    width: 130px;
+}
+    .button-Reserv:hover {
+        background: #441f81;
+        transition: 0.5s;
+    }
+
+.nav-link {
+    font-size: 18px;
+    color: #eeebf5;
+    transition: 0.5s;
+}
+    .nav-link:hover {
+        color: #cdccd0;
+        transition: 0.5s;
+    }
