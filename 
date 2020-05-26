@@ -1,0 +1,150 @@
+[33mcommit 263e942652ab5bc7e2fe8e2ea3c9f2d85cd78ca5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 0f13009 e02e70f
+Author: MaxGMD13 Максим <maksgmd@mail.ru>
+Date:   Tue May 26 20:10:04 2020 +0300
+
+    Check
+
+[33mcommit 0f130093593d84eda2e40e914bdbac7000e65123[m
+Merge: 92cbc48 f9fa018
+Author: MaxGMD13 Максим <maksgmd@mail.ru>
+Date:   Tue May 26 19:20:23 2020 +0300
+
+    Check
+
+[33mcommit e02e70f4fa40fa8294627cd72230ffd8ae548df5[m
+Merge: d52a83b 6723505
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Tue May 26 19:18:57 2020 +0300
+
+    Customers, Menu
+
+[33mcommit d52a83bddb495fc2b35fda4da4efd8e211ecb539[m
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Tue May 26 19:16:35 2020 +0300
+
+    Customers, Menu
+
+[33mcommit 67235052ca4b6ab1b08797be86b4a423da33c98f[m
+Merge: 547a4ed f9fa018
+Author: Neurosub <62236416+Neurosub@users.noreply.github.com>
+Date:   Tue May 26 18:56:35 2020 +0300
+
+    actual
+
+[33mcommit 547a4edd36f95e481bbdf7773b969ff098ddb13c[m
+Author: Neurosub <62236416+Neurosub@users.noreply.github.com>
+Date:   Tue May 26 18:54:47 2020 +0300
+
+    upd Positions, ProductWeight
+
+[33mcommit 92cbc48802eb72bce5d5be8622c28a866089bae5[m
+Author: MaxGMD13 Максим <maksgmd@mail.ru>
+Date:   Tue May 26 18:39:19 2020 +0300
+
+    Check
+
+[33mcommit f9fa018bfa15d9517a6f7d83c43cf0af56a42b60[m
+Merge: 1cf0623 395813d
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Tue May 26 18:31:13 2020 +0300
+
+    FixPrice
+
+[33mcommit 1cf0623b37062cbb6f43ba83ddec5e6751497c4e[m
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Tue May 26 18:28:26 2020 +0300
+
+    Stuff new
+
+[33mcommit 395813dc1245b9bcae832d222a47ebaca46c0791[m
+Author: Neurosub <62236416+Neurosub@users.noreply.github.com>
+Date:   Tue May 26 18:11:55 2020 +0300
+
+    upd ProductsType
+
+[33mcommit e6b2990d00d8c017b017d026bed35ca2bf128b6a[m
+Author: Neurosub <62236416+Neurosub@users.noreply.github.com>
+Date:   Tue May 26 17:44:12 2020 +0300
+
+    upd Navigation
+
+[33mcommit 243f4248faab2699b0d7e7010ae289d518f228ec[m
+Author: Neurosub <62236416+Neurosub@users.noreply.github.com>
+Date:   Tue May 26 17:18:51 2020 +0300
+
+    upd ProductRecords actual vers.
+
+[33mcommit 484d2030e1ad1277d8c903f4332d3586b573695a[m
+Author: Neurosub <62236416+Neurosub@users.noreply.github.com>
+Date:   Tue May 26 13:32:52 2020 +0300
+
+    add Wind NavigXProdRec
+
+[33mcommit 21466524b1925e548967338bc89ffae493c9fdf9[m
+Merge: 264693f b01d435
+Author: MaxGMD13 Максим <maksgmd@mail.ru>
+Date:   Tue May 26 13:19:50 2020 +0300
+
+    Check
+
+[33mcommit a70fe6f68dea196da5c7165aa350a207db43802e[m
+Author: Neurosub <62236416+Neurosub@users.noreply.github.com>
+Date:   Tue May 26 13:15:27 2020 +0300
+
+    check
+
+[33mcommit 0e15fe0b2da532476a146706ba730232fefc521d[m
+Author: Neurosub <leanon2000@mail.ru>
+Date:   Tue May 26 13:10:09 2020 +0300
+
+    delete procedures
+
+[33mcommit 264693f0191bd52951f6c595564b175e5e9dfe7d[m
+Merge: 6fb4187 fcf8e04
+Author: MaxGMD13 Максим <maksgmd@mail.ru>
+Date:   Tue May 26 02:02:23 2020 +0300
+
+    Check
+
+[33mcommit b01d435c0b424f0791bd63e01abe9a1730ecc453[m
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Tue May 26 01:56:54 2020 +0300
+
+    Add Stuff
+
+[33mcommit 6fb4187be5fef863b73055d87f8dcc85faa62321[m
+Author: MaxGMD13 Максим <maksgmd@mail.ru>
+Date:   Tue May 26 01:47:17 2020 +0300
+
+    Check
+
+[33mcommit fcf8e04ea34c3aa70f4ec467fa326d6bdd07af23[m
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Tue May 26 00:49:49 2020 +0300
+
+    Add Products Type
+
+[33mcommit 7daf6a8e34605d0d145649cf8e0cf6f61513d786[m
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Tue May 26 00:37:21 2020 +0300
+
+    add menu
+
+[33mcommit e44b60cf796073c08576ce6521b0f117f094a154[m
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Tue May 26 00:02:38 2020 +0300
+
+    add product weight
+
+[33mcommit 4a63503fa20193be225e5fce68a9a36a67b9c166[m
+Author: Даниил Лукин <danlukin36@gmail.com>
+Date:   Mon May 25 23:31:12 2020 +0300
+
+    add positions
+
+[33mcommit cb971e521f437077eda7a20a03925015e226fc30[m
+Author: MaxGMD13 Максим <maksgmd@mail.ru>
+Date:   Mon May 25 23:08:12 2020 +0300
+
+    Start project
