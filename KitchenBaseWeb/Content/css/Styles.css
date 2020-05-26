@@ -53,3 +53,22 @@ a {
         background: #441f81;
         transition: 0.5s;
     }
+
+.reg-form {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 100px;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.lblTitle-Reg {
+    color: #eeebf5;
+    font-size: 26px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+.form-control {
+    border-radius: unset;
+}

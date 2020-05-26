@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 C:\KitchenBase\KitchenBase\App.xaml
+<<<<<<< HEAD
 5-1985897530
 
 91513465890
 13-1505183044
 MainWindow.xaml;Pages\Menu.xaml;Pages\Positions.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;
+=======
+6-1361358798
+
+10157502818
+13-1505183044
+MainWindow.xaml;Pages\Menu.xaml;Pages\Positions.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;Pages\Stuff.xaml;
+>>>>>>> b01d435c0b424f0791bd63e01abe9a1730ecc453
 
 True
 
