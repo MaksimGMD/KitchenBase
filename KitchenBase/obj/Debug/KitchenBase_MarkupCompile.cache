@@ -10,35 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\KitchenBase\KitchenBase\App.xaml
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-5-1985897530
-
-91513465890
-13-1505183044
-MainWindow.xaml;Pages\Menu.xaml;Pages\Positions.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;
-=======
-6-1361358798
-=======
-91534679384
->>>>>>> f9fa018bfa15d9517a6f7d83c43cf0af56a42b60
-=======
 10-211435012
->>>>>>> 9d0feed847d89a07d0aea40532cf6fd4460ba90a
 
-141170974491
+15-1254037076
 13-1505183044
-<<<<<<< HEAD
-<<<<<<< HEAD
-MainWindow.xaml;Pages\Menu.xaml;Pages\Positions.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;Pages\Stuff.xaml;
->>>>>>> b01d435c0b424f0791bd63e01abe9a1730ecc453
-=======
-MainWindow.xaml;Pages\Customers.xaml;Pages\Menu.xaml;Pages\Navigation.xaml;Pages\Positions.xaml;Pages\ProductRecords.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;Pages\Stuff.xaml;
->>>>>>> f9fa018bfa15d9517a6f7d83c43cf0af56a42b60
-=======
 MainWindow.xaml;Pages\Authorization.xaml;Pages\Customers.xaml;Pages\Menu.xaml;Pages\Navigation.xaml;Pages\Positions.xaml;Pages\ProductRecords.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;Pages\Stuff.xaml;
->>>>>>> 9d0feed847d89a07d0aea40532cf6fd4460ba90a
 
-False
+True
 
