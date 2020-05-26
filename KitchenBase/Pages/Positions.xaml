@@ -30,20 +30,20 @@
         <Label Name="lblPosition" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" Content="Должность" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>
-        <Label Name="lblNamePostion" Content="Название должности"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" VerticalContentAlignment="Bottom" FontSize="35" Foreground="White" FontFamily="Century Gothic">
+        <Label Name="lblNamePostion" Content="Название должности"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" VerticalContentAlignment="Bottom" FontSize="35" Foreground="White" FontFamily="Century Gothic">
             </Label>
-        <Border BorderBrush="#6c43af" BorderThickness="1"  Height="50" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" >
+        <Border BorderBrush="#6c43af" BorderThickness="1"  Height="50" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" >
                 <TextBox Name="tbName" FontSize="30"></TextBox>
             </Border>
-        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="1" FontSize="30" FontFamily="Century Gothic" ></Button>
-        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="4" Grid.Column="1" FontSize="30" FontFamily="Century Gothic" ></Button>
-        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="5" Grid.Column="1" FontSize="30" FontFamily="Century Gothic" ></Button>
+        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="5" Grid.Column="1" FontSize="30" FontFamily="Century Gothic" ></Button>
+        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="6" Grid.Column="1" FontSize="30" FontFamily="Century Gothic" ></Button>
+        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="7" Grid.Column="1" FontSize="30" FontFamily="Century Gothic" ></Button>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" >
             <TextBox Name="tbSearch" FontSize="30"></TextBox>
         </Border>
         <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Height="40" Grid.Row="3" Grid.Column="3"  FontSize="30" FontFamily="Century Gothic"  ></Button>
         <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="4"  Height="40" FontSize="30" FontFamily="Century Gothic" ></Button>
         <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="5"  Height="40" FontSize="30" FontFamily="Century Gothic" ></Button>
-        <DataGrid Name="dgPosition" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16" ></DataGrid>
+        <DataGrid Name="dgPosition" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="4" IsReadOnly="True" ColumnWidth="auto" FontSize="16" ></DataGrid>
     </Grid>
 </Window>

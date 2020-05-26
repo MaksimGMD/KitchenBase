@@ -155,7 +155,7 @@ namespace KitchenBase.Pages {
         
         #line 73 "..\..\..\Pages\Menu.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.DataGrid dgMenu;
+        internal System.Windows.Controls.DataGrid dgCustomers;
         
         #line default
         #line hidden
@@ -233,7 +233,7 @@ namespace KitchenBase.Pages {
             this.btCancel = ((System.Windows.Controls.Button)(target));
             return;
             case 15:
-            this.dgMenu = ((System.Windows.Controls.DataGrid)(target));
+            this.dgCustomers = ((System.Windows.Controls.DataGrid)(target));
             return;
             }
             this._contentLoaded = true;

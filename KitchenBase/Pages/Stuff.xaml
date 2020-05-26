@@ -125,6 +125,6 @@
             </UniformGrid>
         </StackPanel>
         
-        <DataGrid Name="dgStuff" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
+        <DataGrid Name="dgStuff" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="14" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
     </Grid>
 </Window>
