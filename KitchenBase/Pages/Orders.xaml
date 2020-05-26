@@ -27,5 +27,8 @@
         <Label Name="lblActiveOrders" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Активные заказы" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>
+        <Label Name="lbldurka" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="ДУРКА" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+               FontSize="60" Foreground="White">
+        </Label>
     </Grid>
 </Window>
