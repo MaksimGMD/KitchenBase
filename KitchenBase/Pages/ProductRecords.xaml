@@ -78,7 +78,7 @@
                    <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Height="40" Grid.Row="2" Grid.Column="4" FontSize="30" FontFamily="Century Gothic" ></Button>
         <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Height="40" Grid.Row="2" Grid.Column="5" FontSize="30" FontFamily="Century Gothic" ></Button>
         <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Height="40" Grid.Row="2" Grid.Column="6" FontSize="30" FontFamily="Century Gothic" ></Button>
-                  <DataGrid Name="dgProductRecords" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="1" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
+                  <DataGrid Name="dgProductRecords" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="7" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
     </Grid>
 </Window>
 
