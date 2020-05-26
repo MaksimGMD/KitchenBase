@@ -31,3 +31,5 @@ C:\KitchenBase\KitchenBase\obj\Debug\Pages\Customers.g.cs
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Customers.baml
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Authorization.g.cs
 C:\KitchenBase\KitchenBase\obj\Debug\Pages\Authorization.baml
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\OrdersDetails.g.cs
+C:\KitchenBase\KitchenBase\obj\Debug\Pages\OrdersDetails.baml
