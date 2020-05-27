@@ -44,6 +44,6 @@
         <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="3"  Height="40" FontSize="30" FontFamily="Century Gothic" ></Button>
         <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="4"  Height="40" FontSize="30" FontFamily="Century Gothic"></Button>
         <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="5"  Height="40" FontSize="30" FontFamily="Century Gothic"></Button>
-        <DataGrid Name="dgTypeOfProduct" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="2" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
+        <DataGrid Name="dgTypeOfProduct" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="4" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
     </Grid>
 </Window>
