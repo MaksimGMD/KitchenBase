@@ -4,7 +4,7 @@
 }
 
 .Error {
-    font-size: 14px;
+    font-size: 18px;
     color: #cc0000;
     font-weight: 400;
 }
@@ -53,3 +53,76 @@ a {
         background: #441f81;
         transition: 0.5s;
     }
+
+.reg-form {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 100px;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.lblTitle-Reg {
+    color: #eeebf5;
+    font-size: 26px;
+    margin-bottom: 5px;
+    float: left;
+}
+
+.form-control {
+    border-radius: unset;
+}
+
+.navbar {
+    background: #171723;
+}
+
+.button-Reserv {
+    color: #eeebf5;
+    background: #6c43af;
+    border: none;
+    transition: 0.5s;
+    font-size: 24px;
+    margin-top: 40px;
+    margin-right: 25px;
+    width: 130px;
+}
+    .button-Reserv:hover {
+        background: #441f81;
+        transition: 0.5s;
+    }
+
+.nav-link {
+    font-size: 18px;
+    color: #eeebf5;
+    transition: 0.5s;
+}
+    .nav-link:hover {
+        color: #cdccd0;
+        transition: 0.5s;
+    }
+
+.AccTitle {
+    color: #eeebf5;
+    font-size: 24px;
+}
+
+.Account {
+    width: 90%;
+    border-radius: unset;
+    box-shadow: 0 0 10px 5px rgba(156, 198, 238, 0.25);
+}
+.AccountDisabled {
+    width: 90%;
+    border-radius: unset;
+    background: #a1a8c9;
+}
+
+.AccountPage{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.AccountPage > .container > .row {
+    margin-bottom: 20px;
+}

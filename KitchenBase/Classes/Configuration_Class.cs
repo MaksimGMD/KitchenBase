@@ -70,7 +70,7 @@ namespace KitchenBase.Classes
         }
         public void SQL_Data_Base_Collection()
         {
-            SqlCommand command = new SqlCommand("select name from sys.databases where name not in ('master', 'tempdb', 'model', 'msdb') and name like 'Sale_Data_Base%'", connection);
+            SqlCommand command = new SqlCommand("select name from sys.databases where name not in ('master', 'tempdb', 'model', 'msdb') and name like 'KitchenBase%'", connection);
             try
             {
                 connection.Open();
