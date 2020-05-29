@@ -19,6 +19,8 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Authorization : Window
     {
+        public static bool connect = false;
+        //Определяет есть подключение к БД или нет
         public Authorization()
         {
             InitializeComponent();

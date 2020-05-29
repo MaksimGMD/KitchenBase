@@ -69,8 +69,8 @@ C:\KitchenBase\KitchenBaseWeb\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\KitchenBase\KitchenBaseWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\KitchenBase\KitchenBaseWeb\bin\ru\System.Web.Optimization.resources.dll
 C:\KitchenBase\KitchenBaseWeb\bin\ru\Microsoft.AspNet.FriendlyUrls.resources.dll
-C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csprojAssemblyReference.cache
 C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csproj.CoreCompileInputs.cache
 C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csproj.CopyComplete
 C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.dll
 C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.pdb
+C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csprojAssemblyReference.cache
