@@ -2,11 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KitchenBase"
-<<<<<<< HEAD
              StartupUri="Pages/ProductsWeight.xaml">
-=======
-             StartupUri="Pages/OrdersDetails.xaml">
->>>>>>> 39df3a6593de99766ecef9bbeae0665543784e9c
+
     <Application.Resources>
 
     </Application.Resources>
