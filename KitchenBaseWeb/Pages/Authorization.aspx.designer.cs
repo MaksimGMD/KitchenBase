@@ -24,6 +24,15 @@ namespace KitchenBaseWeb.Pages
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// lblAuthorization элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAuthorization;
+
+        /// <summary>
         /// tbLogin элемент управления.
         /// </summary>
         /// <remarks>

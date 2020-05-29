@@ -60,6 +60,15 @@ namespace KitchenBaseWeb.Pages
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
 
         /// <summary>
+        /// lblLoginCheck элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoginCheck;
+
+        /// <summary>
         /// tbName элемент управления.
         /// </summary>
         /// <remarks>
@@ -114,6 +123,15 @@ namespace KitchenBaseWeb.Pages
         protected global::System.Web.UI.WebControls.TextBox tbPasswordConfirm;
 
         /// <summary>
+        /// lblPasswordConfirm элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPasswordConfirm;
+
+        /// <summary>
         /// tbEmail элемент управления.
         /// </summary>
         /// <remarks>
@@ -130,6 +148,15 @@ namespace KitchenBaseWeb.Pages
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+
+        /// <summary>
+        /// RegularExpressionValidator1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
         /// tbPhone элемент управления.

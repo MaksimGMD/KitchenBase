@@ -26,6 +26,7 @@
                     <asp:TextBox class="form-control" ID="tbLogin" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Введите логин" ControlToValidate="tbLogin"
                         CssClass="Error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:Label runat="server" ID="lblLoginCheck" CssClass="Error" Text="Логин уже занят" Visible="false"></asp:Label>
                 </div>
             </div>
             <div class="form-row">
@@ -37,7 +38,7 @@
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="inputPassword4" class="lblTitle-Reg">Пароль</label>
-                    <asp:TextBox class="form-control" ID="tbPassword" runat="server"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="tbPassword" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Введите пароль" ControlToValidate="tbPassword"
                         CssClass="Error" Display="Dynamic"></asp:RequiredFieldValidator>
                 </div>
@@ -49,7 +50,8 @@
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="inputPassword4" class="lblTitle-Reg">Подтверждение пароля</label>
-                    <asp:TextBox class="form-control" ID="tbPasswordConfirm" runat="server"></asp:TextBox>
+                    <asp:TextBox class="form-control" ID="tbPasswordConfirm" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:Label ID="lblPasswordConfirm" runat="server" CssClass="Error" Visible="false" Text="Пароли не совпадают" Display="Dynamic"></asp:Label>
                 </div>
             </div>
             <div class="row">
@@ -58,6 +60,8 @@
                     <asp:TextBox class="form-control" ID="tbEmail" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Введите почту" ControlToValidate="tbEmail"
                         CssClass="Error" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Почта введена неверно" 
+                        ControlToValidate="tbEmail" CssClass="Error" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </div>
             </div>
             <div class="row">
@@ -70,7 +74,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <asp:Button runat="server" ID="btEnter" Text="ЗАРЕГИСТРИРОВАТЬСЯ" CssClass="button" />
+                    <asp:Button runat="server" ID="btEnter" Text="ЗАРЕГИСТРИРОВАТЬСЯ" CssClass="button" OnClick="btEnter_Click" />
                 </div>
             </div>
         </div>

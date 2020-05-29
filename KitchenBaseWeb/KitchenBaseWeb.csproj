@@ -49,6 +49,10 @@
     <Reference Include="AspNet.ScriptManager.bootstrap, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNet.ScriptManager.bootstrap.4.5.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
     </Reference>
+    <Reference Include="Crypt_Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Crypt_Library.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -124,6 +128,7 @@
     <Content Include="Pages\Authorization.aspx" />
     <Content Include="Pages\Registration.aspx" />
     <Content Include="Pages\Reservation.aspx" />
+    <Content Include="Pages\Service.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -279,6 +284,8 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="DBProcedures.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -316,6 +323,13 @@
     </Compile>
     <Compile Include="Pages\Reservation.aspx.designer.cs">
       <DependentUpon>Reservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Service.aspx.cs">
+      <DependentUpon>Service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Service.aspx.designer.cs">
+      <DependentUpon>Service.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
