@@ -89,9 +89,15 @@
             </div>
             <div style="overflow-x: auto; width: 100%">
                 <asp:GridView ID="gvService" runat="server" AllowSorting="true" UseAccessibleHeader="true" CurrentSortDirection="ASC" Font-Size="14px"
-                    AlternatingRowStyle-Wrap="false" HeaderStyle-HorizontalAlign="Center">
+                    AlternatingRowStyle-Wrap="false" HeaderStyle-HorizontalAlign="Center" OnSorting="gvService_Sorting" OnRowDataBound="gvService_RowDataBound" OnSelectedIndexChanged="gvService_SelectedIndexChanged">
+                    <Columns>
+                        <asp:CommandField ShowSelectButton="true"/>
+                    </Columns>
                 </asp:GridView>
             </div>
+        </div>
+        <div>
+            <asp:GridView runat="server"></asp:GridView>
         </div>
     </form>
 </body>
