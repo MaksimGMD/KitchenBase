@@ -76,7 +76,7 @@
             </Image>
         </Button>
 
-        <StackPanel Panel.ZIndex="2" Name="pnlRightMenu" Orientation="Horizontal"  HorizontalAlignment="Right" Grid.Row="3" Grid.Column="5" Grid.RowSpan="5" Grid.ColumnSpan="3" Margin ="0,-77,-170,0">
+        <StackPanel Name="pnlRightMenu" Orientation="Horizontal"  HorizontalAlignment="Right" Grid.Row="3" Grid.Column="5" Grid.RowSpan="5" Grid.ColumnSpan="3" Margin ="0,-77,-170,0">
             <Grid>
                 <Button Name="btnRightMenuHide" Background="#6c43af" BorderBrush="Transparent" Click="btnRightMenuHide_Click" Visibility="Hidden">
                     <Image Source="C:\KitchenBase\KitchenBase\Assets//settings_icon.png" Stretch="None">

@@ -5,7 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
-        Title="Stuff" Height="900" Width="1280" Background="#20202A" ResizeMode="NoResize">
+        Title="Stuff" Height="900" Width="1280" Background="#20202A" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Storyboard x:Key="sbShowRightMenu" >
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,-170,0" To="0,0,0,0" DecelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+        <Storyboard x:Key="sbHideRightMenu">
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,0" To="0,0,-170,0" AccelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="18*"></RowDefinition>
@@ -35,10 +45,11 @@
             <ColumnDefinition Width="40*"></ColumnDefinition>
             <ColumnDefinition Width="40*"></ColumnDefinition>
             <ColumnDefinition Width="30*"></ColumnDefinition>
-            <ColumnDefinition Width="60*"></ColumnDefinition>
-            <ColumnDefinition Width="60*"></ColumnDefinition>
-            <ColumnDefinition Width="60*"></ColumnDefinition>
-            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Name="lblEmployee" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" Content="Информация о персонале" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
@@ -124,7 +135,46 @@
                 <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic" ></Button>
             </UniformGrid>
         </StackPanel>
-        
-        <DataGrid Name="dgStuff" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="14" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
+
+        <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="14" >
+            <DataGrid Name="dgStuff"  IsReadOnly="True" ColumnWidth="auto" FontSize="16" Foreground="White"></DataGrid>
+        </Border>
+
+        <Button Name="Home" Background="#6c43af" BorderBrush="Transparent" Grid.Row="2" Grid.RowSpan="3" Grid.Column="8" Click="Home_Click" >
+            <Image Source="C:\KitchenBase\KitchenBase\Assets/home_icon.png"  Width="50" Height="50"/>
+        </Button>
+
+        <Button Name="Cabinet" Background="#6c43af" BorderBrush="Transparent"  Grid.Row="5" Grid.RowSpan="3" Grid.Column="8">
+            <Image Source="C:\KitchenBase\KitchenBase\Assets//profile_icon.png" Width="50" Height="50"/>
+        </Button>
+
+        <Button Name="btnRightMenuShow" Background="#6c43af" BorderBrush="Transparent" Grid.Row="8" Grid.RowSpan="3" Grid.Column="8"  Click="btnRightMenuShow_Click"  >
+            <Image Source="C:\KitchenBase\KitchenBase\Assets//settings_icon.png"  Width="50" Height="50">
+            </Image>
+        </Button>
+
+        <StackPanel Name="pnlRightMenu" Orientation="Horizontal"  HorizontalAlignment="Right" Grid.Row="8" Grid.Column="6" Grid.RowSpan="8" Grid.ColumnSpan="5" Margin ="0,-100,-170,0">
+            <Grid>
+                <Button Name="btnRightMenuHide" Background="#6c43af" BorderBrush="Transparent" Click="btnRightMenuHide_Click" Visibility="Hidden" Width="60">
+                    <Image Source="C:\KitchenBase\KitchenBase\Assets//settings_icon.png" Stretch="None">
+                    </Image>
+                </Button>
+
+            </Grid>
+            <StackPanel  Name="pnlRight" Width="170" Background="#6c43af" >
+                <Label Content="Цвет фона" FontFamily="Century Gothic" FontSize="20" Foreground="White"/>
+                <RadioButton GroupName="Backcolor" Content="Default" IsChecked="True" Checked="RadioButton_Checked" FontSize="20" Foreground="White" />
+                <RadioButton GroupName="Backcolor" Content="Синий" Checked="RadioButton1_Checked" FontSize="20" Foreground="White"/>
+                <RadioButton GroupName="Backcolor" Content="Серый" FontSize="20" Checked="RadioButton_Checked_1" Foreground="White"/>
+                <Label Content="Цвет кнопок" FontFamily="Century Gothic" FontSize="20" Foreground="White"/>
+                <RadioButton GroupName="ButtonColor" Content="Default" IsChecked="True" FontSize="20"  Checked="RadioButton_Checked_2" Foreground="White"/>
+                <RadioButton GroupName="ButtonColor" Content="Черный" FontSize="20" Checked="RadioButton_Checked_3" Foreground="White"/>
+                <RadioButton GroupName="ButtonColor" Content="Зеленый" FontSize="20" Checked="RadioButton_Checked_4" Foreground="White"/>
+                <Label Content="Поля и таблица" FontFamily="Century Gothic" FontSize="20" Foreground="White"/>
+                <RadioButton GroupName="Text" Content="Default" FontSize="20" IsChecked="True" Checked="RadioButton_Checked_5" Foreground="White"/>
+                <RadioButton GroupName="Text" Content="Прозрачный" FontSize="20" Checked="RadioButton_Checked_6" Foreground="White"/>
+            </StackPanel>
+        </StackPanel>
+
     </Grid>
 </Window>

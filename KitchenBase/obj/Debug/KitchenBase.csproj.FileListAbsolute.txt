@@ -36,4 +36,7 @@ C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.csproj.GenerateResource.cache
 C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.csproj.CoreCompileInputs.cache
 C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.exe
 C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.pdb
+C:\KitchenBase\KitchenBase\bin\Debug\MaterialDesignColors.dll
+C:\KitchenBase\KitchenBase\bin\Debug\MaterialDesignColors.pdb
+C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.csproj.CopyComplete
 C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.csprojAssemblyReference.cache
