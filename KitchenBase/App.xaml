@@ -6,7 +6,7 @@
              StartupUri="Pages/DB_Configuration.xaml">
 =======
              StartupUri="Pages/Navigation.xaml">
->>>>>>> 830437d4f39fadd5f98c27579479e297d5a910e3
+>>>>>>> 28964375238787ece6f2c3c2709d17cefdbd7026
 
     <Application.Resources>
 

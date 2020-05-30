@@ -9,9 +9,8 @@ namespace KitchenBase.Classes
 {
     class DataProcedure
     {
-        Classes.Configuration_class configuration = new Classes.Configuration_class();
-        private SqlCommand command
-           = new SqlCommand("", Classes.Configuration_class.connection);
+        private SqlCommand command = new SqlCommand("", DBConnection.connection);
+
 
         private void commandConfig(string config)
         {
@@ -27,27 +26,27 @@ namespace KitchenBase.Classes
         {
             commandConfig("TypeProduct_insert");
             command.Parameters.AddWithValue("@TypeProduct", TypeProduct);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spTypeProduct_update(Int32 ID_TypeProduct, string TypeProduct)
         {
             commandConfig("TypeProduct_update");
             command.Parameters.AddWithValue("@ID_TypeProduct", ID_TypeProduct);
             command.Parameters.AddWithValue("@TypeProduct", TypeProduct);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spTypeProduct_delete(Int32 ID_TypeProduct)
         {
             commandConfig("TypeProduct_delete");
             command.Parameters.AddWithValue("@ID_TypeProduct", ID_TypeProduct);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для должности
@@ -56,27 +55,27 @@ namespace KitchenBase.Classes
         {
             commandConfig("Doljnost_insert");
             command.Parameters.AddWithValue("@Doljnost", Doljnost);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spDoljnost_update(Int32 ID_Doljnosti, string Doljnost)
         {
             commandConfig("Doljnost_update");
             command.Parameters.AddWithValue("@ID_Doljnosti", ID_Doljnosti);
             command.Parameters.AddWithValue("@Doljnost", Doljnost);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spDoljnost_delete(Int32 ID_Doljnosti)
         {
             commandConfig("Doljnost_delete");
             command.Parameters.AddWithValue("@ID_Doljnosti", ID_Doljnosti);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для авторизации
@@ -86,9 +85,9 @@ namespace KitchenBase.Classes
             commandConfig("Authorization_insert");
             command.Parameters.AddWithValue("@Login", Login);
             command.Parameters.AddWithValue("@Password", Password);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spAuthorization_update(Int32 ID_Authorization, string Login, string Password)
         {
@@ -96,18 +95,18 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@ID_Authorization", ID_Authorization);
             command.Parameters.AddWithValue("@Login", Login);
             command.Parameters.AddWithValue("@Password", Password);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spAuthorization_delete(Int32 ID_Authorization)
         {
             commandConfig("Authorization_delete");
             command.Parameters.AddWithValue("@ID_Authorization", ID_Authorization);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для состава блюд
@@ -116,27 +115,27 @@ namespace KitchenBase.Classes
         {
             commandConfig("SostavaBluda_insert");
             command.Parameters.AddWithValue("@VesProducta", VesProducta);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spSostavaBluda_update(Int32 ID_SostavaBluda, string VesProducta)
         {
             commandConfig("SostavaBluda_update");
             command.Parameters.AddWithValue("@ID_SostavaBluda", ID_SostavaBluda);
             command.Parameters.AddWithValue("@VesProducta", VesProducta);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spSostavaBluda_delete(Int32 ID_SostavaBluda)
         {
             commandConfig("SostavaBluda_delete");
             command.Parameters.AddWithValue("@ID_SostavaBluda", ID_SostavaBluda);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для времени бронирования 
@@ -145,27 +144,27 @@ namespace KitchenBase.Classes
         {
             commandConfig("VremyBronirovanie_insert");
             command.Parameters.AddWithValue("@VremyaBronirovaniy", VremyaBronirovaniy);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spVremyBronirovanie_update(Int32 ID_Vremeni_Bronirovaniy, string VremyaBronirovaniy)
         {
             commandConfig("VremyBronirovanie_update");
             command.Parameters.AddWithValue("@ID_Vremeni_Bronirovaniy", ID_Vremeni_Bronirovaniy);
             command.Parameters.AddWithValue("@VremyaBronirovaniy", VremyaBronirovaniy);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spVremyBronirovanie_delete(Int32 ID_Vremeni_Bronirovaniy)
         {
             commandConfig("VremyBronirovanie_delete");
             command.Parameters.AddWithValue("@ID_Vremeni_Bronirovaniy", ID_Vremeni_Bronirovaniy);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для учёта продуктов на складе
@@ -178,9 +177,9 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@KolichestvoNaSklade", KolichestvoNaSklade);
             command.Parameters.AddWithValue("@SrokGodnosti", SrokGodnosti);
             command.Parameters.AddWithValue("@ID_TypeProduct", ID_TypeProduct);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spYchetProductovNaSklade_update(Int32 ID_Producta, string NameProduct, string VesProducta, string KolichestvoNaSklade, string SrokGodnosti, Int32 ID_TypeProduct)
         {
@@ -191,18 +190,18 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@KolichestvoNaSklade", KolichestvoNaSklade);
             command.Parameters.AddWithValue("@SrokGodnosti", SrokGodnosti);
             command.Parameters.AddWithValue("@ID_TypeProduct", ID_TypeProduct);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spYchetProductovNaSklade_delete(Int32 ID_Producta)
         {
             commandConfig("YchetProductovNaSklade_delete");
             command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для меню 
@@ -215,9 +214,9 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@CenaBluda", CenaBluda);
             command.Parameters.AddWithValue("@SrokGodnosti", SrokGodnosti);
             command.Parameters.AddWithValue("@ID_SostavaBluda", ID_SostavaBluda);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spMenu_update(Int32 ID_Producta, string NameBluda, string TimePrigorovleniy, string CenaBluda, string SrokGodnosti, Int32 ID_SostavaBluda)
         {
@@ -228,18 +227,18 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@CenaBluda", CenaBluda);
             command.Parameters.AddWithValue("@SrokGodnosti", SrokGodnosti);
             command.Parameters.AddWithValue("@ID_SostavaBluda", ID_SostavaBluda);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spMenu_delete(Int32 ID_Producta)
         {
             commandConfig("YchetProductovNaSklade_delete");
             command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для ингридиента
@@ -250,7 +249,7 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@ID_SostaveBluda", ID_SostaveBluda);
             command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spIngridient_update(Int32 ID_Ingridientov, Int32 ID_SostaveBluda, Int32 ID_Producta)
         {
@@ -258,18 +257,18 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@ID_Ingridientov", ID_Ingridientov);
             command.Parameters.AddWithValue("@ID_SostaveBluda", ID_SostaveBluda);
             command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spIngridient_delete(Int32 ID_Ingridientov)
         {
             commandConfig("Ingridient_delete");
             command.Parameters.AddWithValue("@ID_Ingridientov", ID_Ingridientov);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для бронирования
@@ -284,7 +283,7 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@Kommentariy", Kommentariy);
             command.Parameters.AddWithValue("@ID_Vremeni_Bronirovaniy", ID_Vremeni_Bronirovaniy);
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spInformationOBronirovanie_update(Int32 ID_Bronirovaniya, Int32 ID_Stola, string DateBronirovaniy, string StatusStola, string KolichestvoGostey, string Kommentariy, Int32 ID_Vremeni_Bronirovaniy)
         {
@@ -296,18 +295,18 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@KolichestvoGostey", KolichestvoGostey);
             command.Parameters.AddWithValue("@Kommentariy", Kommentariy);
             command.Parameters.AddWithValue("@ID_Vremeni_Bronirovaniy", ID_Vremeni_Bronirovaniy);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spInformationOBronirovanie_delete(Int32 ID_Bronirovaniya)
         {
             commandConfig("InformationOBronirovanie_delete");
             command.Parameters.AddWithValue("@ID_Bronirovaniya", ID_Bronirovaniya);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         //Процедуры для персонала
@@ -323,7 +322,7 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@ID_Doljnosti", ID_Doljnosti);
             command.Parameters.AddWithValue("@ID_Authorization", ID_Authorization);
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spPersonal_update(Int32 ID_Personala, string Name, string Surname, string MiddleName, string Email, string PhoneNumber, Int32 ID_Doljnosti, Int32 ID_Authorization)
         {
@@ -336,18 +335,18 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
             command.Parameters.AddWithValue("@ID_Doljnosti", ID_Doljnosti);
             command.Parameters.AddWithValue("@ID_Authorization", ID_Authorization);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spPersonal_delete(Int32 ID_Personala)
         {
             commandConfig("Personal_delete");
             command.Parameters.AddWithValue("@ID_Personala", ID_Personala);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
 
@@ -359,7 +358,7 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@ID_Bronirovaniya", ID_Bronirovaniya);
             command.Parameters.AddWithValue("@ID_InformationOKliente", ID_InformationOKliente);
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
         public void spKlientBronirovanie_update(Int32 ID_KlientBronirovanie, Int32 ID_Bronirovaniya, Int32 ID_InformationOKliente)
         {
@@ -367,18 +366,18 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@ID_KlientBronirovanie", ID_KlientBronirovanie);
             command.Parameters.AddWithValue("@ID_Bronirovaniya", ID_Bronirovaniya);
             command.Parameters.AddWithValue("@ID_InformationOKliente", ID_InformationOKliente);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
 
         public void spKlientBronirovanie_delete(Int32 ID_KlientBronirovanie)
         {
             commandConfig("KlientBronirovanie_delete");
             command.Parameters.AddWithValue("@ID_KlientBronirovanie", ID_KlientBronirovanie);
-            Classes.Configuration_class.connection.Open();
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
-            Classes.Configuration_class.connection.Close();
+            DBConnection.connection.Close();
         }
      }
 }
