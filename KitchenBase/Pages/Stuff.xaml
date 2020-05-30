@@ -137,7 +137,7 @@
         </StackPanel>
 
         <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="14" >
-            <DataGrid Name="dgStuff"  IsReadOnly="True" ColumnWidth="auto" FontSize="16" Foreground="White"></DataGrid>
+            <DataGrid Name="dgPersonal"  IsReadOnly="True" ColumnWidth="auto" FontSize="16" Foreground="White" AutoGeneratingColumn="DgPersonal_AutoGeneratingColumn"></DataGrid>
         </Border>
 
         <Button Name="Home" Background="#6c43af" BorderBrush="Transparent" Grid.Row="2" Grid.RowSpan="3" Grid.Column="8" Click="Home_Click" >
