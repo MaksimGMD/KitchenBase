@@ -160,6 +160,13 @@ namespace KitchenBase.Pages
             tbWeight.Foreground = whitez;
             dgProductsWeight.Foreground = whitez;
         }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation Navigation = new Navigation();
+            Navigation.Show();
+            Close();
+        }
     }
           
 }

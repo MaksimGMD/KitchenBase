@@ -2,7 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KitchenBase"
+<<<<<<< HEAD
              StartupUri="Pages/DB_Configuration.xaml">
+=======
+             StartupUri="Pages/Navigation.xaml">
+>>>>>>> 830437d4f39fadd5f98c27579479e297d5a910e3
 
     <Application.Resources>
 

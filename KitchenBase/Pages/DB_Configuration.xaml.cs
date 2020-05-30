@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data;
 using System.Threading;
-using System.Windows.Forms;
 
 
 
@@ -60,7 +59,7 @@ namespace KitchenBase.Pages
                 btChecked.IsEnabled = true;
             };
             //Присвоение фонового потока в основной
-            Dispatcher.Invoke(action);
+            Dispatcher.BeginInvoke(action);
         }
 
         private void btCancel_Click(object sender, RoutedEventArgs e)
@@ -99,7 +98,7 @@ namespace KitchenBase.Pages
                         threadBases.Start();
                         btConnect.IsEnabled = true;
                     };
-                    Dispatcher.Invoke(action);
+                    Dispatcher.BeginInvoke(action);
                     break;
                 case false:
                     //Вслучае если  нет подключения повторяем сбор данных
@@ -126,7 +125,7 @@ namespace KitchenBase.Pages
                 cbDataBaseName.IsEnabled = true;
                 btChecked.IsEnabled = true;
             };
-            Dispatcher.Invoke(action);
+            Dispatcher.BeginInvoke(action);
         }
 
         //Кнопка проверка подключения к источнику и базе данных
@@ -159,7 +158,7 @@ namespace KitchenBase.Pages
             {
                 case true:
                     //В случае если поле не заполнено
-                    System.Windows.MessageBox.Show("Не выбрана нужная база данных!",
+                    MessageBox.Show("Не выбрана нужная база данных!",
                         "Продажа товара",
                         MessageBoxButton.OK, MessageBoxImage.Warning);
                     cbDataBaseName.Focus();
@@ -174,7 +173,8 @@ namespace KitchenBase.Pages
                     //о правильности подключения
                     Authorization.connect = true;
                     //Перезапуск программы
-                    System.Windows.Forms.Application.Restart();
+                    System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                    Application.Current.Shutdown();
                     //System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
                     //Application.Current.Shutdown();
                     break;
