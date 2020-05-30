@@ -8,6 +8,6 @@ namespace KitchenBase.Classes
 {
     class DBConnection
     {
-        danila xuy ой прости
+        danila xuy ой прости еще раз извини я не хотел этой агрессиииииии..
     }
 }
