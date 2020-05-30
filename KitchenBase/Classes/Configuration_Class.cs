@@ -9,6 +9,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 
 
+
 namespace KitchenBase.Classes
 {
     class Configuration_class

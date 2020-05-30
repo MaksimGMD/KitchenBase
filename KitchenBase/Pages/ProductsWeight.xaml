@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
-        Title="ProductsWeight" Height="720" Width="1280" Background="#20202A" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen">
+        Title="ProductsWeight" Height="720" Width="1280" Background="#20202A"  ResizeMode="NoResize"  WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Storyboard x:Key="sbShowRightMenu" >
@@ -63,7 +63,7 @@
         </Border>
 
 
-        <Button Name="Home" Background="#6c43af" BorderBrush="Transparent" Grid.Row="2" Grid.Column="8" >
+        <Button Name="Home" Background="#6c43af" BorderBrush="Transparent" Grid.Row="2" Grid.Column="8" Click="Home_Click" >
             <Image Source="C:\KitchenBase\KitchenBase\Assets/home_icon.png" Stretch="None"/>
         </Button>
 

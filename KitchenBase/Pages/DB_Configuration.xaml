@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
-        Title="DB_Configuration" Height="420" Width="480" Background="#20202A" Loaded="Window_Loaded">
+        Title="DB_Configuration" Height="420" Width="500" Background="#20202A" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="15*"></RowDefinition>
             <RowDefinition Height="20*"></RowDefinition>
             <RowDefinition Height="15*"></RowDefinition>
-            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="30*"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
+            
+            
+            
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10*"></ColumnDefinition>
@@ -29,20 +32,20 @@
                FontSize="22" Foreground="White" FontFamily="Century Gothic">
                 </Label>
                 <Border BorderBrush="#6c43af" BorderThickness="1" >
-                    <ComboBox Name="cbServerName" FontSize="24" SelectionChanged="cbServerName_SelectionChanged"></ComboBox>
+                    <ComboBox Name="cbServerName" FontSize="24" SelectionChanged="cbServerName_SelectionChanged"/>
                 </Border>
+                
+               
                 <Label Name="lblDataBaseName" Content="Название базы данных"  
                FontSize="22" Foreground="White" FontFamily="Century Gothic">
                 </Label>
                 <Border BorderBrush="#6c43af" BorderThickness="1" >
-                    <ComboBox Name="cbDataBaseName1" FontSize="24"></ComboBox>
+                    <ComboBox Name="cbDataBaseName" FontSize="24"></ComboBox>
                 </Border>
             </UniformGrid>
         </StackPanel>
 
-        <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="4" Grid.Column="1"  Grid.ColumnSpan="3">
-            <TextBox Name="cbDataBaseName" FontSize="24"></TextBox>
-        </Border>
+    
         <UniformGrid Rows="1" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3">
             <Button Name="btChecked"  Foreground="#eeebf5" Background="#6c43af"  FontSize="19" FontFamily="Century Gothic" Click="btChecked_Click">
                 <TextBlock Text="Проверка подключения" TextWrapping="Wrap" TextAlignment="Center"/>
