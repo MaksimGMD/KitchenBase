@@ -59,5 +59,12 @@ namespace KitchenBase.Pages
             Stuff.Show();
             Close();
         }
+
+        private void btInformationCustomers_Click(object sender, RoutedEventArgs e)
+        {
+            Customers Customers = new Customers();
+            Customers.Show();
+            Close();
+        }
     }
 }

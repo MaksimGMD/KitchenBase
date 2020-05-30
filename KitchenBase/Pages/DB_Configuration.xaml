@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
-        Title="DB_Configuration" Height="420" Width="500" Background="#20202A" Loaded="Window_Loaded">
+        Title="DB_Configuration" Height="420" Width="500" Background="#20202A" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"></RowDefinition>
