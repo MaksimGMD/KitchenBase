@@ -8,6 +8,8 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 
+
+
 namespace KitchenBase.Classes
 {
     class Configuration_class
@@ -53,7 +55,7 @@ namespace KitchenBase.Classes
         }
         public void SQL_Data_Base_Checking()
         {
-            connection.ConnectionString = "Data Source = " + ds + "; Initial Catalog = " + IC + "; Integrated Security = True;";
+            connection.ConnectionString = "Data Source = " + ds + "; Initial Catalog = master; Integrated Security = True;";
             try
             {
                 connection.Open();
@@ -70,7 +72,9 @@ namespace KitchenBase.Classes
         }
         public void SQL_Data_Base_Collection()
         {
-            SqlCommand command = new SqlCommand("select name from sys.databases where name not in ('master', 'tempdb', 'model', 'msdb') and name like 'KitchenBase%'", connection);
+
+            SqlCommand command = new SqlCommand("select name from sys.databases where name not in ('master', 'tempdb', 'model', 'msdb')", connection);
+
             try
             {
                 connection.Open();
@@ -86,5 +90,7 @@ namespace KitchenBase.Classes
                 connection.Close();
             }
         }
+
+
     }
 }
