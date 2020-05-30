@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
+using System.Data.SqlClient;
+using Crypt_Library;
+using System.Text;
 
 namespace KitchenBaseWeb.Pages
 {
@@ -17,9 +20,10 @@ namespace KitchenBaseWeb.Pages
         //Авторизация
         protected void btEnter_Click(object sender, EventArgs e)
         {
+            string Password;
             DBConnection connection = new DBConnection();
-            connection.Authorization(tbLogin.Text, tbPassword.Text);
-            switch(DBConnection.idUser)
+            connection.Authorization(tbLogin.Text);
+            switch (DBConnection.idUser)
             {
                 case (0):
                     tbLogin.BackColor = ColorTranslator.FromHtml("#cc0000");
@@ -27,14 +31,31 @@ namespace KitchenBaseWeb.Pages
                     lblAuthorization.Visible = true;
                     break;
                 default:
-                    switch (connection.userRole(DBConnection.idUser))
+                    //Проверка пароля
+                    SqlCommand command = new SqlCommand("", DBConnection.connection);
+                    command.CommandText = "select [Password] from [Authorization] where [ID_Authorization] = '" + DBConnection.idUser + "'";
+                    DBConnection.connection.Open();
+                    Password = command.ExecuteScalar().ToString(); //Строка (пароль) из базы данных
+                    DBConnection.connection.Close();
+                    byte[] bytes = Encoding.ASCII.GetBytes(Password); //Коверертируем в байтовый массив
+                    if (tbPassword.Text.ToString() == Crypt.Decryption(bytes))
                     {
-                        case ("Customer"):
-                            Response.Redirect("Reservation.aspx");
-                            break;
-                        case ("Employee"):
-                            Response.Redirect("Service.aspx");
-                            break;
+                        switch (connection.userRole(DBConnection.idUser))
+                        {
+                            case ("Customer"):
+                                Response.Redirect("Reservation.aspx");
+                                break;
+                            case ("Employee"):
+                                Response.Redirect("Service.aspx");
+                                break;
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        tbLogin.BackColor = ColorTranslator.FromHtml("#cc0000");
+                        tbPassword.BackColor = ColorTranslator.FromHtml("#cc0000");
+                        lblAuthorization.Visible = true;
                     }
                     break;
             }

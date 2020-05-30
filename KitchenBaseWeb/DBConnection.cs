@@ -15,6 +15,9 @@ namespace KitchenBaseWeb
             "Integrated Security = True; Connect Timeout = 30; Encrypt=False;" +
             "TrustServerCertificate=False; ApplicationIntent=ReadWrite;" +
             "MultiSubnetFailover=False");
+        public static string qrNameBluda = "select [ID_Menu], [NameBluda] as 'Название блюда', [TimePrigorovleniy] as 'Время приготовления', [CenaBluda] as 'Цена блюда'" +
+            "from [Menu]",
+            qrService = "select * from [ObslujivanieKlienta_View]";
 
         public static int idUser;
         private SqlCommand command = new SqlCommand("", connection);
@@ -22,16 +25,15 @@ namespace KitchenBaseWeb
         /// Авторизация
         /// </summary>
         /// <param name="login"></param>
-        /// <param name="password"></param>
         /// <returns>Возвращает id записи</returns>
-        public Int32 Authorization (string login, string password)
+        public Int32 Authorization (string login)
         {
-            password = BitConverter.ToString(Crypt_Library.Crypt.Encryption(password));
+            //password = BitConverter.ToString(Crypt_Library.Crypt.Encryption(password));
             try
             {
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = "select [ID_Authorization] from" +
-                    "[Authorization] where [Login] = '" + login + "' and '" + password + "'";
+                    "[Authorization] where [Login] = '" + login + "'";
                 DBConnection.connection.Open();
                 idUser = Convert.ToInt32(command.ExecuteScalar().ToString());
                 return (idUser);
