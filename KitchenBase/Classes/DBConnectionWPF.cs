@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KitchenBase.Classes
 {
-    class DBConnection
+    class DBConnectionWPF
     {
     }
 }
