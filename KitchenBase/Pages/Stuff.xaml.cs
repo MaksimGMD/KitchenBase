@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
-
+using System.Data.SqlClient;
+using System.Data;
+using KitchenBase.Classes;
 
 namespace KitchenBase.Pages
 {
@@ -22,9 +24,73 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Stuff : Window
     {
+        private string QR = "";
         public Stuff()
         {
             InitializeComponent();
+        }
+
+        //DataProcedure procedure = new DataProcedure();
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            QR = DBConnection.qrPersonal;
+            dgFill(QR);
+            CbPositionFill();
+        }
+
+        private void CbPositionFill()
+        {
+            DBConnection connection = new DBConnection();
+            connection.PersonalFill();
+            CbPosition.ItemsSource = connection.dtPersonal.DefaultView;
+            CbPosition.SelectedValuePath = "ID_Personala";
+            CbPosition.DisplayMemberPath = "Должность";
+            CbPosition.SelectedIndex = 1;
+        }
+
+            private void dgFill(string qr)
+        {
+            DBConnection connection = new DBConnection();
+            DBConnection.qrPersonal = qr;
+            connection.PersonalFill();
+            dgPersonal.ItemsSource = connection.dtPersonal.DefaultView;
+            dgPersonal.Columns[0].Visibility = Visibility.Collapsed;
+            dgPersonal.Columns[6].Visibility = Visibility.Collapsed;
+            dgPersonal.Columns[8].Visibility = Visibility.Collapsed;
+
+        }
+
+        private void DgPersonal_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.Column.Header)
+            {
+                case ("Surname"):
+                    e.Column.Header = "Фамилия";
+                    break;
+                case ("Name"):
+                    e.Column.Header = "Имя";
+                    break;
+                case ("MiddleName"):
+                    e.Column.Header = "Отчество";
+                    break;
+                case ("Email"):
+                    e.Column.Header = "Почта";
+                    break;
+                case ("PhoneNumber"):
+                    e.Column.Header = "НомерТелефона";
+                    break;
+                case ("Doljnost"):
+                    e.Column.Header = "Должность";
+                    break;
+                case ("Login"):
+                    e.Column.Header = "Логин";
+                    break;
+                case ("Password"):
+                    e.Column.Header = "Пароль";
+                    break;
+            }
+
         }
 
         private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
@@ -143,7 +209,7 @@ namespace KitchenBase.Pages
             tbLogin.Background = azaz6;
             tbPassword.Background = azaz6;
             tbPasswordConfirm.Background = azaz6;
-            dgStuff.Background = azaz6;
+            dgPersonal.Background = azaz6;
 
             tbSearch.Foreground = blackz;
             tbSurname.Foreground = blackz;
@@ -154,7 +220,7 @@ namespace KitchenBase.Pages
             tbLogin.Foreground = blackz;
             tbPassword.Foreground = blackz;
             tbPasswordConfirm.Foreground = blackz;
-            dgStuff.Foreground = blackz;
+            dgPersonal.Foreground = blackz;
         }
 
         private void RadioButton_Checked_6(object sender, RoutedEventArgs e)
@@ -171,7 +237,7 @@ namespace KitchenBase.Pages
             tbLogin.Background = azaz7;
             tbPassword.Background = azaz7;
             tbPasswordConfirm.Background = azaz7;
-            dgStuff.Background = azaz7;
+            dgPersonal.Background = azaz7;
 
             tbSearch.Foreground = whitez;
             tbSurname.Foreground = whitez;
@@ -182,7 +248,7 @@ namespace KitchenBase.Pages
             tbLogin.Foreground = whitez;
             tbPassword.Foreground = whitez;
             tbPasswordConfirm.Foreground = whitez;
-            dgStuff.Foreground = whitez;
+            dgPersonal.Foreground = whitez;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)

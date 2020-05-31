@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using KitchenBase.Classes;
 
 namespace KitchenBase.Pages
 {
@@ -24,6 +25,38 @@ namespace KitchenBase.Pages
         public ProductsType()
         {
             InitializeComponent();
+        }
+        private string QR = "";
+
+        //DataProcedure procedure = new DataProcedure();
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            QR = DBConnection.qrTypeProduct;
+            dgFill(QR);
+        }
+
+
+        private void dgFill(string qr)
+        {
+            DBConnection connection = new DBConnection();
+            DBConnection.qrTypeProduct = qr;
+            connection.TypeProductFill();
+            dgTypeProduct.ItemsSource = connection.dtTypeProduct.DefaultView;
+            //    dgPersonal.Columns[0].Visibility = Visibility.Collapsed;
+
+        }
+
+        private void DgTypeProduct_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.Column.Header)
+            {
+                case ("TypeProduct"):
+                    e.Column.Header = "НазваниеТипаПродукта";
+                    break;
+            }
+
         }
 
 
@@ -138,10 +171,10 @@ namespace KitchenBase.Pages
             var blackz = (Brush)converter.ConvertFromString("#000000");
             tbSearch.Background = azaz6;
             tbNameType.Background = azaz6;
-            dgTypeOfProduct.Background = azaz6;
+            dgTypeProduct.Background = azaz6;
             tbSearch.Foreground = blackz;
             tbNameType.Foreground = blackz;
-            dgTypeOfProduct.Foreground = blackz;
+            dgTypeProduct.Foreground = blackz;
         }
 
         private void RadioButton_Checked_6(object sender, RoutedEventArgs e)
@@ -151,10 +184,10 @@ namespace KitchenBase.Pages
             var whitez = (Brush)converter.ConvertFromString("#FFFFFF");
             tbSearch.Background = azaz7;
             tbNameType.Background = azaz7;
-            dgTypeOfProduct.Background = azaz7;
+            dgTypeProduct.Background = azaz7;
             tbSearch.Foreground = whitez;
             tbNameType.Foreground = whitez;
-            dgTypeOfProduct.Foreground = whitez;
+            dgTypeProduct.Foreground = whitez;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
