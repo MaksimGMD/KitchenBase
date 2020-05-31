@@ -17,7 +17,15 @@ namespace KitchenBaseWeb
             "MultiSubnetFailover=False");
         public static string qrNameBluda = "select [ID_Menu], [NameBluda] as 'Название блюда', [TimePrigorovleniy] as 'Время приготовления', [CenaBluda] as 'Цена блюда'" +
             "from [Menu]",
-            qrService = "select * from [ObslujivanieKlienta_View]";
+            qrService = "select * from [ObslujivanieKlienta_View]",
+            qrTime = "select * from [VremyBronirovanie]",
+            qrReservation = "select[InformationOBronirovanie].[ID_Vremeni_Bronirovaniy], [VremyaBronirovaniy] as 'Время бронирования', [DateBronirovaniy] as 'Дата бронирования', " +
+            "[KolichestvoGostey] as 'Количеесто гостей', [ID_Stola] as 'Номер стола', [InformationOBronirovanie].[ID_Bronirovaniya] as 'Номер бронирования', [Kommentariy] as 'Комментарий' " +
+            "from[InformationOBronirovanie] " +
+            "inner join[VremyBronirovanie] on[VremyBronirovanie].[ID_Vremeni_Bronirovaniy] = [InformationOBronirovanie].[ID_Vremeni_Bronirovaniy] " +
+            "inner join[KlientBronirovanie] on[KlientBronirovanie].[ID_Bronirovaniya] = [InformationOBronirovanie].[ID_Bronirovaniya] " +
+            "inner join[LichnieDannieKlienta] on[LichnieDannieKlienta].[ID_InformationOKliente] = [KlientBronirovanie].[ID_InformationOKliente] " +
+            "where[KlientBronirovanie].[ID_InformationOKliente] = '" + idUser + "'";
 
         public static int idUser;
         private SqlCommand command = new SqlCommand("", connection);

@@ -37,8 +37,7 @@ namespace KitchenBaseWeb.Pages
                     DBConnection.connection.Open();
                     Password = command.ExecuteScalar().ToString(); //Строка (пароль) из базы данных
                     DBConnection.connection.Close();
-                    byte[] bytes = Encoding.ASCII.GetBytes(Password); //Коверертируем в байтовый массив
-                    if (tbPassword.Text.ToString() == Crypt.Decryption(bytes))
+                    if (tbPassword.Text.ToString() == Crypt.Decrypt(Password))
                     {
                         switch (connection.userRole(DBConnection.idUser))
                         {

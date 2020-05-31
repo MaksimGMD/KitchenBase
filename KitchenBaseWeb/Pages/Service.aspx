@@ -91,7 +91,7 @@
                 <asp:GridView ID="gvService" runat="server" AllowSorting="true" UseAccessibleHeader="true" CurrentSortDirection="ASC" Font-Size="14px"
                     AlternatingRowStyle-Wrap="false" HeaderStyle-HorizontalAlign="Center" OnSorting="gvService_Sorting" OnRowDataBound="gvService_RowDataBound" OnSelectedIndexChanged="gvService_SelectedIndexChanged">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="true"/>
+                        <asp:CommandField ShowSelectButton="true" SelectText="Выбрать"/>
                     </Columns>
                 </asp:GridView>
             </div>

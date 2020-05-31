@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase"
         mc:Ignorable="d"
-         Title="Positions" Height="720" Width="1280" Background="#20202A" WindowStartupLocation="CenterScreen">
+         Title="Positions" Height="720" Width="1280" Background="#20202A" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
 
     <Window.Resources>
         <Storyboard x:Key="sbShowRightMenu" >
@@ -55,7 +55,7 @@
         <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Height="40" Grid.Row="3" Grid.Column="3"  FontSize="30" FontFamily="Century Gothic"  ></Button>
         <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="4"  Height="40" FontSize="30" FontFamily="Century Gothic" ></Button>
         <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="5"  Height="40" FontSize="30" FontFamily="Century Gothic" ></Button>
-        <DataGrid Name="dgPosition" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="4" IsReadOnly="True" ColumnWidth="auto" FontSize="16" ></DataGrid>
+        <DataGrid Name="dgPosition" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="4" IsReadOnly="True" ColumnWidth="auto" FontSize="16" AutoGeneratingColumn="dgPosition_AutoGeneratingColumn"></DataGrid>
 
         <Button Name="Home" Background="#6c43af" BorderBrush="Transparent" Grid.Row="2" Grid.Column="8" Click="Home_Click" >
             <Image Source="C:\KitchenBase\KitchenBase\Assets/home_icon.png" Stretch="None"/>

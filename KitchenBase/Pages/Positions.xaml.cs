@@ -28,8 +28,37 @@ namespace KitchenBase
         {
             InitializeComponent();
         }
+        private string QR = "";
 
-        private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
+        //DataProcedure procedure = new DataProcedure();
+
+        private void dgFill(string qr)
+        {
+            DBConnection connection = new DBConnection();
+            DBConnection.qrDoljnost = qr;
+            connection.DoljnostFill();
+            dgPosition.ItemsSource = connection.dtDoljnost.DefaultView;
+            //dgPosition.Columns[0].Visibility = Visibility.Collapsed;
+
+        }
+
+        private void dgPosition_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.Column.Header)
+            {
+                case ("Doljnost"):
+                    e.Column.Header = "Должность";
+                    break;
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            QR = DBConnection.qrDoljnost;
+            dgFill(QR);
+        }
+
+    private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
         {
             ShowHideMenu("sbHideRightMenu", btnRightMenuHide, btnRightMenuShow, pnlRightMenu);
         }
