@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using KitchenBase.Classes;
 
 namespace KitchenBase.Pages
 {
@@ -32,15 +33,15 @@ namespace KitchenBase.Pages
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            QR = Classes.DBConnection.qrTypeProduct;
+            QR = DBConnection.qrTypeProduct;
             dgFill(QR);
         }
 
 
         private void dgFill(string qr)
         {
-            Classes.DBConnection connection = new Classes.DBConnection();
-            Classes.DBConnection.qrTypeProduct = qr;
+            DBConnection connection = new DBConnection();
+            DBConnection.qrTypeProduct = qr;
             connection.TypeProductFill();
             dgTypeProduct.ItemsSource = connection.dtTypeProduct.DefaultView;
             //    dgPersonal.Columns[0].Visibility = Visibility.Collapsed;

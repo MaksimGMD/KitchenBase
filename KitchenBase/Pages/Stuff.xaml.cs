@@ -15,7 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 using System.Data.SqlClient;
 using System.Data;
-
+using KitchenBase.Classes;
 
 namespace KitchenBase.Pages
 {
@@ -24,28 +24,24 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Stuff : Window
     {
-
+        private string QR = "";
         public Stuff()
         {
             InitializeComponent();
         }
 
-
-        private string QR = "";
-
         //DataProcedure procedure = new DataProcedure();
-
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            QR = Classes.DBConnection.qrPersonal;
+            QR = DBConnection.qrPersonal;
             dgFill(QR);
             CbPositionFill();
         }
 
         private void CbPositionFill()
         {
-            Classes.DBConnection connection = new Classes.DBConnection();
+            DBConnection connection = new DBConnection();
             connection.PersonalFill();
             CbPosition.ItemsSource = connection.dtPersonal.DefaultView;
             CbPosition.SelectedValuePath = "ID_Personala";
@@ -55,11 +51,13 @@ namespace KitchenBase.Pages
 
             private void dgFill(string qr)
         {
-            Classes.DBConnection connection = new Classes.DBConnection();
-            Classes.DBConnection.qrPersonal = qr;
+            DBConnection connection = new DBConnection();
+            DBConnection.qrPersonal = qr;
             connection.PersonalFill();
             dgPersonal.ItemsSource = connection.dtPersonal.DefaultView;
-        //    dgPersonal.Columns[0].Visibility = Visibility.Collapsed;
+            dgPersonal.Columns[0].Visibility = Visibility.Collapsed;
+            dgPersonal.Columns[6].Visibility = Visibility.Collapsed;
+            dgPersonal.Columns[8].Visibility = Visibility.Collapsed;
 
         }
 
@@ -260,6 +258,6 @@ namespace KitchenBase.Pages
             Close();
         }
 
-       
+
     }
 }

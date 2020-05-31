@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using KitchenBase.Classes;
 
 namespace KitchenBase.Pages
 {

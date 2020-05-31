@@ -12,9 +12,9 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
-           @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
-               " Initial Catalog = KitchenBase; Persist Security Info = true;" +
-               " User ID = sa; Password = \"psl14082001\"");
+           @"Data Source = DESKTOP-RV6IQJS\SQLEXPRESS; " +
+               " Initial Catalog = KitchenBase4; Persist Security Info = true;" +
+               " User ID = sa; Password = \"pass13\"");
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
@@ -60,9 +60,13 @@ namespace KitchenBase.Classes
 
         //Таблица клиент (Запрос работает)
         public DataTable dtLichnieDannieKlienta = new DataTable("LichnieDannieKlienta");
+        
         public static string qrLichnieDannieKlienta = "SELECT [ID_InformationOKliente], [Name] as \"Имя\", [Surname] as \"Фамилия\", [MiddleName] as \"Отчество\", [Email] as \"Почта\"," +
         "[PhoneNumber] as \"НомерТелефона\", [dbo].[LichnieDannieKlienta].[ID_Authorization], [Login] as \"Логин\", [Password] as \"Пароль\" FROM [dbo].[LichnieDannieKlienta]" +
          " INNER JOIN [dbo].[Authorization] ON [dbo].[LichnieDannieKlienta].[ID_Authorization] = [dbo].[Authorization].[ID_Authorization]";
+
+        public static int NomerZakaza = new int();
+        public static string qrRabotaKuhni = "select * from [OrderMore_View] where [NomerZakaza] = '" + NomerZakaza + "'";
 
 
         private SqlCommand command = new SqlCommand("", connection);

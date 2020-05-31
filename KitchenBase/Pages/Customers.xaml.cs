@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using KitchenBase.Classes;
 
 namespace KitchenBase.Pages
 {
@@ -141,7 +142,7 @@ namespace KitchenBase.Pages
             tbLogin.Background = azaz6;
             tbPassword.Background = azaz6;
             tbPasswordConfirm.Background = azaz6;
-            dgCustomers.Background = azaz6;
+            dgLichnieDannieKlienta.Background = azaz6;
 
             tbSearch.Foreground = blackz;
             tbSurname.Foreground = blackz;
@@ -152,7 +153,7 @@ namespace KitchenBase.Pages
             tbLogin.Foreground = blackz;
             tbPassword.Foreground = blackz;
             tbPasswordConfirm.Foreground = blackz;
-            dgCustomers.Foreground = blackz;
+            dgLichnieDannieKlienta.Foreground = blackz;
         }
 
         private void RadioButton_Checked_6(object sender, RoutedEventArgs e)
@@ -169,7 +170,7 @@ namespace KitchenBase.Pages
             tbLogin.Background = azaz7;
             tbPassword.Background = azaz7;
             tbPasswordConfirm.Background = azaz7;
-            dgCustomers.Background = azaz7;
+            dgLichnieDannieKlienta.Background = azaz7;
 
             tbSearch.Foreground = whitez;
             tbSurname.Foreground = whitez;
@@ -180,7 +181,7 @@ namespace KitchenBase.Pages
             tbLogin.Foreground = whitez;
             tbPassword.Foreground = whitez;
             tbPasswordConfirm.Foreground = whitez;
-            dgCustomers.Foreground = whitez;
+            dgLichnieDannieKlienta.Foreground = whitez;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
