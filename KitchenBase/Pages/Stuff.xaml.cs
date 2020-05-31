@@ -40,10 +40,20 @@ namespace KitchenBase.Pages
         {
             QR = Classes.DBConnection.qrPersonal;
             dgFill(QR);
+            CbPositionFill();
         }
 
+        private void CbPositionFill()
+        {
+            Classes.DBConnection connection = new Classes.DBConnection();
+            connection.PersonalFill();
+            CbPosition.ItemsSource = connection.dtPersonal.DefaultView;
+            CbPosition.SelectedValuePath = "ID_Personala";
+            CbPosition.DisplayMemberPath = "Должность";
+            CbPosition.SelectedIndex = 1;
+        }
 
-        private void dgFill(string qr)
+            private void dgFill(string qr)
         {
             Classes.DBConnection connection = new Classes.DBConnection();
             Classes.DBConnection.qrPersonal = qr;

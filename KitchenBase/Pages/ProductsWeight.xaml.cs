@@ -138,10 +138,10 @@ namespace KitchenBase.Pages
             var blackz = (Brush)converter.ConvertFromString("#000000");
             tbSearch.Background = azaz6;
             tbWeight.Background = azaz6;
-            dgProductsWeight.Background = azaz6;
+            dgSostavaBluda.Background = azaz6;
             tbSearch.Foreground = blackz;
             tbWeight.Foreground = blackz;
-            dgProductsWeight.Foreground = blackz;
+            dgSostavaBluda.Foreground = blackz;
         }
 
         private void RadioButton_Checked_6(object sender, RoutedEventArgs e)
@@ -151,10 +151,10 @@ namespace KitchenBase.Pages
             var whitez = (Brush)converter.ConvertFromString("#FFFFFF");
             tbSearch.Background = azaz7;
             tbWeight.Background = azaz7;
-            dgProductsWeight.Background = azaz7;
+            dgSostavaBluda.Background = azaz7;
             tbSearch.Foreground = whitez;
             tbWeight.Foreground = whitez;
-            dgProductsWeight.Foreground = whitez;
+            dgSostavaBluda.Foreground = whitez;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)

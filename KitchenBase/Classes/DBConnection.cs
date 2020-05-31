@@ -11,27 +11,60 @@ namespace KitchenBase.Classes
     {
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
-        public static SqlConnection connection = new SqlConnection(@"Data Source = DESKTOP-T819KVA\SQLEXPRESS; Initial Catalog = KitchenBase; " + 
-            "Integrated Security = True; Connect Timeout = 30; Encrypt=False;" +
-            "TrustServerCertificate=False; ApplicationIntent=ReadWrite;" +
-            "MultiSubnetFailover=False");
-        //Таблица персонал
+        public static SqlConnection connection = new SqlConnection(
+           @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
+               " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+               " User ID = sa; Password = \"psl14082001\"");
+
+        //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
         public static string qrPersonal = "SELECT [ID_Personala], [Surname] as \"Фамилия\", [Name] as \"Имя\", [MiddleName] as \"Отчество\", [Email] as \"Почта\"," +
-            "[PhoneNumber] as \"НомерТелефона\", [dbo].[Personal].[ID_Doljnosti], [Doljnost] as \"Должность\" FROM [dbo].[Personal], " +
-                                                "[dbo].[Personal].[ID_Authorization], [Login] as \"Логин\" FROM [dbo].[Personal], " +
-                                                "[dbo].[Personal].[ID_Authorization], [Password] as \"Пароль\" FROM [dbo].[Personal]" +
-             " INNER JOIN [dbo].[Authorization] ON [dbo].[Personal].[ID_Personala] = [dbo].[Authorization].[ID_Authorization]" +
-             " INNER JOIN [dbo].[Doljnost] ON [dbo].[Personal].[ID_Personala] = [dbo].[Doljnost].[ID_Doljnosti]";
-        //Таблица учёт продуктов на складе
-        // public DataTable dtYchetProductovNaSklade = new DataTable("YchetProductovNaSklade");
-        // public static string qrYchetProductovNaSklade = "SELECT [ID_Producta], [NameProduct] as \"Наименование\"," +
-        //Таблица тип продуктов
-        //Таблица должности
-        //Таблица состав блюда
-        //Таблица вес продуктов
-        //Таблица информация о бронировании
-        //Таблица ингридиенты
+        "[PhoneNumber] as \"НомерТелефона\", [dbo].[Personal].[ID_Doljnosti], [Doljnost] as \"Должность\", " +
+                                            "[dbo].[Personal].[ID_Authorization], [Login] as \"Логин\", [Password] as \"Пароль\" FROM [dbo].[Personal]" +
+         " INNER JOIN [dbo].[Authorization] ON [dbo].[Personal].[ID_Authorization] = [dbo].[Authorization].[ID_Authorization]" +
+         " INNER JOIN [dbo].[Doljnost] ON [dbo].[Personal].[ID_Doljnosti] = [dbo].[Doljnost].[ID_Doljnosti]";
+
+        //Таблица вес продуктов (СОСТАВ БЛЮДА) (Запрос работает)
+        public DataTable dtSostavaBluda = new DataTable("SostavaBluda");
+        public static string qrSostavaBluda = "SELECT [ID_SostavaBluda], [VesProducta] as \"ВесПродукта\" FROM [dbo].[SostavaBluda]";
+
+
+
+        //Таблица учёт продуктов на складе (Запрос работает)
+        public DataTable dtYchetProductovNaSklade = new DataTable("YchetProductovNaSklade");
+        public static string qrYchetProductovNaSklade = "SELECT [ID_Producta], [NameProduct] as \"НаименованиеПродукта\", [VesProducta] as \"ВесПродукта\", [KolichestvoNaSklade] as \"КоличествоНаСкладе\", [SrokGodnosti] as \"СрокГодности\"," +
+           "[dbo].[YchetProductovNaSklade].[ID_TypeProduct], [TypeProduct] as \"НазваниеТипаПродукта\" FROM [dbo].[YchetProductovNaSklade]" +
+             " INNER JOIN [dbo].[TypeProduct] ON [dbo].[YchetProductovNaSklade].[ID_TypeProduct] = [dbo].[TypeProduct].[ID_TypeProduct]";
+
+
+
+        //Таблица тип продуктов (Запрос работает)
+        public DataTable dtTypeProduct = new DataTable("TypeProduct");
+        public static string qrTypeProduct = "SELECT [ID_TypeProduct], [TypeProduct] as \"НазваниеТипаПродукта\" FROM [dbo].[TypeProduct]";
+
+
+
+
+        //Таблица должности (Запрос работает)
+        public DataTable dtDoljnost = new DataTable("Doljnost");
+        public static string qrDoljnost = "SELECT [ID_Doljnosti], [Doljnost] as \"Должность\" FROM [dbo].[Doljnost]";
+
+
+
+
+        //Таблица меню (Запрос работает)
+        public DataTable dtMenu = new DataTable("Menu");
+        public static string qrMenu = "SELECT [ID_Menu], [NameBluda] as \"НаименованиеБлюда\", [TimePrigorovleniy] as \"ВремяПриготовления\", [CenaBluda] as \"ЦенаБлюда\", "+
+        "[dbo].[SostavaBluda].[ID_SostavaBluda], [VesProducta] as \"ВесПродукта\" FROM [dbo].[Menu]" +
+        "INNER JOIN [dbo].[SostavaBluda] ON [dbo].[Menu].[ID_SostavaBluda] = [dbo].[SostavaBluda].[ID_SostavaBluda]";
+
+        //Таблица клиент (Запрос работает)
+        public DataTable dtLichnieDannieKlienta = new DataTable("LichnieDannieKlienta");
+        public static string qrLichnieDannieKlienta = "SELECT [ID_InformationOKliente], [Name] as \"Имя\", [Surname] as \"Фамилия\", [MiddleName] as \"Отчество\", [Email] as \"Почта\"," +
+        "[PhoneNumber] as \"НомерТелефона\", [dbo].[LichnieDannieKlienta].[ID_Authorization], [Login] as \"Логин\", [Password] as \"Пароль\" FROM [dbo].[LichnieDannieKlienta]" +
+         " INNER JOIN [dbo].[Authorization] ON [dbo].[LichnieDannieKlienta].[ID_Authorization] = [dbo].[Authorization].[ID_Authorization]";
+
+
         private SqlCommand command = new SqlCommand("", connection);
         private void dtFill(DataTable table, string query)
         {
@@ -41,11 +74,40 @@ namespace KitchenBase.Classes
             connection.Close();
 
         }
+        //заполнение персонал
         public void PersonalFill()
         {
             dtFill(dtPersonal, qrPersonal);
         }
-
-
+        //заполнение тип продуктов
+        public void TypeProductFill()
+        {
+            dtFill(dtTypeProduct, qrTypeProduct);
+        }
+        //заполнение вес продуктов
+        public void SostavaBludaFill()
+        {
+            dtFill(dtSostavaBluda, qrSostavaBluda);
+        }
+        //заполнение учёт продуктов на складе
+        public void YchetProductovNaSkladeFill()
+        {
+            dtFill(dtYchetProductovNaSklade, qrYchetProductovNaSklade);
+        }
+        //заполнение должность
+        public void DoljnostFill()
+        {
+            dtFill(dtDoljnost, qrDoljnost);
+        }
+        //заполнение меню
+        public void MenuFill()
+        {
+            dtFill(dtMenu, qrMenu);
+        }
+        //заполнение клиента
+        public void LichnieDannieKlientaFill()
+        {
+            dtFill(dtLichnieDannieKlienta, qrLichnieDannieKlienta);
+        }
     }
 }

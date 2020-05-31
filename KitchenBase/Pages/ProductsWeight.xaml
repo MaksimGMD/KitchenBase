@@ -59,7 +59,7 @@
         <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="5"  Height="40" FontSize="30" FontFamily="Century Gothic" ></Button>
 
         <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="4" >
-            <DataGrid Foreground="White" Name="dgProductsWeight" IsReadOnly="True"  ColumnWidth="auto" FontSize="16" AlternatingRowBackground="#FF2A026C" BorderBrush="#FF2A026C" ></DataGrid>
+            <DataGrid Foreground="White" Name="dgSostavaBluda" IsReadOnly="True"  ColumnWidth="auto" FontSize="16" AlternatingRowBackground="#FF2A026C" BorderBrush="#FF2A026C" ></DataGrid>
         </Border>
 
 

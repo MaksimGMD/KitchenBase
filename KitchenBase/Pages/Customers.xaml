@@ -132,7 +132,7 @@
             </UniformGrid>
         </StackPanel>
 
-        <DataGrid Name="dgCustomers" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="3" Grid.RowSpan="12" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
+        <DataGrid Name="dgLichnieDannieKlienta" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="3" Grid.RowSpan="12" IsReadOnly="True" ColumnWidth="auto" FontSize="16"></DataGrid>
 
         <Button Name="Home" Background="#6c43af" BorderBrush="Transparent" Grid.Row="2" Grid.RowSpan="3" Grid.Column="9" Click="Home_Click" >
             <Image Source="C:\KitchenBase\KitchenBase\Assets/home_icon.png" Width="50" Height="50"/>
