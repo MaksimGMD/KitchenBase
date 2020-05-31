@@ -22,6 +22,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class ProductsType : Window
     {
+        
         public ProductsType()
         {
             InitializeComponent();

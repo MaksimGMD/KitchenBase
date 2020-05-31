@@ -23,9 +23,41 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Menu : Window
     {
+        private string QR = "";
         public Menu()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            QR = DBConnection.qrMenu;
+            dgFill(QR);
+        }
+
+        private void dgFill(string qr)
+        {
+            DBConnection connection = new DBConnection();
+            DBConnection.qrMenu = qr;
+            connection.MenuFill();
+            dgMenu.ItemsSource = connection.dtMenu.DefaultView;
+            dgMenu.Columns[0].Visibility = Visibility.Collapsed;
+        }
+
+        private void dgMenu_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.Column.Header)
+            {
+                case ("NameBluda"):
+                    e.Column.Header = "Наименование блюда";
+                    break;
+                case ("TimePrigorovleniy"):
+                    e.Column.Header = "Время приготовления";
+                    break;
+                case ("CenaBluda"):
+                    e.Column.Header = "Цена блюда";
+                    break;
+            }
         }
 
         private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
@@ -173,5 +205,9 @@ namespace KitchenBase.Pages
             navigation.Show();
             Close();
         }
+
+
+
+
     }
 }

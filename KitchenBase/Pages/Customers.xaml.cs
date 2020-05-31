@@ -22,6 +22,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Customers : Window
     {
+        private string QR = "";
         public Customers()
         {
             InitializeComponent();

@@ -22,10 +22,37 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class ProductsWeight : Window
     {
-        
+        private string QR = "";
         public ProductsWeight()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            QR = DBConnection.qrSostavaBluda;
+            dgFill(QR);
+        }
+
+        private void dgFill(string qr)
+        {
+            DBConnection connection = new DBConnection();
+            DBConnection.qrSostavaBluda = qr;
+            connection.SostavaBludaFill();
+            dgSostavaBluda.ItemsSource = connection.dtSostavaBluda.DefaultView;
+            dgSostavaBluda.Columns[0].Visibility = Visibility.Collapsed;
+        }
+
+
+        private void dgSostavaBluda_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.Column.Header)
+            {
+                case ("VesProducta"):
+                    e.Column.Header = "Вес продукта";
+                    break;
+            }
+
         }
 
         private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
@@ -164,6 +191,8 @@ namespace KitchenBase.Pages
             Navigation.Show();
             Close();
         }
+
+
     }
           
 }

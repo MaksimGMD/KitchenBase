@@ -23,6 +23,7 @@ namespace KitchenBase
     /// </summary>
     public partial class Positions : Window
     {
+        private string QR = "";
         public Positions()
         {
             InitializeComponent();

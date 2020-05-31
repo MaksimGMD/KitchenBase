@@ -26,7 +26,7 @@ namespace KitchenBase.Classes
 
         //Таблица вес продуктов (СОСТАВ БЛЮДА) (Запрос работает)
         public DataTable dtSostavaBluda = new DataTable("SostavaBluda");
-        public static string qrSostavaBluda = "SELECT [ID_SostavaBluda], [VesProducta] as \"ВесПродукта\" FROM [dbo].[SostavaBluda]";
+        public static string qrSostavaBluda = "SELECT [ID_SostavaBluda], [VesProducta] as \"Вес Продукта\" FROM [dbo].[SostavaBluda]";
 
 
 

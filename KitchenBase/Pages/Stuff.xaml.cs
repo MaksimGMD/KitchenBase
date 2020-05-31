@@ -58,7 +58,6 @@ namespace KitchenBase.Pages
             dgPersonal.Columns[0].Visibility = Visibility.Collapsed;
             dgPersonal.Columns[6].Visibility = Visibility.Collapsed;
             dgPersonal.Columns[8].Visibility = Visibility.Collapsed;
-
         }
 
         private void DgPersonal_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
