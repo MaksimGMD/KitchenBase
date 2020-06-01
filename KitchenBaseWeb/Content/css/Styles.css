@@ -118,12 +118,14 @@ a {
     width: 90%;
     border-radius: unset;
     box-shadow: 0 0 10px 5px rgba(156, 198, 238, 0.25);
+    color: #000000;
 }
 
 .AccountDisabled {
     width: 90%;
     border-radius: unset;
     background: #545A8A;
+    color: #eeebf5;
 }
 
 .AccountPage {
@@ -146,24 +148,6 @@ a {
         outline: none;
     }
 
-/*.table-condensed tr th {
-    border: 0px solid #ffffff;
-    color: white;
-    background-color: #ffffff;
-    font-size: 14px;
-}
-
-.table-condensed, .table-condensed tr td {
-    border: 0px solid #ffffff;
-}
-
-tr:nth-child(even) {
-    background: #ffffff
-}
-
-tr:nth-child(odd) {
-    background: #ffffff;
-}*/
 .table{
     background: #ffffff;
 }

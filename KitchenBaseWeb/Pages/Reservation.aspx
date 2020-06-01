@@ -78,7 +78,8 @@
                 <div class="col-4">
                     <asp:Button ID="btInsert" runat="server" Text="Добавить" CssClass="button-Reserv" OnClick="btInsert_Click" />
                     <asp:Button ID="btUpdate" runat="server" Text="Изменить" CssClass="button-Reserv" OnClick="btUpdate_Click" />
-                    <asp:Button ID="btDelete" runat="server" Text="Удалить" CssClass="button-Reserv" OnClick="btDelete_Click" CausesValidation="false"/>
+                    <asp:Button ID="btDelete" runat="server" Text="Удалить" CssClass="button-Reserv" OnClick="btDelete_Click" CausesValidation="false"  OnClientClick="return isDelete()"/>
+                    
                 </div>
             </div>
             <div class="Table mt-5" style="overflow-x: auto; width: 90%">
