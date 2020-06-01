@@ -58,7 +58,6 @@ namespace KitchenBase.Pages
             dgPersonal.Columns[0].Visibility = Visibility.Collapsed;
             dgPersonal.Columns[6].Visibility = Visibility.Collapsed;
             dgPersonal.Columns[8].Visibility = Visibility.Collapsed;
-
         }
 
         private void DgPersonal_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -155,7 +154,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz3;
             btCancel.Background = azaz3;
             btnRightMenuShow.Background = azaz3;
-            Cabinet.Background = azaz3;
             Home.Background = azaz3;
             btnRightMenuHide.Background = azaz3;
             pnlRight.Background = azaz3;
@@ -172,7 +170,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz4;
             btCancel.Background = azaz4;
             btnRightMenuShow.Background = azaz4;
-            Cabinet.Background = azaz4;
             Home.Background = azaz4;
             btnRightMenuHide.Background = azaz4;
             pnlRight.Background = azaz4;
@@ -189,7 +186,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz5;
             btCancel.Background = azaz5;
             btnRightMenuShow.Background = azaz5;
-            Cabinet.Background = azaz5;
             Home.Background = azaz5;
             btnRightMenuHide.Background = azaz5;
             pnlRight.Background = azaz5;
@@ -209,7 +205,6 @@ namespace KitchenBase.Pages
             tbLogin.Background = azaz6;
             tbPassword.Background = azaz6;
             tbPasswordConfirm.Background = azaz6;
-            dgPersonal.Background = azaz6;
 
             tbSearch.Foreground = blackz;
             tbSurname.Foreground = blackz;
@@ -220,7 +215,6 @@ namespace KitchenBase.Pages
             tbLogin.Foreground = blackz;
             tbPassword.Foreground = blackz;
             tbPasswordConfirm.Foreground = blackz;
-            dgPersonal.Foreground = blackz;
         }
 
         private void RadioButton_Checked_6(object sender, RoutedEventArgs e)
@@ -237,7 +231,6 @@ namespace KitchenBase.Pages
             tbLogin.Background = azaz7;
             tbPassword.Background = azaz7;
             tbPasswordConfirm.Background = azaz7;
-            dgPersonal.Background = azaz7;
 
             tbSearch.Foreground = whitez;
             tbSurname.Foreground = whitez;
@@ -248,7 +241,6 @@ namespace KitchenBase.Pages
             tbLogin.Foreground = whitez;
             tbPassword.Foreground = whitez;
             tbPasswordConfirm.Foreground = whitez;
-            dgPersonal.Foreground = whitez;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)

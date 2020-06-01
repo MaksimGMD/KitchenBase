@@ -22,6 +22,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Customers : Window
     {
+        private string QR = "";
         public Customers()
         {
             InitializeComponent();
@@ -142,7 +143,6 @@ namespace KitchenBase.Pages
             tbLogin.Background = azaz6;
             tbPassword.Background = azaz6;
             tbPasswordConfirm.Background = azaz6;
-            dgLichnieDannieKlienta.Background = azaz6;
 
             tbSearch.Foreground = blackz;
             tbSurname.Foreground = blackz;
@@ -153,7 +153,6 @@ namespace KitchenBase.Pages
             tbLogin.Foreground = blackz;
             tbPassword.Foreground = blackz;
             tbPasswordConfirm.Foreground = blackz;
-            dgLichnieDannieKlienta.Foreground = blackz;
         }
 
         private void RadioButton_Checked_6(object sender, RoutedEventArgs e)
@@ -170,7 +169,6 @@ namespace KitchenBase.Pages
             tbLogin.Background = azaz7;
             tbPassword.Background = azaz7;
             tbPasswordConfirm.Background = azaz7;
-            dgLichnieDannieKlienta.Background = azaz7;
 
             tbSearch.Foreground = whitez;
             tbSurname.Foreground = whitez;
@@ -181,7 +179,6 @@ namespace KitchenBase.Pages
             tbLogin.Foreground = whitez;
             tbPassword.Foreground = whitez;
             tbPasswordConfirm.Foreground = whitez;
-            dgLichnieDannieKlienta.Foreground = whitez;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)

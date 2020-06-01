@@ -20,7 +20,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Authorization : Window
     {
-        public static bool connect = false;
+        private string QR = "";
         //Определяет есть подключение к БД или нет
         public Authorization()
         {

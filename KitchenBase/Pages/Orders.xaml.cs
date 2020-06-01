@@ -20,6 +20,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Orders : Window
     {
+        private string QR = "";
         public Orders()
         {
             InitializeComponent();

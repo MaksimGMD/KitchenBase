@@ -95,7 +95,14 @@
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
-                    <ComboBox Name="CbPosition" FontSize="24"> </ComboBox>
+                    <ComboBox Name="CbPosition" FontSize="24">
+                        <ComboBox.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                <GradientStop Color="#00000000" Offset="1"/>
+                            </LinearGradientBrush>
+                        </ComboBox.Background>
+                    </ComboBox>
             </Border>
 
             <Label Name="lblLogin" Content="Логин"  
@@ -137,23 +144,20 @@
         </StackPanel>
 
         <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="14" >
-            <DataGrid Name="dgPersonal"  IsReadOnly="True" ColumnWidth="auto" FontSize="16" Foreground="White" AutoGeneratingColumn="DgPersonal_AutoGeneratingColumn"></DataGrid>
+            <DataGrid Name="dgPersonal"  IsReadOnly="True" ColumnWidth="auto" FontSize="16"  AutoGeneratingColumn="DgPersonal_AutoGeneratingColumn"  ></DataGrid>
         </Border>
 
         <Button Name="Home" Background="#6c43af" BorderBrush="Transparent" Grid.Row="2" Grid.RowSpan="3" Grid.Column="8" Click="Home_Click" >
             <Image Source="C:\KitchenBase\KitchenBase\Assets/home_icon.png"  Width="50" Height="50"/>
         </Button>
 
-        <Button Name="Cabinet" Background="#6c43af" BorderBrush="Transparent"  Grid.Row="5" Grid.RowSpan="3" Grid.Column="8">
-            <Image Source="C:\KitchenBase\KitchenBase\Assets//profile_icon.png" Width="50" Height="50"/>
-        </Button>
 
-        <Button Name="btnRightMenuShow" Background="#6c43af" BorderBrush="Transparent" Grid.Row="8" Grid.RowSpan="3" Grid.Column="8"  Click="btnRightMenuShow_Click"  >
+        <Button Name="btnRightMenuShow" Background="#6c43af" BorderBrush="Transparent" Grid.Row="5" Grid.RowSpan="3" Grid.Column="8"  Click="btnRightMenuShow_Click"  >
             <Image Source="C:\KitchenBase\KitchenBase\Assets//settings_icon.png"  Width="50" Height="50">
             </Image>
         </Button>
 
-        <StackPanel Name="pnlRightMenu" Orientation="Horizontal"  HorizontalAlignment="Right" Grid.Row="8" Grid.Column="6" Grid.RowSpan="8" Grid.ColumnSpan="5" Margin ="0,-100,-170,0">
+        <StackPanel Name="pnlRightMenu" Orientation="Horizontal"  HorizontalAlignment="Right" Grid.Row="5" Grid.Column="6" Grid.RowSpan="8" Grid.ColumnSpan="5" Margin ="0,-100,-170,0">
             <Grid>
                 <Button Name="btnRightMenuHide" Background="#6c43af" BorderBrush="Transparent" Click="btnRightMenuHide_Click" Visibility="Hidden" Width="60">
                     <Image Source="C:\KitchenBase\KitchenBase\Assets//settings_icon.png" Stretch="None">
@@ -170,7 +174,7 @@
                 <RadioButton GroupName="ButtonColor" Content="Default" IsChecked="True" FontSize="20"  Checked="RadioButton_Checked_2" Foreground="White"/>
                 <RadioButton GroupName="ButtonColor" Content="Черный" FontSize="20" Checked="RadioButton_Checked_3" Foreground="White"/>
                 <RadioButton GroupName="ButtonColor" Content="Зеленый" FontSize="20" Checked="RadioButton_Checked_4" Foreground="White"/>
-                <Label Content="Поля и таблица" FontFamily="Century Gothic" FontSize="20" Foreground="White"/>
+                <Label Content="Фон поля" FontFamily="Century Gothic" FontSize="20" Foreground="White"/>
                 <RadioButton GroupName="Text" Content="Default" FontSize="20" IsChecked="True" Checked="RadioButton_Checked_5" Foreground="White"/>
                 <RadioButton GroupName="Text" Content="Прозрачный" FontSize="20" Checked="RadioButton_Checked_6" Foreground="White"/>
             </StackPanel>
