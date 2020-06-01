@@ -61,11 +61,8 @@
             <Image Source="C:\KitchenBase\KitchenBase\Assets/home_icon.png" Stretch="None"/>
         </Button>
 
-        <Button Name="Cabinet" Background="#6c43af" BorderBrush="Transparent"  Grid.Row="3" Grid.Column="7">
-            <Image Source="C:\KitchenBase\KitchenBase\Assets//profile_icon.png" Stretch="None"/>
-        </Button>
 
-        <Button Name="btnRightMenuShow" Background="#6c43af" BorderBrush="Transparent" Grid.Row="4" Grid.Column="7"  Click="btnRightMenuShow_Click"  >
+        <Button Name="btnRightMenuShow" Background="#6c43af" BorderBrush="Transparent" Grid.Row="3" Grid.Column="7"  Click="btnRightMenuShow_Click"  >
             <Image Source="C:\KitchenBase\KitchenBase\Assets//settings_icon.png" Stretch="None">
             </Image>
         </Button>
@@ -87,7 +84,7 @@
                 <RadioButton GroupName="ButtonColor" Content="Default" IsChecked="True" FontSize="20"  Checked="RadioButton_Checked_2" Foreground="White"/>
                 <RadioButton GroupName="ButtonColor" Content="Черный" FontSize="20" Checked="RadioButton_Checked_3" Foreground="White"/>
                 <RadioButton GroupName="ButtonColor" Content="Зеленый" FontSize="20" Checked="RadioButton_Checked_4" Foreground="White"/>
-                <Label Content="Поля и таблица" FontFamily="Century Gothic" FontSize="20" Foreground="White"/>
+                <Label Content="Фон поля" FontFamily="Century Gothic" FontSize="20" Foreground="White"/>
                 <RadioButton GroupName="Text" Content="Default" FontSize="20" IsChecked="True" Checked="RadioButton_Checked_5" Foreground="White"/>
                 <RadioButton GroupName="Text" Content="Прозрачный" FontSize="20" Checked="RadioButton_Checked_6" Foreground="White"/>
             </StackPanel>

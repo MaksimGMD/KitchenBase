@@ -118,7 +118,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz3;
             btCancel.Background = azaz3;
             btnRightMenuShow.Background = azaz3;
-            Cabinet.Background = azaz3;
             Home.Background = azaz3;
             btnRightMenuHide.Background = azaz3;
             pnlRight.Background = azaz3;
@@ -135,7 +134,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz4;
             btCancel.Background = azaz4;
             btnRightMenuShow.Background = azaz4;
-            Cabinet.Background = azaz4;
             Home.Background = azaz4;
             btnRightMenuHide.Background = azaz4;
             pnlRight.Background = azaz4;
@@ -152,7 +150,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz5;
             btCancel.Background = azaz5;
             btnRightMenuShow.Background = azaz5;
-            Cabinet.Background = azaz5;
             Home.Background = azaz5;
             btnRightMenuHide.Background = azaz5;
             pnlRight.Background = azaz5;
@@ -166,10 +163,8 @@ namespace KitchenBase.Pages
             var blackz = (Brush)converter.ConvertFromString("#000000");
             tbSearch.Background = azaz6;
             tbWeight.Background = azaz6;
-            dgSostavaBluda.Background = azaz6;
             tbSearch.Foreground = blackz;
             tbWeight.Foreground = blackz;
-            dgSostavaBluda.Foreground = blackz;
         }
 
         private void RadioButton_Checked_6(object sender, RoutedEventArgs e)
@@ -179,10 +174,8 @@ namespace KitchenBase.Pages
             var whitez = (Brush)converter.ConvertFromString("#FFFFFF");
             tbSearch.Background = azaz7;
             tbWeight.Background = azaz7;
-            dgSostavaBluda.Background = azaz7;
             tbSearch.Foreground = whitez;
             tbWeight.Foreground = whitez;
-            dgSostavaBluda.Foreground = whitez;
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
