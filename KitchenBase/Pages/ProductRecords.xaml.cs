@@ -25,7 +25,6 @@ namespace KitchenBase.Pages
         {
             InitializeComponent();
         }
-        private string QR = "";
 
         //DataProcedure procedure = new DataProcedure();
 

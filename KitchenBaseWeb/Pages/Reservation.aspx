@@ -80,7 +80,7 @@
                 <asp:GridView ID="gvReservation" runat="server" AllowSorting="True" CurrentSortDirection="ASC" Font-Size="14px" AlternatingRowStyle-Wrap="false"
                     HeaderStyle-HorizontalAlign="Center" OnRowDataBound="gvReservation_RowDataBound" OnSorting="gvReservation_Sorting" OnSelectedIndexChanged="gvReservation_SelectedIndexChanged">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="true" SelectText="Выбрать"/>
+                        <asp:CommandField ShowSelectButton="true" SelectText="Выбрать" />
                     </Columns>
                 </asp:GridView>
             </div>
