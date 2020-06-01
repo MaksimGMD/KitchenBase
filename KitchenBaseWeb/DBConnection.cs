@@ -20,26 +20,24 @@ namespace KitchenBaseWeb
             qrService = "select * from [ObslujivanieKlienta_View]",
             qrTime = "select * from [VremyBronirovanie]",
             qrReservation = "select[InformationOBronirovanie].[ID_Vremeni_Bronirovaniy], [VremyaBronirovaniy] as 'Время бронирования', [DateBronirovaniy] as 'Дата бронирования', " +
-            "[KolichestvoGostey] as 'Количеесто гостей', [ID_Stola] as 'Номер стола', [InformationOBronirovanie].[ID_Bronirovaniya] as 'Номер бронирования', [Kommentariy] as 'Комментарий' " +
+            "[KolichestvoGostey] as 'Количество гостей', [ID_Stola] as 'Номер стола', [InformationOBronirovanie].[ID_Bronirovaniya] as 'Номер бронирования', [Kommentariy] as 'Комментарий' " +
             "from[InformationOBronirovanie] " +
             "inner join[VremyBronirovanie] on[VremyBronirovanie].[ID_Vremeni_Bronirovaniy] = [InformationOBronirovanie].[ID_Vremeni_Bronirovaniy] " +
             "inner join[KlientBronirovanie] on[KlientBronirovanie].[ID_Bronirovaniya] = [InformationOBronirovanie].[ID_Bronirovaniya] " +
-            "inner join[LichnieDannieKlienta] on[LichnieDannieKlienta].[ID_InformationOKliente] = [KlientBronirovanie].[ID_InformationOKliente] " +
-            "where[KlientBronirovanie].[ID_InformationOKliente] = '" + idUser + "'";
+            "inner join[LichnieDannieKlienta] on[LichnieDannieKlienta].[ID_InformationOKliente] = [KlientBronirovanie].[ID_InformationOKliente]";
 
-        public static int idUser;
+        public static int idUser, idKlient, idRecord; 
         private SqlCommand command = new SqlCommand("", connection);
         /// <summary>
         /// Авторизация
         /// </summary>
-        /// <param name="login"></param>
+        /// <param name="login">Логин</param>
         /// <returns>Возвращает id записи</returns>
-        public Int32 Authorization (string login)
+        public Int32 Authorization(string login)
         {
-            //password = BitConverter.ToString(Crypt_Library.Crypt.Encryption(password));
             try
             {
-                command.CommandType = System.Data.CommandType.Text;
+                command.CommandType = CommandType.Text;
                 command.CommandText = "select [ID_Authorization] from" +
                     "[Authorization] where [Login] = '" + login + "'";
                 DBConnection.connection.Open();
@@ -57,9 +55,32 @@ namespace KitchenBaseWeb
             }
         }
         /// <summary>
+        /// id клиента
+        /// </summary>
+        /// <param name="idUser">id из авторизации</param>
+        public void getIDKlienta(int idUser)
+        {
+            try
+            {
+                command.CommandType = CommandType.Text;
+                command.CommandText = "select [ID_InformationOKliente] from [LichnieDannieKlienta] where [ID_Authorization] = '" + idUser + "'";
+                connection.Open();
+                idKlient = Convert.ToInt32(command.ExecuteScalar().ToString());
+            }
+            catch
+            {
+                idKlient = 0;
+                
+            }
+            finally
+            {
+                DBConnection.connection.Close();
+            }
+        }
+        /// <summary>
         /// Роль
         /// </summary>
-        /// <param name="userID"></param>
+        /// <param name="userID">id Авторизованного пользователя</param>
         /// <returns>Роль пользователя</returns>
         public string userRole(Int32 userID)
         {

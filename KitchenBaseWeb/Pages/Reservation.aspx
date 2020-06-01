@@ -12,6 +12,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <script type="text/javascript">
+        function isDelete() {
+            return confirm("Вы уверенны, что хотите удалить выбранные данные?");
+        }
+        </script>
         <asp:SqlDataSource ID="sdsTime" runat="server"></asp:SqlDataSource>
         <asp:SqlDataSource ID="sdsReserv" runat="server"></asp:SqlDataSource>
         <nav class="navbar navbar-expand-lg justify-content-end">
@@ -73,14 +78,14 @@
                 <div class="col-4">
                     <asp:Button ID="btInsert" runat="server" Text="Добавить" CssClass="button-Reserv" OnClick="btInsert_Click" />
                     <asp:Button ID="btUpdate" runat="server" Text="Изменить" CssClass="button-Reserv" OnClick="btUpdate_Click" />
-                    <asp:Button ID="btDelete" runat="server" Text="Удалить" CssClass="button-Reserv" OnClick="btDelete_Click" CausesValidation="false" />
+                    <asp:Button ID="btDelete" runat="server" Text="Удалить" CssClass="button-Reserv" OnClick="btDelete_Click" CausesValidation="false"/>
                 </div>
             </div>
-            <div class="table" style="overflow-x: auto; width: 100%">
-                <asp:GridView ID="gvReservation" runat="server" AllowSorting="True" CurrentSortDirection="ASC" Font-Size="14px" AlternatingRowStyle-Wrap="false"
+            <div class="Table mt-5" style="overflow-x: auto; width: 90%">
+                <asp:GridView ID="gvReservation" runat="server" CssClass="table table-condensed table-hover" BorderColor="#20202a" AllowSorting="True" CurrentSortDirection="ASC" Font-Size="16px" AlternatingRowStyle-Wrap="false"
                     HeaderStyle-HorizontalAlign="Center" OnRowDataBound="gvReservation_RowDataBound" OnSorting="gvReservation_Sorting" OnSelectedIndexChanged="gvReservation_SelectedIndexChanged">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="true" SelectText="Выбрать"/>
+                        <asp:CommandField ShowSelectButton="true" SelectText="Выбрать" />
                     </Columns>
                 </asp:GridView>
             </div>

@@ -145,3 +145,32 @@ a {
     .Search:focus {
         outline: none;
     }
+
+/*.table-condensed tr th {
+    border: 0px solid #ffffff;
+    color: white;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+.table-condensed, .table-condensed tr td {
+    border: 0px solid #ffffff;
+}
+
+tr:nth-child(even) {
+    background: #ffffff
+}
+
+tr:nth-child(odd) {
+    background: #ffffff;
+}*/
+.table{
+    background: #ffffff;
+}
+.table tr {
+    text-align: center;
+}
+.table a {
+    color: #007bff;
+    font-size: 18px;
+}

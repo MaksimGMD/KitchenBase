@@ -78,5 +78,21 @@ namespace KitchenBaseWeb
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
+        //Обновление бронирования стола
+        public void InformationOBronirovanieUpdate(int ID_Bronirovaniya, int ID_Stola, string DateBronirovaniy, bool StatusStola,
+            int KolichestvoGostey, string Kommentariy, int ID_Vremeni_Bronirovaniy)
+        {
+            commandConfig("InformationOBronirovanie_update");
+            command.Parameters.AddWithValue("@ID_Bronirovaniya", ID_Bronirovaniya);
+            command.Parameters.AddWithValue("@ID_Stola", ID_Stola);
+            command.Parameters.AddWithValue("@DateBronirovaniy", DateBronirovaniy);
+            command.Parameters.AddWithValue("@StatusStola", StatusStola);
+            command.Parameters.AddWithValue("@KolichestvoGostey", KolichestvoGostey);
+            command.Parameters.AddWithValue("@Kommentariy", Kommentariy);
+            command.Parameters.AddWithValue("@ID_Vremeni_Bronirovaniy", ID_Vremeni_Bronirovaniy);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
     }
 }
