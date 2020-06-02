@@ -24,6 +24,7 @@ namespace KitchenBaseWeb.Pages
             DBConnection connection = new DBConnection();
             connection.Authorization(tbLogin.Text);
             connection.getIDKlienta(DBConnection.idUser);
+            connection.getIDPersonal(DBConnection.idUser);
             switch (DBConnection.idUser)
             {
                 case (0):

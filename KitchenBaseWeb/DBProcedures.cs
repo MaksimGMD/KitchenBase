@@ -112,5 +112,47 @@ namespace KitchenBaseWeb
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
+        //Добавление заказа
+        public void ObslujivanieKlientaInsert(int KolichestvoBlud, string Kommentariy, string VremyZakaza, int SummaZakaza, int IDPersonala,
+            int IDMenu, int ID_Bronirovaniya)
+        {
+            commandConfig("ObslujivanieKlienta_insert");
+            command.Parameters.AddWithValue("@KolichestvoBlud", KolichestvoBlud);
+            command.Parameters.AddWithValue("@Kommentariy", Kommentariy);
+            command.Parameters.AddWithValue("@VremyZakaza", VremyZakaza);
+            command.Parameters.AddWithValue("@SummaZakaza", SummaZakaza);
+            command.Parameters.AddWithValue("@IDPersonala", IDPersonala);
+            command.Parameters.AddWithValue("@IDMenu", IDMenu);
+            command.Parameters.AddWithValue("@ID_Bronirovaniya", ID_Bronirovaniya);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Обновление заказа
+        public void ObslujivanieKlientaUpdate(int NomerZakaza, int KolichestvoBlud, string Kommentariy, string VremyZakaza, int SummaZakaza, int IDPersonala,
+            int IDMenu, int ID_Bronirovaniya)
+        {
+            commandConfig("ObslujivanieKlienta_update");
+            command.Parameters.AddWithValue("NomerZakaza", NomerZakaza);
+            command.Parameters.AddWithValue("@KolichestvoBlud", KolichestvoBlud);
+            command.Parameters.AddWithValue("@Kommentariy", Kommentariy);
+            command.Parameters.AddWithValue("@VremyZakaza", VremyZakaza);
+            command.Parameters.AddWithValue("@SummaZakaza", SummaZakaza);
+            command.Parameters.AddWithValue("@IDPersonala", IDPersonala);
+            command.Parameters.AddWithValue("@IDMenu", IDMenu);
+            command.Parameters.AddWithValue("@ID_Bronirovaniya", ID_Bronirovaniya);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Удаление заказа
+        public void ObslujivanieKlientaDelete(int NomerZakaza)
+        {
+            commandConfig("ObslujivanieKlienta_delete");
+            command.Parameters.AddWithValue("NomerZakaza", NomerZakaza);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
     }
 }

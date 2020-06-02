@@ -23,16 +23,12 @@ namespace KitchenBaseWeb.Pages
         private void DataFill()
         {
             string Password;
-            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
-            "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
-            "ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
-            {
                 DataTable dt = new DataTable();
-                connection.Open();
+                DBConnection.connection.Open();
                 SqlDataReader myReader = null;
                 SqlCommand myCommand = new SqlCommand("select [Name], [Surname], [MiddleName], [Email], [PhoneNumber], [Login], [Password] from [LichnieDannieKlienta] " +
                         "inner join[Authorization] on[Authorization].[ID_Authorization] = [LichnieDannieKlienta].[ID_Authorization] " +
-                        "where[LichnieDannieKlienta].[ID_Authorization] = '" + DBConnection.idUser + "'", connection);
+                        "where[LichnieDannieKlienta].[ID_Authorization] = '" + DBConnection.idUser + "'", DBConnection.connection);
 
                 myReader = myCommand.ExecuteReader();
                 while (myReader.Read())
@@ -46,8 +42,7 @@ namespace KitchenBaseWeb.Pages
                     tbSurname.Text = (myReader["Surname"].ToString());
                     tbPassword.Text = Crypt.Decrypt(Password);
                 }
-                connection.Close();
-            }
+                DBConnection.connection.Close();
         }
         //Изменение свойств полей
         private void TBStatus()
