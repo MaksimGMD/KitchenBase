@@ -35,6 +35,24 @@ namespace KitchenBaseWeb
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
+        //Обновление данных пользователя
+        public void UsersRegistrationUpdate(int ID_InformationOKliente, string Login, string Password, string Name, string Surname, string MiddleName,
+            string Email, string PhoneNumber)
+        {
+            Password = Crypt.Encrypt(Password);
+            commandConfig("Users_RegistrationUpdate");
+            command.Parameters.AddWithValue("@ID_InformationOKliente", ID_InformationOKliente);
+            command.Parameters.AddWithValue("@Login", Login);
+            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@Name", Name);
+            command.Parameters.AddWithValue("@Surname", Surname);
+            command.Parameters.AddWithValue("@MiddleName", MiddleName);
+            command.Parameters.AddWithValue("@Email", Email);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
 
         //Добавление бронирования стола
         public void InformationOBronirovanieInsert(int ID_Stola, string DateBronirovaniy, bool StatusStola, int KolichestvoGostey, string Kommentariy,
@@ -74,6 +92,22 @@ namespace KitchenBaseWeb
         {
             commandConfig("InformationOBronirovanie_delete");
             command.Parameters.AddWithValue("@ID_Bronirovaniya", ID_Bronirovaniya);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Обновление бронирования стола
+        public void InformationOBronirovanieUpdate(int ID_Bronirovaniya, int ID_Stola, string DateBronirovaniy, bool StatusStola,
+            int KolichestvoGostey, string Kommentariy, int ID_Vremeni_Bronirovaniy)
+        {
+            commandConfig("InformationOBronirovanie_update");
+            command.Parameters.AddWithValue("@ID_Bronirovaniya", ID_Bronirovaniya);
+            command.Parameters.AddWithValue("@ID_Stola", ID_Stola);
+            command.Parameters.AddWithValue("@DateBronirovaniy", DateBronirovaniy);
+            command.Parameters.AddWithValue("@StatusStola", StatusStola);
+            command.Parameters.AddWithValue("@KolichestvoGostey", KolichestvoGostey);
+            command.Parameters.AddWithValue("@Kommentariy", Kommentariy);
+            command.Parameters.AddWithValue("@ID_Vremeni_Bronirovaniy", ID_Vremeni_Bronirovaniy);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();

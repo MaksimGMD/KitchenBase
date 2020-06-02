@@ -23,6 +23,7 @@ namespace KitchenBaseWeb.Pages
             string Password;
             DBConnection connection = new DBConnection();
             connection.Authorization(tbLogin.Text);
+            connection.getIDKlienta(DBConnection.idUser);
             switch (DBConnection.idUser)
             {
                 case (0):
