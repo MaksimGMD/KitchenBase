@@ -417,16 +417,14 @@ namespace KitchenBase.Pages
             tbPhoneNumber.MaxLength = 12;
             if (a.Length == 1)
             {
-                tbPhoneNumber.Text = "+7" + tbPhoneNumber.Text;//добавляет плюс
+                tbPhoneNumber.Text = "+7" + tbPhoneNumber.Text;//добавляет +7
                 tbPhoneNumber.SelectionStart = tbPhoneNumber.Text.Length; //перенос в конец строки
             }
         }
         //всплывающее оповещение
         private void TbPhoneNumber_GotFocus(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Начинайте вводить номер телефона " +
-          "\n без +7", "KitchenBase",
-         MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show("Начинайте вводить номер телефона без +7 ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         private void TbLogin_GotFocus(object sender, RoutedEventArgs e)
