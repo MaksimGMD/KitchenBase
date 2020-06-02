@@ -12,8 +12,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:SqlDataSource ID="sdsTime" runat="server"></asp:SqlDataSource>
         <asp:SqlDataSource ID="sdsReserv" runat="server"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="sdsTime" runat="server"></asp:SqlDataSource>
         <nav class="navbar navbar-expand-lg justify-content-end">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -78,7 +78,7 @@
             </div>
             <div class="table" style="overflow-x: auto; width: 100%">
                 <asp:GridView ID="gvReservation" runat="server" AllowSorting="True" CurrentSortDirection="ASC" Font-Size="14px" AlternatingRowStyle-Wrap="false"
-                    HeaderStyle-HorizontalAlign="Center" OnRowDataBound="gvReservation_RowDataBound" OnSorting="gvReservation_Sorting" OnSelectedIndexChanged="gvReservation_SelectedIndexChanged">
+                     HeaderStyle-HorizontalAlign="Center" OnRowDataBound="gvReservation_RowDataBound" OnSorting="gvReservation_Sorting" OnSelectedIndexChanged="gvReservation_SelectedIndexChanged" DataSourceID="sdsReserv">
                     <Columns>
                         <asp:CommandField ShowSelectButton="true" SelectText="Выбрать" />
                     </Columns>
