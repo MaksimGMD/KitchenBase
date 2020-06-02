@@ -311,20 +311,20 @@ namespace KitchenBase.Classes
 
         //Процедуры для персонала
 
-        public void spPersonal_insert(string Name, string Surname, string MiddleName, string Email, string PhoneNumber, Int32 ID_Doljnosti, Int32 ID_Authorization)
+        public void spPersonal_insert(string Surname, string Name, string MiddleName, string Email, string PhoneNumber, Int32 ID_Doljnosti)
         {
             commandConfig("Personal_insert");
-            command.Parameters.AddWithValue("@Name", Name);
             command.Parameters.AddWithValue("@Surname", Surname);
+            command.Parameters.AddWithValue("@Name", Name);
             command.Parameters.AddWithValue("@MiddleName", MiddleName);
             command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
             command.Parameters.AddWithValue("@ID_Doljnosti", ID_Doljnosti);
-            command.Parameters.AddWithValue("@ID_Authorization", ID_Authorization);
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
-        public void spPersonal_update(Int32 ID_Personala, string Name, string Surname, string MiddleName, string Email, string PhoneNumber, Int32 ID_Doljnosti, Int32 ID_Authorization)
+        public void spPersonal_update(Int32 ID_Personala, string Name, string Surname, string MiddleName, string Email, string PhoneNumber, Int32 ID_Doljnosti)
         {
             commandConfig("Personal_update");
             command.Parameters.AddWithValue("@ID_Personala", ID_Personala);
@@ -334,7 +334,6 @@ namespace KitchenBase.Classes
             command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
             command.Parameters.AddWithValue("@ID_Doljnosti", ID_Doljnosti);
-            command.Parameters.AddWithValue("@ID_Authorization", ID_Authorization);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();

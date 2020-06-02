@@ -30,7 +30,7 @@ namespace KitchenBase.Pages
             InitializeComponent();
         }
 
-        //DataProcedure procedure = new DataProcedure();
+        DataProcedure DataProcedure = new DataProcedure();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -42,8 +42,8 @@ namespace KitchenBase.Pages
         private void CbPositionFill()
         {
             DBConnection connection = new DBConnection();
-            connection.PersonalFill();
-            CbPosition.ItemsSource = connection.dtPersonal.DefaultView;
+            connection.DoljnostFill();
+            CbPosition.ItemsSource = connection.dtDoljnost.DefaultView;
             CbPosition.SelectedValuePath = "ID_Personala";
             CbPosition.DisplayMemberPath = "Должность";
             CbPosition.SelectedIndex = 1;
@@ -250,6 +250,133 @@ namespace KitchenBase.Pages
             Close();
         }
 
+        private void BtInsert_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbSurname.Text == "")
+            {
+                case (true):
+                    tbSurname.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbSurname.Background = Brushes.White;
 
+                    switch (tbName.Text == "")
+                    {
+                        case (true):
+                            tbName.Background = Brushes.Red;
+                            break;
+                        case (false):
+                            tbName.Background = Brushes.White;
+
+                            switch (tbMiddleName.Text == "")
+                            {
+                                case (true):
+                                    tbMiddleName.Background = Brushes.Red;
+                                    break;
+                                case (false):
+                                    tbMiddleName.Background = Brushes.White;
+
+                                    switch (tbEmail.Text == "")
+                                    {
+                                        case (true):
+                                            tbEmail.Background = Brushes.Red;
+                                            break;
+                                        case (false):
+                                            tbEmail.Background = Brushes.White;
+
+                                            switch (tbPhoneNumber.Text == "")
+                                            {
+                                                case (true):
+                                                    tbPhoneNumber.Background = Brushes.Red;
+                                                    break;
+                                                case (false):
+                                                    tbPhoneNumber.Background = Brushes.White;
+
+                                                    switch (CbPosition.SelectedIndex == -1)
+                                                    {
+                                                        case (true):
+                                                            CbPosition.Background = Brushes.Red;
+                                                            break;
+                                                        case (false):
+                                                            CbPosition.Background = Brushes.White;
+
+                                                            switch (tbLogin.Text == "")
+                                                            {
+                                                                case (true):
+                                                                    tbLogin.Background = Brushes.Red;
+                                                                    break;
+                                                                case (false):
+                                                                    tbLogin.Background = Brushes.White;
+
+                                                                    switch (tbPassword.Text == "")
+                                                                    {
+                                                                        case (true):
+                                                                            tbPassword.Background = Brushes.Red;
+                                                                            break;
+                                                                        case (false):
+                                                                            tbPassword.Background = Brushes.White;
+
+                                                                            switch (tbPasswordConfirm.Text == "")
+                                                                            {
+                                                                                case (true):
+                                                                                    tbPasswordConfirm.Background = Brushes.Red;
+                                                                                    break;
+                                                                                case (false):
+                                                                                    tbPasswordConfirm.Background = Brushes.White;
+                                                                                    DataProcedure.spPersonal_insert(tbSurname.Text.ToString(), tbName.Text.ToString(), tbMiddleName.Text.ToString(), tbEmail.Text.ToString(), tbPhoneNumber.Text.ToString(), Convert.ToInt32(CbPosition.SelectedValue.ToString()));
+                                                                                    DataProcedure.spAuthorization_insert(tbLogin.Text.ToString(), tbPassword.Text.ToString());
+                                                                                    dgFill(QR);
+                                                                                    CbPositionFill();
+                                                                                    tbSurname.Text == "";
+                                                                                    tbName.Text == "";
+                                                                                    tbMiddleName.Text == "";
+                                                                                    tbEmail.Text == "";
+                                                                                    tbPhoneNumber.Text == "";
+                                                                                    tbLogin.Text == "";
+                                                                                    tbPassword.Text == "";
+                                                                                    break;
+                                                                            }
+                                                                            break;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                            }
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        private void BtUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtFilter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -12,9 +12,9 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
-           "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
-               " Initial Catalog = KitchenBase3; Persist Security Info = true;" +
-               " User ID = sa; Password = \"pass13\"");
+                @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
+               " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+               " User ID = sa; Password = \"psl14082001\"");
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
@@ -57,9 +57,9 @@ namespace KitchenBase.Classes
         public static string qrMenu = "SELECT[ID_Menu], [NameBluda] as \"Наименование Блюда\", [TimePrigorovleniy] as \"Время приготовления\", [CenaBluda] as \"Цена блюда\", "+
         "[dbo].[Ingridient].[ID_Producta], [dbo].[YchetProductovNaSklade].[NameProduct] as \"Название продукта\", "+
 		"[dbo].[Ingridient].[ID_SostaveBluda],  [dbo].[SostavaBluda].[VesProducta] as \"Вес продукта\" FROM[dbo].[Ingridient] "+
-        "INNER JOIN[dbo].[SostavaBluda] ON [dbo].[Ingridient].[ID_SostaveBluda] = [dbo].[SostavaBluda].[ID_SostavaBluda] "+
+        "INNER JOIN [dbo].[SostavaBluda] ON [dbo].[Ingridient].[ID_SostaveBluda] = [dbo].[SostavaBluda].[ID_SostavaBluda] "+
         "INNER JOIN [dbo].[Menu] ON [dbo].[Menu].[ID_SostavaBluda] = [dbo].[SostavaBluda].[ID_SostavaBluda] " +
-        "INNER JOIN[dbo].[YchetProductovNaSklade] ON[dbo].[Ingridient].[ID_Producta] = [dbo].[YchetProductovNaSklade].[ID_Producta]";
+        "INNER JOIN [dbo].[YchetProductovNaSklade] ON [dbo].[Ingridient].[ID_Producta] = [dbo].[YchetProductovNaSklade].[ID_Producta]";
             
             /*  Старый запрос на всякий случай
             "SELECT [ID_Menu], [NameBluda] as \"НаименованиеБлюда\", [TimePrigorovleniy] as \"ВремяПриготовления\", [CenaBluda] as \"ЦенаБлюда\", "+
