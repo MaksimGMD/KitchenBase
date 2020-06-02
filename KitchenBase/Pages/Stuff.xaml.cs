@@ -13,9 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
-using System.Data.SqlClient;
-using System.Data;
+using KitchenBase.Pages;
 using KitchenBase.Classes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace KitchenBase.Pages
 {
@@ -25,13 +26,14 @@ namespace KitchenBase.Pages
     public partial class Stuff : Window
     {
         private string QR = "";
+        DataProcedure DataProcedure = new DataProcedure();
+
         public Stuff()
         {
             InitializeComponent();
         }
 
-        DataProcedure DataProcedure = new DataProcedure();
-
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             QR = DBConnection.qrPersonal;
@@ -44,9 +46,8 @@ namespace KitchenBase.Pages
             DBConnection connection = new DBConnection();
             connection.DoljnostFill();
             CbPosition.ItemsSource = connection.dtDoljnost.DefaultView;
-            CbPosition.SelectedValuePath = "ID_Personala";
+            CbPosition.SelectedValuePath = "ID_Doljnosti";
             CbPosition.DisplayMemberPath = "Должность";
-            CbPosition.SelectedIndex = 1;
         }
 
             private void dgFill(string qr)
@@ -327,13 +328,13 @@ namespace KitchenBase.Pages
                                                                                     DataProcedure.spAuthorization_insert(tbLogin.Text.ToString(), tbPassword.Text.ToString());
                                                                                     dgFill(QR);
                                                                                     CbPositionFill();
-                                                                                    tbSurname.Text == "";
-                                                                                    tbName.Text == "";
-                                                                                    tbMiddleName.Text == "";
-                                                                                    tbEmail.Text == "";
-                                                                                    tbPhoneNumber.Text == "";
-                                                                                    tbLogin.Text == "";
-                                                                                    tbPassword.Text == "";
+                                                                                    tbSurname.Text = "";
+                                                                                    tbName.Text = "";
+                                                                                    tbMiddleName.Text = "";
+                                                                                    tbEmail.Text = "";
+                                                                                    tbPhoneNumber.Text = "";
+                                                                                    tbLogin.Text = "";
+                                                                                    tbPassword.Text = "";
                                                                                     break;
                                                                             }
                                                                             break;

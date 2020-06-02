@@ -10,22 +10,12 @@ namespace KitchenBaseWeb
 {
     public class DBConnection
     {
-<<<<<<< HEAD
 
-       /* Connect Timeout = 30; Encrypt=False;" +
-            "TrustServerCertificate=False; ApplicationIntent=ReadWrite;" +
-            "MultiSubnetFailover=False */
-
-        //Подключение к базе данных 
-        public static SqlConnection connection = new SqlConnection("Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; Initial Catalog = KitchenBase3; " +
-            "Integrated Security = True; User ID = sa; Password = \"pass13\"");
-=======
         //Подключение к базе данных 
         public static SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
             "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
             "ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
->>>>>>> f130e847e4f25c84bceb6f42b53d0f21fc0d6c0a
         public static string qrNameBluda = "select [ID_Menu], [NameBluda] as 'Название блюда', [TimePrigorovleniy] as 'Время приготовления', [CenaBluda] as 'Цена блюда'" +
             "from [Menu]",
             qrService = "select * from [ObslujivanieKlienta_View]",
