@@ -192,6 +192,9 @@ namespace KitchenBase.Pages
             switch (tbWeight.Text == "")
             {
                 case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                     tbWeight.Background = Brushes.Red;
                     break;
                 case (false):
@@ -208,6 +211,9 @@ namespace KitchenBase.Pages
             switch (tbWeight.Text == "")
             {
                 case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                     tbWeight.Background = Brushes.Red;
                     break;
                 case (false):
