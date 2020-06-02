@@ -10,6 +10,7 @@ namespace KitchenBaseWeb
 {
     public class DBConnection
     {
+
         //Подключение к базе данных 
         public static SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
             "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +

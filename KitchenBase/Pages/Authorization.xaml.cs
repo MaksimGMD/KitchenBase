@@ -26,5 +26,10 @@ namespace KitchenBase.Pages
         {
             InitializeComponent();
         }
+
+        private void btAccept_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

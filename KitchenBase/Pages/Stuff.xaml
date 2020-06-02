@@ -99,7 +99,7 @@
                         <ComboBox.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                 <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                                <GradientStop Color="#00000000" Offset="1"/>
+                                <GradientStop Color="White" Offset="1"/>
                             </LinearGradientBrush>
                         </ComboBox.Background>
                     </ComboBox>
@@ -126,9 +126,9 @@
                 <TextBox Name="tbPasswordConfirm" FontSize="24"></TextBox>
             </Border>
                     <UniformGrid Rows="1" >
-                        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic"   ></Button>
-                        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" ></Button>
-                        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" ></Button>
+                        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtInsert_Click"   ></Button>
+                        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtUpdate_Click" ></Button>
+                        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtDelete_Click" ></Button>
                     </UniformGrid>
             </UniformGrid>
         </StackPanel>
@@ -137,9 +137,9 @@
                 <TextBox Name="tbSearch" FontSize="30"></TextBox>
             </Border>
             <UniformGrid Rows="1">
-                <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic"  ></Button>
-                <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic"></Button>
-                <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic" ></Button>
+                <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic" Click="BtSearch_Click"  ></Button>
+                <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic" Click="BtFilter_Click"></Button>
+                <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  FontSize="30" FontFamily="Century Gothic" Click="BtCancel_Click" ></Button>
             </UniformGrid>
         </StackPanel>
 

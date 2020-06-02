@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 using KitchenBase.Classes;
+using System.Data;
 
 namespace KitchenBase.Pages
 {
@@ -22,6 +23,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class ProductsWeight : Window
     {
+        DataProcedure procedures = new DataProcedure();
         private string QR = "";
         public ProductsWeight()
         {
@@ -185,7 +187,81 @@ namespace KitchenBase.Pages
             Close();
         }
 
+        private void btInsert_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbWeight.Text == "")
+            {
+                case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    tbWeight.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbWeight.Background = Brushes.White;
+                    procedures.spSostavaBluda_insert(tbWeight.Text.ToString());
+                    dgFill(QR);
+                    tbWeight.Text = "";
+                    break;
+            }
+        }
 
+        private void btUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbWeight.Text == "")
+            {
+                case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    tbWeight.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbWeight.Background = Brushes.White;
+                    DataRowView ID = (DataRowView)dgSostavaBluda.SelectedItems[0];
+                    procedures.spSostavaBluda_update(Convert.ToInt32(ID["ID_SostavaBluda"]), tbWeight.Text.ToString());
+                    dgFill(QR);
+                    tbWeight.Text = "";
+                    break;
+            }
+        }
+
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView ID = (DataRowView)dgSostavaBluda.SelectedItems[0];
+            switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
+            {
+                case MessageBoxResult.OK:
+                    procedures.spSostavaBluda_delete(Convert.ToInt32(ID["ID_SostavaBluda"]));
+                    dgFill(QR);
+                    tbWeight.Text = "";
+                    break;
+            }
+        }
+
+        private void btSearch_Click(object sender, RoutedEventArgs e)
+        {
+            dgFill(QR);
+            foreach (DataRowView dataRow in (DataView)dgSostavaBluda.ItemsSource)
+            {
+                if (dataRow.Row.ItemArray[1].ToString() == tbSearch.Text)
+                {
+                    dgSostavaBluda.SelectedItem = dataRow;
+                }
+            }
+        }
+
+        private void btFilter_Click(object sender, RoutedEventArgs e)
+        {
+            string newQR = QR + "where [VesProducta] like '%" + tbSearch.Text + "%'";
+            dgFill(newQR);
+        }
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            tbSearch.Text = "";
+            dgFill(QR);
+        }
     }
           
 }

@@ -19,7 +19,6 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Navigation : Window
     {
-        private string QR = "";
         public Navigation()
         {
             InitializeComponent();

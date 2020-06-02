@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 using KitchenBase.Classes;
+using System.Data;
 
 namespace KitchenBase.Pages
 {
@@ -22,7 +23,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class ProductsType : Window
     {
-        
+        DataProcedure procedures = new DataProcedure();
         public ProductsType()
         {
             InitializeComponent();
@@ -191,5 +192,80 @@ namespace KitchenBase.Pages
             Close();
         }
 
+        private void btSearch_Click(object sender, RoutedEventArgs e)
+        {
+            dgFill(QR);
+            foreach (DataRowView dataRow in (DataView)dgTypeProduct.ItemsSource)
+            {
+                if (dataRow.Row.ItemArray[1].ToString() == tbSearch.Text)
+                {
+                    dgTypeProduct.SelectedItem = dataRow;
+                }
+            }
+        }
+
+        private void btFilter_Click(object sender, RoutedEventArgs e)
+        {
+            string newQR = QR + "where [TypeProduct] like '%" + tbSearch.Text + "%'";
+            dgFill(newQR);
+        }
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            tbSearch.Text = "";
+            dgFill(QR);
+        }
+
+        private void BtInsert_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbNameType.Text == "")
+            {
+                case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    tbNameType.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbNameType.Background = Brushes.White;
+                    procedures.spTypeProduct_insert(tbNameType.Text.ToString());
+                    dgFill(QR);
+                    tbNameType.Text = "";
+                    break;
+            }
+        }
+
+        private void btUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbNameType.Text == "")
+            {
+                case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    tbNameType.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbNameType.Background = Brushes.White;                  
+                    DataRowView ID = (DataRowView)dgTypeProduct.SelectedItems[0];
+                    procedures.spTypeProduct_update(Convert.ToInt32(ID["ID_TypeProduct"]), tbNameType.Text.ToString());
+                    dgFill(QR);
+                    tbNameType.Text = "";
+                    break;
+            }
+        }
+
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView ID = (DataRowView)dgTypeProduct.SelectedItems[0];
+            switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
+            {
+                case MessageBoxResult.OK:
+                    procedures.spTypeProduct_delete(Convert.ToInt32(ID["ID_TypeProduct"]));
+                    dgFill(QR);
+                    tbNameType.Text = "";
+                    break;
+            }
+        }
     }
 }
