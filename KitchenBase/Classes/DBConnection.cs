@@ -39,22 +39,15 @@ namespace KitchenBase.Classes
         public DataTable dtSostavaBluda = new DataTable("SostavaBluda");
         public static string qrSostavaBluda = "SELECT [ID_SostavaBluda], [VesProducta] as \"Вес продукта\" FROM [dbo].[SostavaBluda]";
 
-
-
         //Таблица учёт продуктов на складе (Запрос работает)
         public DataTable dtYchetProductovNaSklade = new DataTable("YchetProductovNaSklade");
         public static string qrYchetProductovNaSklade = "SELECT [ID_Producta], [NameProduct] as \"Наименование продукта\", [VesProducta] as \"Вес продукта\", [KolichestvoNaSklade] as \"Количество на складе\", [SrokGodnosti] as \"СрокГодности\"," +
            "[dbo].[YchetProductovNaSklade].[ID_TypeProduct], [TypeProduct] as \"Название типа продукта\" FROM [dbo].[YchetProductovNaSklade]" +
              " INNER JOIN [dbo].[TypeProduct] ON [dbo].[YchetProductovNaSklade].[ID_TypeProduct] = [dbo].[TypeProduct].[ID_TypeProduct]";
 
-
-
         //Таблица тип продуктов (Запрос работает)
         public DataTable dtTypeProduct = new DataTable("TypeProduct");
         public static string qrTypeProduct = "SELECT [ID_TypeProduct], [TypeProduct] as \"Название типа продукта\" FROM [dbo].[TypeProduct]";
-
-
-
 
         //Таблица должности (Запрос работает)
         public DataTable dtDoljnost = new DataTable("Doljnost");
