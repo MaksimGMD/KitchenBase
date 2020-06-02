@@ -8,18 +8,21 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using KitchenBase.Classes;
+using Microsoft.Office.Interop.Excel;
+using Microsoft.Win32;
 
 namespace KitchenBase.Pages
 {
     /// <summary>
     /// Логика взаимодействия для ProductRecords.xaml
     /// </summary>
-    public partial class ProductRecords : Window
+    public partial class ProductRecords : System.Windows.Window
     {
         DataProcedure DataProcedure = new DataProcedure();
         private string QR = "";
@@ -238,5 +241,103 @@ namespace KitchenBase.Pages
                     break;
             }
         }
-    }
+
+        private void btCreatingBillLading_Click(object sender, RoutedEventArgs e)
+        {
+            /* Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            worksheet = workbook.Sheets["Sheet1"];
+            worksheet = workbook.ActiveSheet;
+            worksheet.Name = "YchetProductov";
+
+            for (int i=1; i < dgYchetProductovNaSklade.Columns.Count+1; i++)
+            {
+                worksheet.Cells[i, 1] = dgYchetProductovNaSklade.Columns[i - 1].Header;
+            }
+
+            for (int i = 0; i < dgYchetProductovNaSklade.Items.Count; i++)
+            {
+                for (int j = 0; j < dgYchetProductovNaSklade.Columns.Count; j++)
+                {
+                   worksheet.Cells[i + 2, j + 1] = dgYchetProductovNaSklade.Items[i].Cells[j].Value.Tostring();
+                } 
+            }
+
+           var saveFileDialog = new SaveFileDialog();
+           saveFileDialog.FileName = "output";
+           saveFileDialog.DefaultExt = ".xlsx";
+           if (saveFileDialog.ShowDialog() == DialogResult.OK)
+           {
+               workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+           } */
+
+            /* Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
+             Microsoft.Office.Interop.Excel._Workbook wb;
+             Microsoft.Office.Interop.Excel._Worksheet ws;
+             XlReferenceStyle RefStyle = Excel.ReferenceStyle;
+             wb = (Microsoft.Office.Interop.Excel._Workbook)Excel.Workbooks.Add(1);
+             ws = (Microsoft.Office.Interop.Excel._Worksheet)wb.ActiveSheet;
+             for (int j = 0; j < dgYchetProductovNaSklade.Columns.Count; ++j)
+             {
+                 (ws.Cells[1, j + 1] as Range).Value2 = dgYchetProductovNaSklade.Columns[j].Header;
+                 for (int i = 0; i < dgYchetProductovNaSklade.Items.Count; ++i)
+                 {
+                     object Val = dgYchetProductovNaSklade.Items[i].Cells.[j].Value;
+                     if (Val != null)
+                         (ws.Cells[i + 2, j + 1] as Range).Value2 = Val.ToString();
+                 }
+             }
+             Excel.Visible = true;
+             ws.Columns.EntireColumn.AutoFit();
+             Excel.ReferenceStyle = RefStyle;
+             ReleaseExcel(Excel as Object);
+
+             private void ReleaseExcel(object excel)
+             {
+                 // Уничтожение объекта Excel.
+                 Marshal.ReleaseComObject(excel);
+                 // Вызываем сборщик мусора для немедленной очистки памяти
+                 GC.GetTotalMemory(true);
+             } */
+
+            /*
+            string extension = "xlsx";
+
+            Microsoft.Win32.SaveFileDialog dialog = new Microsoft.Win32.SaveFileDialog()
+            {
+                DefaultExt = extension,
+                Filter = String.Format("{1} files (.{0})|.{0}|All files (.)|.", extension, "Excel"),
+                FilterIndex = 1
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                using (Stream stream = dialog.OpenFile())
+                {
+                    gridViewExport.ExportToXlsx(stream,
+                        new GridViewDocumentExportOptions()
+                        {
+                            ShowColumnFooters = true,
+                            ShowColumnHeaders = true,
+                            ShowGroupFooters = true
+                        });
+                }
+            } */
+            ExportToExcel();
+        }
+
+        private void ExportToExcel()
+        {
+            dgYchetProductovNaSklade.SelectAllCells();
+            dgYchetProductovNaSklade.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
+            ApplicationCommands.Copy.Execute(null, dgYchetProductovNaSklade);
+            String resultat = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
+            String result = (string)Clipboard.GetData(DataFormats.Text);
+            dgYchetProductovNaSklade.UnselectAllCells();
+            System.IO.StreamWriter file = new System.IO.StreamWriter(@"D:\test1.xlsx");
+            file.WriteLine(result.Replace(',', ' '));
+            file.Close();
+        }
+    }        
 }
