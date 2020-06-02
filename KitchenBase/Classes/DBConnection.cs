@@ -12,10 +12,17 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
+<<<<<<< HEAD
                 @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
                " Initial Catalog = KitchenBase; Persist Security Info = true;" +
                " User ID = sa; Password = \"psl14082001\"");
 
+=======
+
+           "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
+               " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+               " User ID = sa; Password = \"pass13\"");
+>>>>>>> a5e7238232cec8532d11317989aff86a467981e6
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");

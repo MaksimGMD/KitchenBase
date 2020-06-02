@@ -13,9 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
-using System.Data.SqlClient;
-using System.Data;
+using KitchenBase.Pages;
 using KitchenBase.Classes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace KitchenBase.Pages
 {
@@ -25,13 +26,14 @@ namespace KitchenBase.Pages
     public partial class Stuff : Window
     {
         private string QR = "";
+        DataProcedure DataProcedure = new DataProcedure();
+
         public Stuff()
         {
             InitializeComponent();
         }
 
-        DataProcedure DataProcedure = new DataProcedure();
-
+        
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             QR = DBConnection.qrPersonal;
@@ -46,7 +48,6 @@ namespace KitchenBase.Pages
             CbPosition.ItemsSource = connection.dtDoljnost.DefaultView;
             CbPosition.SelectedValuePath = "ID_Doljnosti";
             CbPosition.DisplayMemberPath = "Должность";
-            CbPosition.SelectedIndex = 1;
         }
 
             private void dgFill(string qr)
