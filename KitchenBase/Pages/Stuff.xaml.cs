@@ -39,6 +39,7 @@ namespace KitchenBase.Pages
             QR = DBConnection.qrPersonal;
             dgFill(QR);
             CbPositionFill();
+
         }
 
         private void CbPositionFill()
@@ -251,11 +252,15 @@ namespace KitchenBase.Pages
             Close();
         }
 
-        private void BtInsert_Click(object sender, RoutedEventArgs e)
+  
+            private void BtInsert_Click(object sender, RoutedEventArgs e)
         {
             switch (tbSurname.Text == "")
             {
                 case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                     MessageBoxButton.OK, MessageBoxImage.Warning);
                     tbSurname.Background = Brushes.Red;
                     break;
                 case (false):
@@ -264,6 +269,9 @@ namespace KitchenBase.Pages
                     switch (tbName.Text == "")
                     {
                         case (true):
+                            MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                             tbName.Background = Brushes.Red;
                             break;
                         case (false):
@@ -272,6 +280,9 @@ namespace KitchenBase.Pages
                             switch (tbMiddleName.Text == "")
                             {
                                 case (true):
+                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
                                     tbMiddleName.Background = Brushes.Red;
                                     break;
                                 case (false):
@@ -280,6 +291,9 @@ namespace KitchenBase.Pages
                                     switch (tbEmail.Text == "")
                                     {
                                         case (true):
+                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                 MessageBoxButton.OK, MessageBoxImage.Warning);
                                             tbEmail.Background = Brushes.Red;
                                             break;
                                         case (false):
@@ -288,6 +302,9 @@ namespace KitchenBase.Pages
                                             switch (tbPhoneNumber.Text == "")
                                             {
                                                 case (true):
+                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                     MessageBoxButton.OK, MessageBoxImage.Warning);
                                                     tbPhoneNumber.Background = Brushes.Red;
                                                     break;
                                                 case (false):
@@ -296,6 +313,9 @@ namespace KitchenBase.Pages
                                                     switch (CbPosition.SelectedIndex == -1)
                                                     {
                                                         case (true):
+                                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                                         "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                            MessageBoxButton.OK, MessageBoxImage.Warning);
                                                             CbPosition.Background = Brushes.Red;
                                                             break;
                                                         case (false):
@@ -304,6 +324,9 @@ namespace KitchenBase.Pages
                                                             switch (tbLogin.Text == "")
                                                             {
                                                                 case (true):
+                                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                    "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                       MessageBoxButton.OK, MessageBoxImage.Warning);
                                                                     tbLogin.Background = Brushes.Red;
                                                                     break;
                                                                 case (false):
@@ -312,6 +335,9 @@ namespace KitchenBase.Pages
                                                                     switch (tbPassword.Text == "")
                                                                     {
                                                                         case (true):
+                                                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                                MessageBoxButton.OK, MessageBoxImage.Warning);
                                                                             tbPassword.Background = Brushes.Red;
                                                                             break;
                                                                         case (false):
@@ -320,6 +346,9 @@ namespace KitchenBase.Pages
                                                                             switch (tbPasswordConfirm.Text == "")
                                                                             {
                                                                                 case (true):
+                                                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
                                                                                     tbPasswordConfirm.Background = Brushes.Red;
                                                                                     break;
                                                                                 case (false):
@@ -379,5 +408,31 @@ namespace KitchenBase.Pages
         {
 
         }
+
+        //маска для номера телефона
+        private void TbPhoneNumber_TextChanged(object sender, TextChangedEventArgs e)
+        {           
+            string a;
+            a = tbPhoneNumber.Text;
+            tbPhoneNumber.MaxLength = 12;
+            if (a.Length == 1)
+            {
+                tbPhoneNumber.Text = "+7" + tbPhoneNumber.Text;//добавляет плюс
+                tbPhoneNumber.SelectionStart = tbPhoneNumber.Text.Length; //перенос в конец строки
+            }
+        }
+        //всплывающее оповещение
+        private void TbPhoneNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Начинайте вводить номер телефона " +
+          "\n без +7", "KitchenBase",
+         MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void TbLogin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Минимальная длина логина составляет 8 символов ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
     }
 }

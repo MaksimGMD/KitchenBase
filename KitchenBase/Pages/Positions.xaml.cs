@@ -217,6 +217,9 @@ namespace KitchenBase
             switch (tbName.Text == "")
             {
                 case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                     tbName.Background = Brushes.Red;
                     break;
                 case (false):
@@ -233,6 +236,9 @@ namespace KitchenBase
             switch (tbName.Text == "")
             {
                 case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                     tbName.Background = Brushes.Red;
                     break;
                 case (false):

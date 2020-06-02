@@ -115,6 +115,9 @@ namespace KitchenBase.Pages
             switch (tbNameProduct.Text == "")
             {
                 case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                     tbNameProduct.Background = Brushes.Red;
                     break;
                 case (false):
@@ -122,6 +125,9 @@ namespace KitchenBase.Pages
                     switch (tbWeightProduct.Text == "")
                     {
                         case (true):
+                            MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                             tbWeightProduct.Background = Brushes.Red;
                             break;
                         case (false):
@@ -129,6 +135,9 @@ namespace KitchenBase.Pages
                             switch (tbQuantityStock.Text == "")
                             {
                                 case (true):
+                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                                     tbQuantityStock.Background = Brushes.Red;
                                     break;
                                 case (false):
@@ -136,6 +145,9 @@ namespace KitchenBase.Pages
                                     switch (tbShelfLife.Text == "")
                                     {
                                         case (true):
+                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                                             tbShelfLife.Background = Brushes.Red;
                                             break;
                                         case (false):
@@ -143,6 +155,9 @@ namespace KitchenBase.Pages
                                             switch (cbTypeProduct.SelectedIndex == -1)
                                             {
                                                 case (true):
+                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                                                     cbTypeProduct.Background = Brushes.Red;
                                                     break;
                                                 case (false):
@@ -172,6 +187,9 @@ namespace KitchenBase.Pages
             switch (tbNameProduct.Text == "")
             {
                 case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                     tbNameProduct.Background = Brushes.Red;
                     break;
                 case (false):
@@ -179,6 +197,9 @@ namespace KitchenBase.Pages
                     switch (tbWeightProduct.Text == "")
                     {
                         case (true):
+                            MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                             tbWeightProduct.Background = Brushes.Red;
                             break;
                         case (false):
@@ -186,6 +207,9 @@ namespace KitchenBase.Pages
                             switch (tbQuantityStock.Text == "")
                             {
                                 case (true):
+                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                                     tbQuantityStock.Background = Brushes.Red;
                                     break;
                                 case (false):
@@ -193,6 +217,9 @@ namespace KitchenBase.Pages
                                     switch (tbShelfLife.Text == "")
                                     {
                                         case (true):
+                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                                             tbShelfLife.Background = Brushes.Red;
                                             break;
                                         case (false):
@@ -200,6 +227,9 @@ namespace KitchenBase.Pages
                                             switch (cbTypeProduct.SelectedIndex == -1)
                                             {
                                                 case (true):
+                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
                                                     cbTypeProduct.Background = Brushes.Red;
                                                     break;
                                                 case (false):
