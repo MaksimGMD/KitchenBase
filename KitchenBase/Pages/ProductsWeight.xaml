@@ -24,6 +24,7 @@
             <RowDefinition Height="77*"></RowDefinition>
             <RowDefinition Height="77*"></RowDefinition>
             <RowDefinition Height="77*"></RowDefinition>
+            <RowDefinition Height="77*"></RowDefinition>
             <RowDefinition Height="76*"></RowDefinition>
             <RowDefinition Height="76*"></RowDefinition>
             <RowDefinition Height="76*"></RowDefinition>
@@ -41,25 +42,26 @@
         </Grid.ColumnDefinitions>
 
         <Label Name="lblProductWeightTitle"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="7" Content="Вес продуктов для приготовления" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
-               FontSize="60" Foreground="White">
+               FontSize="56" Foreground="White">
         </Label>
-        <Label Name="lblProductWeight" Content="Вес продуктов для приготовления (гр.)"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" VerticalContentAlignment="Bottom" FontSize="20" Foreground="White" FontFamily="Century Gothic">
+        <Label Name="lblProductWeight" Content="Вес продуктов для &#10;приготовления (гр.)"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" VerticalContentAlignment="Bottom" FontSize="24" Foreground="White" FontFamily="Century Gothic">
         </Label>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" >
-            <TextBox Name="tbWeight" FontSize="30"></TextBox>
+            <TextBox Name="tbWeight" FontSize="30" Text="{Binding SelectedItem.Вес продукта,
+                                 ElementName=dgSostavaBluda}"></TextBox>
         </Border>
-        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="1"   FontSize="30" FontFamily="Century Gothic" ></Button>
-        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="4" Grid.Column="1"   FontSize="30" FontFamily="Century Gothic" ></Button>
-        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="5" Grid.Column="1"   FontSize="30" FontFamily="Century Gothic" ></Button>
+        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="1"   FontSize="30" FontFamily="Century Gothic" Click="btInsert_Click" ></Button>
+        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="4" Grid.Column="1"   FontSize="30" FontFamily="Century Gothic" Click="btUpdate_Click" ></Button>
+        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" Grid.Row="5" Grid.Column="1"   FontSize="30" FontFamily="Century Gothic" Click="btDelete_Click" ></Button>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" >
             <TextBox Name="tbSearch" FontSize="30" Background="White"></TextBox>
         </Border>
-        <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="3" Height="40" FontSize="30" FontFamily="Century Gothic"  ></Button>
-        <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="4" Height="40" FontSize="30" FontFamily="Century Gothic" ></Button>
-        <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="5"  Height="40" FontSize="30" FontFamily="Century Gothic" ></Button>
+        <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="3" Height="50" FontSize="30" FontFamily="Century Gothic" Click="btSearch_Click"  ></Button>
+        <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="4" Height="50" FontSize="30" FontFamily="Century Gothic" Click="btFilter_Click" ></Button>
+        <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="3" Grid.Column="5"  Height="50" FontSize="30" FontFamily="Century Gothic" Click="btCancel_Click" ></Button>
 
         <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Grid.RowSpan="4" >
-            <DataGrid Foreground="White" Name="dgSostavaBluda" IsReadOnly="True"  ColumnWidth="auto" FontSize="16" AlternatingRowBackground="#FF2A026C" BorderBrush="#FF2A026C" AutoGeneratingColumn="dgSostavaBluda_AutoGeneratingColumn" ></DataGrid>
+            <DataGrid  Name="dgSostavaBluda" IsReadOnly="True"  ColumnWidth="auto" FontSize="16"  BorderBrush="#FF2A026C" AutoGeneratingColumn="dgSostavaBluda_AutoGeneratingColumn" ></DataGrid>
         </Border>
 
 

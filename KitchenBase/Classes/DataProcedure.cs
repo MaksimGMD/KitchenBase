@@ -206,36 +206,34 @@ namespace KitchenBase.Classes
 
         //Процедуры для меню 
 
-        public void spMenu_insert(string NameBluda, string TimePrigorovleniy, string CenaBluda, string SrokGodnosti, Int32 ID_SostavaBluda)
+        public void spMenu_insert(string NameBluda, string TimePrigorovleniy, string CenaBluda, Int32 ID_SostavaBluda)
         {
-            commandConfig("YchetProductovNaSklade_insert");
+            commandConfig("Menu_insert");
             command.Parameters.AddWithValue("@NameBluda", NameBluda);
             command.Parameters.AddWithValue("@TimePrigorovleniy", TimePrigorovleniy);
             command.Parameters.AddWithValue("@CenaBluda", CenaBluda);
-            command.Parameters.AddWithValue("@SrokGodnosti", SrokGodnosti);
             command.Parameters.AddWithValue("@ID_SostavaBluda", ID_SostavaBluda);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
-        public void spMenu_update(Int32 ID_Producta, string NameBluda, string TimePrigorovleniy, string CenaBluda, string SrokGodnosti, Int32 ID_SostavaBluda)
+        public void spMenu_update(Int32 ID_Menu, string NameBluda, string TimePrigorovleniy, string CenaBluda, Int32 ID_SostavaBluda)
         {
-            commandConfig("YchetProductovNaSklade_update");
-            command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
+            commandConfig("Menu_update");
+            command.Parameters.AddWithValue("@ID_Menu", ID_Menu);
             command.Parameters.AddWithValue("@NameBluda", NameBluda);
             command.Parameters.AddWithValue("@TimePrigorovleniy", TimePrigorovleniy);
             command.Parameters.AddWithValue("@CenaBluda", CenaBluda);
-            command.Parameters.AddWithValue("@SrokGodnosti", SrokGodnosti);
             command.Parameters.AddWithValue("@ID_SostavaBluda", ID_SostavaBluda);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
 
-        public void spMenu_delete(Int32 ID_Producta)
+        public void spMenu_delete(Int32 ID_Menu)
         {
-            commandConfig("YchetProductovNaSklade_delete");
-            command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
+            commandConfig("Menu_delete");
+            command.Parameters.AddWithValue("@ID_Menu", ID_Menu);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
@@ -248,6 +246,7 @@ namespace KitchenBase.Classes
             commandConfig("Ingridient_insert");
             command.Parameters.AddWithValue("@ID_SostaveBluda", ID_SostaveBluda);
             command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
+            DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }

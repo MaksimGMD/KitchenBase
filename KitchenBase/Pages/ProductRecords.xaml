@@ -40,44 +40,48 @@
         <Label Name="lblNameProduct" Content="Наименование продукта" FontSize="24" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" VerticalContentAlignment="Bottom" FontFamily="Century Gothic">
             </Label>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
-                <TextBox Name="tbNameProduct" FontSize="30"></TextBox>
-            </Border>
+            <TextBox Name="tbNameProduct" FontSize="30" Text="{Binding SelectedItem.Наименование продукта,
+                                 ElementName=dgYchetProductovNaSklade}"></TextBox>
+        </Border>
 
-        <Label Name="lblTypeProduct" Content="Тип продукта" FontSize="24" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" VerticalContentAlignment="Bottom" FontFamily="Century Gothic">
+        <Label Name="lblWeightProduct" Content="Вес продукта в граммах" FontSize="24" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" VerticalContentAlignment="Bottom" FontFamily="Century Gothic">
             </Label>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" >
-            <ComboBox Name="cbTypeProduct" FontSize="30"></ComboBox>
+            <TextBox Name="tbWeightProduct" FontSize="30"  Text="{Binding SelectedItem.Вес продукта,
+                                 ElementName=dgYchetProductovNaSklade}"></TextBox>
             </Border>
 
-        <Label Name="lblWeightProduct" Content="Вес продукта в граммах" FontSize="24" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" VerticalContentAlignment="Bottom" FontFamily="Century Gothic">
+        <Label Name="lblQuantityStock" Content="Количество на складе" FontSize="24" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalContentAlignment="Bottom"  Foreground="White" FontFamily="Century Gothic">
             </Label>
-        <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" >
-                <TextBox Name="tbWeightProduct" FontSize="30"></TextBox>
+        <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  >
+            <TextBox Name="tbQuantityStock" FontSize="30"  Text="{Binding SelectedItem.Количество на складе,
+                                 ElementName=dgYchetProductovNaSklade}"></TextBox>
             </Border>
 
-        <Label Name="lblQuantityStock" Content="Количество на складе" FontSize="24" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" VerticalContentAlignment="Bottom"  Foreground="White" FontFamily="Century Gothic">
+        <Label Name="lblShelfLife" Content="Срок годности" FontSize="24" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" VerticalContentAlignment="Bottom" Foreground="White" FontFamily="Century Gothic">
             </Label>
-        <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"  >
-               <TextBox Name="tbQuantityStock" FontSize="30"></TextBox>
-            </Border>
+        <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" >
+            <DatePicker Name="tbShelfLife" FontSize="30" Text="{Binding SelectedItem.СрокГодности,
+                                 ElementName=dgYchetProductovNaSklade}"></DatePicker>
+        </Border>
 
-        <Label Name="lblShelfLife" Content="Срок годности" FontSize="24" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" VerticalContentAlignment="Bottom" Foreground="White" FontFamily="Century Gothic">
-            </Label>
+        <Label Name="lblTypeProduct" Content="Тип продукта" FontSize="24" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" VerticalContentAlignment="Bottom" FontFamily="Century Gothic">
+        </Label>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" >
-                <DatePicker Name="tbShelfLife" FontSize="30" ></DatePicker>
-            </Border>
+            <ComboBox Name="cbTypeProduct" FontSize="30" SelectedValue="{Binding SelectedItem.ID_TypeProduct, ElementName=dgYchetProductovNaSklade}"></ComboBox>
+        </Border>
 
-        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" FontSize="25" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="1" FontFamily="Century Gothic" ></Button>
-        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" FontSize="25" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="1" FontFamily="Century Gothic" ></Button>
-        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" FontSize="25" Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="1" FontFamily="Century Gothic" ></Button>
+        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af" FontSize="25" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="1" FontFamily="Century Gothic" Click="btInsert_Click" ></Button>
+        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af" FontSize="25" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="1" FontFamily="Century Gothic" Click="btUpdate_Click" ></Button>
+        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af" FontSize="25" Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="1" FontFamily="Century Gothic" Click="btDelete_Click" ></Button>
         <Button Name="btCreatingBillLading" Content="Формирование товарной накладной" Foreground="#eeebf5" Background="#6c43af" FontSize="25" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3" FontFamily="Century Gothic"></Button>
 
         <Border BorderBrush="#6c43af" BorderThickness="1"  Height="50"  Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="4" >
                 <TextBox Name="tbSearch" FontSize="30"></TextBox>
             </Border>
-                   <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Height="40" Grid.Row="2" Grid.Column="4" FontSize="30" FontFamily="Century Gothic" ></Button>
-        <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Height="40" Grid.Row="2" Grid.Column="5" FontSize="30" FontFamily="Century Gothic" ></Button>
-        <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Height="40" Grid.Row="2" Grid.Column="6" FontSize="30" FontFamily="Century Gothic" ></Button>
+                   <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Height="40" Grid.Row="2" Grid.Column="4" FontSize="30" FontFamily="Century Gothic" Click="btSearch_Click" ></Button>
+        <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Height="40" Grid.Row="2" Grid.Column="5" FontSize="30" FontFamily="Century Gothic" Click="btFilter_Click" ></Button>
+        <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Height="40" Grid.Row="2" Grid.Column="6" FontSize="30" FontFamily="Century Gothic" Click="btCancel_Click" ></Button>
         <DataGrid Name="dgYchetProductovNaSklade" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="7" IsReadOnly="True" ColumnWidth="auto" FontSize="16" AutoGeneratingColumn="dgYchetProductovNaSklade_AutoGeneratingColumn"></DataGrid>
     </Grid>
 </Window>

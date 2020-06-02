@@ -12,9 +12,15 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
+<<<<<<< HEAD
                 @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
                " Initial Catalog = KitchenBase; Persist Security Info = true;" +
                " User ID = sa; Password = \"psl14082001\"");
+=======
+           "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
+               " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+               " User ID = sa; Password = \"pass13\"");
+>>>>>>> c748240096476db1c8d628803a0f8e35c72968a4
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
@@ -32,7 +38,7 @@ namespace KitchenBase.Classes
 
         //Таблица учёт продуктов на складе (Запрос работает)
         public DataTable dtYchetProductovNaSklade = new DataTable("YchetProductovNaSklade");
-        public static string qrYchetProductovNaSklade = "SELECT [ID_Producta], [NameProduct] as \"Наименование продукта\", [VesProducta] as \"ВесПродукта\", [KolichestvoNaSklade] as \"КоличествоНаСкладе\", [SrokGodnosti] as \"СрокГодности\"," +
+        public static string qrYchetProductovNaSklade = "SELECT [ID_Producta], [NameProduct] as \"Наименование продукта\", [VesProducta] as \"Вес продукта\", [KolichestvoNaSklade] as \"Количество на складе\", [SrokGodnosti] as \"СрокГодности\"," +
            "[dbo].[YchetProductovNaSklade].[ID_TypeProduct], [TypeProduct] as \"Название типа продукта\" FROM [dbo].[YchetProductovNaSklade]" +
              " INNER JOIN [dbo].[TypeProduct] ON [dbo].[YchetProductovNaSklade].[ID_TypeProduct] = [dbo].[TypeProduct].[ID_TypeProduct]";
 
@@ -55,7 +61,7 @@ namespace KitchenBase.Classes
         //Таблица меню (Запрос работает)
         public DataTable dtMenu = new DataTable("Menu");
         public static string qrMenu = "SELECT[ID_Menu], [NameBluda] as \"Наименование Блюда\", [TimePrigorovleniy] as \"Время приготовления\", [CenaBluda] as \"Цена блюда\", "+
-        "[dbo].[Ingridient].[ID_Producta], [dbo].[YchetProductovNaSklade].[NameProduct] as \"Название продукта\", "+
+        "[dbo].[Ingridient].[ID_Ingridientov], [dbo].[Ingridient].[ID_Producta], [dbo].[YchetProductovNaSklade].[NameProduct] as \"Название продукта\", " +
 		"[dbo].[Ingridient].[ID_SostaveBluda],  [dbo].[SostavaBluda].[VesProducta] as \"Вес продукта\" FROM[dbo].[Ingridient] "+
         "INNER JOIN [dbo].[SostavaBluda] ON [dbo].[Ingridient].[ID_SostaveBluda] = [dbo].[SostavaBluda].[ID_SostavaBluda] "+
         "INNER JOIN [dbo].[Menu] ON [dbo].[Menu].[ID_SostavaBluda] = [dbo].[SostavaBluda].[ID_SostavaBluda] " +

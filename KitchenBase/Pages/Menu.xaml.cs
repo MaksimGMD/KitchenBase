@@ -15,6 +15,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 using KitchenBase.Pages;
 using KitchenBase.Classes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace KitchenBase.Pages
 {
@@ -23,6 +25,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Menu : Window
     {
+        DataProcedure DataProcedure = new DataProcedure();
         private string QR = "";
         public Menu()
         {
@@ -33,6 +36,8 @@ namespace KitchenBase.Pages
         {
             QR = DBConnection.qrMenu;
             dgFill(QR);
+            cbFill();
+            cbFill2();
         }
 
         private void dgFill(string qr)
@@ -43,7 +48,35 @@ namespace KitchenBase.Pages
             dgMenu.ItemsSource = connection.dtMenu.DefaultView;
             dgMenu.Columns[0].Visibility = Visibility.Collapsed;
             dgMenu.Columns[4].Visibility = Visibility.Collapsed;
-            dgMenu.Columns[6].Visibility = Visibility.Collapsed;
+            dgMenu.Columns[5].Visibility = Visibility.Collapsed;
+            dgMenu.Columns[7].Visibility = Visibility.Collapsed;
+        }
+
+        //private void Dependency_OnChange1(object sender, SqlNotificationEventArgs e)
+        //{
+        //    if (e.Info != SqlNotificationInfo.Invalid)
+        //    {
+        //        lbFill();
+        //        lbFill2();
+        //    }
+        //}
+
+        private void cbFill()
+        {
+            DBConnection connection = new DBConnection();
+            connection.YchetProductovNaSkladeFill();
+            cbNameProducta.ItemsSource = connection.dtYchetProductovNaSklade.DefaultView;
+            cbNameProducta.SelectedValuePath = "ID_Producta";
+            cbNameProducta.DisplayMemberPath = "Наименование продукта";
+        }
+
+        private void cbFill2()
+        {
+            DBConnection connection = new DBConnection();
+            connection.SostavaBludaFill();
+            cbVesProducta.ItemsSource = connection.dtSostavaBluda.DefaultView;
+            cbVesProducta.SelectedValuePath = "ID_SostavaBluda";
+            cbVesProducta.DisplayMemberPath = "Вес продукта";
         }
 
         private void dgMenu_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -64,6 +97,167 @@ namespace KitchenBase.Pages
                     break;
                 case ("VesProducta"):
                     e.Column.Header = "Вес Продукта";
+                    break;
+            }
+        }
+
+        private void btSearch_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (DataRowView dataRow in (DataView)dgMenu.ItemsSource)
+            {
+                if (dataRow.Row.ItemArray[1].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[2].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[3].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[6].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[8].ToString() == tbSearch.Text)
+                {
+                    dgMenu.SelectedItem = dataRow;
+                }
+            }
+        }
+
+        private void btFilter_Click(object sender, RoutedEventArgs e)
+        {
+            string newQR = QR + "where [NameBluda] like '%" + tbSearch.Text + "%' or [TimePrigorovleniy] like '%" + tbSearch.Text + "%' or [CenaBluda] like '%" + tbSearch.Text + "%' " +
+                " or [NameProduct] like '%" + tbSearch.Text + "%' or [VesProducta] like '%" + tbSearch.Text + "%'";
+            dgFill(newQR);
+        }
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            tbSearch.Text = "";
+            dgFill(QR);
+        }
+
+        private void btInsert_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbNameBluda.Text == "")
+            {
+                case (true):
+                    tbNameBluda.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbNameBluda.Background = Brushes.White;
+                    switch (tbTime.Text == "")
+                    {
+                        case (true):
+                            tbTime.Background = Brushes.Red;
+                            break;
+                        case (false):
+                            tbTime.Background = Brushes.White;
+                            switch (tbCena.Text == "")
+                            {
+                                case (true):
+                                    tbCena.Background = Brushes.Red;
+                                    break;
+                                case (false):
+                                    tbCena.Background = Brushes.White;
+                                    switch (cbNameProducta.SelectedIndex == -1)
+                                    {
+                                        case (true):
+                                            cbNameProducta.Background = Brushes.Red;
+                                            break;
+                                        case (false):
+                                            cbNameProducta.Background = Brushes.White;
+                                            switch (cbVesProducta.SelectedIndex == -1)
+                                            {
+                                                case (true):
+                                                    cbVesProducta.Background = Brushes.Red;
+                                                    break;
+                                                case (false):
+                                                    cbVesProducta.Background = Brushes.White; 
+                                                    DataProcedure.spMenu_insert(tbNameBluda.Text.ToString(), tbTime.Text.ToString(), tbCena.Text.ToString(), Convert.ToInt32(cbVesProducta.SelectedValue.ToString()));
+                                                    DataProcedure.spIngridient_insert(Convert.ToInt32(cbVesProducta.SelectedValue.ToString()), Convert.ToInt32(cbNameProducta.SelectedValue.ToString()));
+                                                    dgFill(QR);
+                                                    tbNameBluda.Text = "";
+                                                    tbTime.Text = "";
+                                                    tbCena.Text = "";
+                                                    cbFill();
+                                                    cbFill2();
+                                                    break;                                                   
+                                            }
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        private void btUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbNameBluda.Text == "")
+            {
+                case (true):
+                    tbNameBluda.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbNameBluda.Background = Brushes.White;
+                    switch (tbTime.Text == "")
+                    {
+                        case (true):
+                            tbTime.Background = Brushes.Red;
+                            break;
+                        case (false):
+                            tbTime.Background = Brushes.White;
+                            switch (tbCena.Text == "")
+                            {
+                                case (true):
+                                    tbCena.Background = Brushes.Red;
+                                    break;
+                                case (false):
+                                    tbCena.Background = Brushes.White;
+                                    switch (cbNameProducta.SelectedIndex == -1)
+                                    {
+                                        case (true):
+                                            cbNameProducta.Background = Brushes.Red;
+                                            break;
+                                        case (false):
+                                            cbNameProducta.Background = Brushes.White;
+                                            switch (cbVesProducta.SelectedIndex == -1)
+                                            {
+                                                case (true):
+                                                    cbVesProducta.Background = Brushes.Red;
+                                                    break;
+                                                case (false):
+                                                    cbVesProducta.Background = Brushes.White;
+                                                    DataRowView ID = (DataRowView)dgMenu.SelectedItems[0];
+                                                    DataProcedure.spMenu_update(Convert.ToInt32(ID["ID_Menu"]), tbNameBluda.Text.ToString(), tbTime.Text.ToString(), tbCena.Text.ToString(), Convert.ToInt32(cbVesProducta.SelectedValue.ToString()));
+                                                    DataProcedure.spIngridient_update(Convert.ToInt32(ID["ID_Ingridientov"]),Convert.ToInt32(cbVesProducta.SelectedValue.ToString()), Convert.ToInt32(cbNameProducta.SelectedValue.ToString()));
+                                                    dgFill(QR);
+                                                    tbNameBluda.Text = "";
+                                                    tbTime.Text = "";
+                                                    tbCena.Text = "";
+                                                    cbFill();
+                                                    cbFill2();
+                                                    break;
+                                            }
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView ID = (DataRowView)dgMenu.SelectedItems[0];
+            switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
+            {
+                case MessageBoxResult.OK:
+                    DataProcedure.spMenu_delete(Convert.ToInt32(ID["ID_Menu"]));
+                    DataProcedure.spIngridient_delete(Convert.ToInt32(ID["ID_Ingridientov"]));
+                    dgFill(QR);
+                    cbFill();
+                    cbFill2();
+                    tbNameBluda.Text = "";
+                    tbTime.Text = "";
+                    tbCena.Text = "";
                     break;
             }
         }
@@ -206,8 +400,6 @@ namespace KitchenBase.Pages
             navigation.Show();
             Close();
         }
-
-
 
 
     }

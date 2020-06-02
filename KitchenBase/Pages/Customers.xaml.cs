@@ -89,7 +89,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz3;
             btCancel.Background = azaz3;
             btnRightMenuShow.Background = azaz3;
-            Cabinet.Background = azaz3;
             Home.Background = azaz3;
             btnRightMenuHide.Background = azaz3;
             pnlRight.Background = azaz3;
@@ -106,7 +105,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz4;
             btCancel.Background = azaz4;
             btnRightMenuShow.Background = azaz4;
-            Cabinet.Background = azaz4;
             Home.Background = azaz4;
             btnRightMenuHide.Background = azaz4;
             pnlRight.Background = azaz4;
@@ -123,7 +121,6 @@ namespace KitchenBase.Pages
             btFilter.Background = azaz5;
             btCancel.Background = azaz5;
             btnRightMenuShow.Background = azaz5;
-            Cabinet.Background = azaz5;
             Home.Background = azaz5;
             btnRightMenuHide.Background = azaz5;
             pnlRight.Background = azaz5;

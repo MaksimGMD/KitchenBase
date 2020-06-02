@@ -138,16 +138,12 @@
             <Image Source="C:\KitchenBase\KitchenBase\Assets/home_icon.png" Width="50" Height="50"/>
         </Button>
 
-        <Button Name="Cabinet" Background="#6c43af" BorderBrush="Transparent"  Grid.Row="5" Grid.RowSpan="3" Grid.Column="9">
-            <Image Source="C:\KitchenBase\KitchenBase\Assets//profile_icon.png"  Width="50" Height="50"/>
-        </Button>
-
-        <Button Name="btnRightMenuShow" Background="#6c43af" BorderBrush="Transparent" Grid.Row="8" Grid.RowSpan="3" Grid.Column="9"  Click="btnRightMenuShow_Click"  >
+        <Button Name="btnRightMenuShow" Background="#6c43af" BorderBrush="Transparent" Grid.Row="5" Grid.RowSpan="3" Grid.Column="9"  Click="btnRightMenuShow_Click"  >
             <Image Source="C:\KitchenBase\KitchenBase\Assets//settings_icon.png"  Width="50" Height="50">
             </Image>
         </Button>
 
-        <StackPanel Name="pnlRightMenu" Orientation="Horizontal"  HorizontalAlignment="Right" Grid.Row="8" Grid.Column="6" Grid.RowSpan="8" Grid.ColumnSpan="5" Margin ="0,-100,-170,0">
+        <StackPanel Name="pnlRightMenu" Orientation="Horizontal"  HorizontalAlignment="Right" Grid.Row="5" Grid.Column="6" Grid.RowSpan="8" Grid.ColumnSpan="5" Margin ="0,-100,-170,0">
             <Grid>
                 <Button Name="btnRightMenuHide" Background="#6c43af" BorderBrush="Transparent" Click="btnRightMenuHide_Click" Visibility="Hidden" Width="60">
                     <Image Source="C:\KitchenBase\KitchenBase\Assets//settings_icon.png" Stretch="None">
