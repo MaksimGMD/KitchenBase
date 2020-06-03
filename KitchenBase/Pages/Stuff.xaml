@@ -56,54 +56,50 @@
         </Label>
         <StackPanel  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="20" >
             <UniformGrid Rows="19" Columns="1">
-            <Label Name="lblSurname" Content="Фамилия"  
+                <Label Name="lblSurname" Content="Фамилия"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" >
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1" >
                     <TextBox Name="tbSurname" FontSize="24" Text="{Binding SelectedItem.Фамилия,
                                  ElementName=dgPersonal}"></TextBox>
-            </Border>
+                </Border>
 
-            <Label Name="lblName" Content="Имя"  
+                <Label Name="lblName" Content="Имя"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" >
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1" >
                     <TextBox Name="tbName" FontSize="24"  Text="{Binding SelectedItem.Имя,
                                  ElementName=dgPersonal}"></TextBox>
-            </Border>
+                </Border>
 
-            <Label Name="lblMiddleName" Content="Отчество"  
+                <Label Name="lblMiddleName" Content="Отчество"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" >
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1" >
                     <TextBox Name="tbMiddleName" FontSize="24" Text="{Binding SelectedItem.Отчество,
                                  ElementName=dgPersonal}"></TextBox>
-            </Border>
+                </Border>
 
-            <Label Name="lblEmail" Content="Элетронная почта"  
+                <Label Name="lblEmail" Content="Элетронная почта"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" >
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1" >
                     <TextBox Name="tbEmail" FontSize="24" Text="{Binding SelectedItem.Почта,
                                  ElementName=dgPersonal}"></TextBox>
-            </Border>
+                </Border>
 
-            <Label Name="lblPhoneNumber" Content="Номер телефона"  
+                <Label Name="lblPhoneNumber" Content="Номер телефона"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1">
-<<<<<<< HEAD
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1">
+
                     <TextBox Name="tbPhoneNumber" FontSize="24" Text="{Binding SelectedItem.Номер телефона,
-                                 ElementName=dgPersonal}"></TextBox>
-=======
-                    <TextBox Name="tbPhoneNumber" FontSize="24" TextChanged="TbPhoneNumber_TextChanged" GotFocus="TbPhoneNumber_GotFocus"  ></TextBox>
->>>>>>> ef8f155601eb13027e1d75f77b05032bf8c9553c
-            </Border>
-
-            <Label Name="lblPosition" Content="Должность"  
+                                 ElementName=dgPersonal}" TextChanged="TbPhoneNumber_TextChanged" GotFocus="TbPhoneNumber_GotFocus"></TextBox>
+                </Border>
+                <Label Name="lblPosition" Content="Должность"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1">
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1">
                     <ComboBox Name="CbPosition" FontSize="24" SelectedValue="{Binding SelectedItem.ID_Doljnosti, ElementName=dgPersonal}">
                         <ComboBox.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
@@ -112,38 +108,35 @@
                             </LinearGradientBrush>
                         </ComboBox.Background>
                     </ComboBox>
-            </Border>
+                </Border>
 
-            <Label Name="lblLogin" Content="Логин"  
+                <Label Name="lblLogin" Content="Логин"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1" >
-<<<<<<< HEAD
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1" >
+
                     <TextBox Name="tbLogin" FontSize="24" Text="{Binding SelectedItem.Логин,
-                                 ElementName=dgPersonal}"></TextBox>
-=======
-                    <TextBox Name="tbLogin" FontSize="24" GotFocus="TbLogin_GotFocus"></TextBox>
->>>>>>> ef8f155601eb13027e1d75f77b05032bf8c9553c
-            </Border>
+                                 ElementName=dgPersonal}" GotFocus="TbLogin_GotFocus"></TextBox>
+                </Border>
 
-            <Label Name="lblPassword" Content="Пароль"  
+                <Label Name="lblPassword" Content="Пароль"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1">
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1">
                     <TextBox Name="tbPassword" FontSize="24"></TextBox>
-            </Border>
+                </Border>
 
-            <Label Name="lblPasswordConfirm" Content="Подтверждения пароля"  
+                <Label Name="lblPasswordConfirm" Content="Подтверждения пароля"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
-            </Label>
-            <Border BorderBrush="#6c43af" BorderThickness="1">
-                <TextBox Name="tbPasswordConfirm" FontSize="24"></TextBox>
-            </Border>
-                    <UniformGrid Rows="1" >
-                        <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtInsert_Click"   ></Button>
-                        <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtUpdate_Click" ></Button>
-                        <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtDelete_Click" ></Button>
-                    </UniformGrid>
+                </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1">
+                    <TextBox Name="tbPasswordConfirm" FontSize="24"></TextBox>
+                </Border>
+                <UniformGrid Rows="1" >
+                    <Button Name="btInsert" Content="Добавить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtInsert_Click"   ></Button>
+                    <Button Name="btUpdate" Content="Изменить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtUpdate_Click" ></Button>
+                    <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Click="BtDelete_Click" ></Button>
+                </UniformGrid>
             </UniformGrid>
         </StackPanel>
         <StackPanel  Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2">

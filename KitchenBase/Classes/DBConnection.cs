@@ -73,7 +73,7 @@ namespace KitchenBase.Classes
         public DataTable dtLichnieDannieKlienta = new DataTable("LichnieDannieKlienta");
         
         public static string qrLichnieDannieKlienta = "SELECT [ID_InformationOKliente], [Name] as \"Имя\", [Surname] as \"Фамилия\", [MiddleName] as \"Отчество\", [Email] as \"Почта\"," +
-        "[PhoneNumber] as \"НомерТелефона\", [dbo].[LichnieDannieKlienta].[ID_Authorization], [Login] as \"Логин\", [Password] as \"Пароль\" FROM [dbo].[LichnieDannieKlienta]" +
+        "[PhoneNumber] as \"Номер телефона\", [dbo].[LichnieDannieKlienta].[ID_Authorization], [Login] as \"Логин\", [Password] as \"Пароль\" FROM [dbo].[LichnieDannieKlienta]" +
          " INNER JOIN [dbo].[Authorization] ON [dbo].[LichnieDannieKlienta].[ID_Authorization] = [dbo].[Authorization].[ID_Authorization]";
 
         public static int NomerZakaza = new int();

@@ -27,7 +27,21 @@ namespace KitchenBase.Pages
         {
             InitializeComponent();
         }
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            QR = DBConnection.qrLichnieDannieKlienta;
+            dgFill(QR);
+        }
+        private void dgFill(string qr)
+        {
+            DBConnection connection = new DBConnection();
+            DBConnection.qrLichnieDannieKlienta = qr;
+            connection.LichnieDannieKlientaFill();
+            dgLichnieDannieKlienta.ItemsSource = connection.dtLichnieDannieKlienta.DefaultView;
+            dgLichnieDannieKlienta.Columns[0].Visibility = Visibility.Collapsed;
+            dgLichnieDannieKlienta.Columns[6].Visibility = Visibility.Collapsed;
+            dgLichnieDannieKlienta.Columns[8].Visibility = Visibility.Collapsed;
+        }
         private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
         {
             ShowHideMenu("sbHideRightMenu", btnRightMenuHide, btnRightMenuShow, pnlRightMenu);
@@ -185,5 +199,85 @@ namespace KitchenBase.Pages
             Close();
         }
 
+        private void dgLichnieDannieKlienta_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.Column.Header)
+            {
+                case ("Surname"):
+                    e.Column.Header = "Фамилия";
+                    break;
+                case ("Name"):
+                    e.Column.Header = "Имя";
+                    break;
+                case ("MiddleName"):
+                    e.Column.Header = "Отчество";
+                    break;
+                case ("Email"):
+                    e.Column.Header = "Почта";
+                    break;
+                case ("PhoneNumber"):
+                    e.Column.Header = "НомерТелефона";
+                    break;
+                case ("Doljnost"):
+                    e.Column.Header = "Должность";
+                    break;
+                case ("Login"):
+                    e.Column.Header = "Логин";
+                    break;
+            }
+        }
+
+        private void btInsert_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btFilter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //маска для номера телефона
+        private void TbPhoneNumber_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string a;
+            a = tbPhoneNumber.Text;
+            tbPhoneNumber.MaxLength = 12;
+            if (a.Length == 1)
+            {
+                tbPhoneNumber.Text = "+7" + tbPhoneNumber.Text;//добавляет +7
+                tbPhoneNumber.SelectionStart = tbPhoneNumber.Text.Length; //перенос в конец строки
+            }
+        }
+        //всплывающее оповещение
+        private void TbPhoneNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Начинайте вводить номер телефона без +7 ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void TbLogin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Минимальная длина логина составляет 8 символов ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
     }
 }
