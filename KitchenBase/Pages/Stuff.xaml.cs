@@ -39,6 +39,7 @@ namespace KitchenBase.Pages
             QR = DBConnection.qrPersonal;
             dgFill(QR);
             CbPositionFill();
+
         }
 
         private void CbPositionFill()
@@ -249,7 +250,8 @@ namespace KitchenBase.Pages
             Close();
         }
 
-        private void BtInsert_Click(object sender, RoutedEventArgs e)
+  
+            private void BtInsert_Click(object sender, RoutedEventArgs e)
         {
             switch (tbSurname.Text == "")
             {
@@ -568,5 +570,29 @@ namespace KitchenBase.Pages
             tbSearch.Text = string.Empty;
             dgFill(QR);
         }
+
+        //маска для номера телефона
+        private void TbPhoneNumber_TextChanged(object sender, TextChangedEventArgs e)
+        {           
+            string a;
+            a = tbPhoneNumber.Text;
+            tbPhoneNumber.MaxLength = 12;
+            if (a.Length == 1)
+            {
+                tbPhoneNumber.Text = "+7" + tbPhoneNumber.Text;//добавляет +7
+                tbPhoneNumber.SelectionStart = tbPhoneNumber.Text.Length; //перенос в конец строки
+            }
+        }
+        //всплывающее оповещение
+        private void TbPhoneNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Начинайте вводить номер телефона без +7 ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void TbLogin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Минимальная длина логина составляет 8 символов ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
     }
 }

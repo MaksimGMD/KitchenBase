@@ -92,8 +92,12 @@
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
+<<<<<<< HEAD
                     <TextBox Name="tbPhoneNumber" FontSize="24" Text="{Binding SelectedItem.Номер телефона,
                                  ElementName=dgPersonal}"></TextBox>
+=======
+                    <TextBox Name="tbPhoneNumber" FontSize="24" TextChanged="TbPhoneNumber_TextChanged" GotFocus="TbPhoneNumber_GotFocus"  ></TextBox>
+>>>>>>> ef8f155601eb13027e1d75f77b05032bf8c9553c
             </Border>
 
             <Label Name="lblPosition" Content="Должность"  
@@ -114,8 +118,12 @@
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
+<<<<<<< HEAD
                     <TextBox Name="tbLogin" FontSize="24" Text="{Binding SelectedItem.Логин,
                                  ElementName=dgPersonal}"></TextBox>
+=======
+                    <TextBox Name="tbLogin" FontSize="24" GotFocus="TbLogin_GotFocus"></TextBox>
+>>>>>>> ef8f155601eb13027e1d75f77b05032bf8c9553c
             </Border>
 
             <Label Name="lblPassword" Content="Пароль"  
