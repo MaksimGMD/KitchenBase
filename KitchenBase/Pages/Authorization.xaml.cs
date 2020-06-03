@@ -64,7 +64,7 @@ namespace KitchenBase.Pages
                             case ("2"):
                                 ProductRecords ProductRecords = new ProductRecords();
                                 ProductRecords.Show();
-                                Visibility = Visibility.Collapsed; ;
+                                Visibility = Visibility.Collapsed;
                                 break;
                             //Официант
                             case ("3"):
@@ -75,6 +75,9 @@ namespace KitchenBase.Pages
                             //Повар
                             case ("4"):
                                 //Добавить страницу для повара
+                                Orders Orders = new Orders();
+                                Orders.Show();
+                                Visibility = Visibility.Collapsed;
                                 break;
                         }
                         break;
