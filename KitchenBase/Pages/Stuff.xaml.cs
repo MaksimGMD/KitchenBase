@@ -33,7 +33,7 @@ namespace KitchenBase.Pages
             InitializeComponent();
         }
 
-        
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             QR = DBConnection.qrPersonal;
@@ -50,7 +50,7 @@ namespace KitchenBase.Pages
             CbPosition.DisplayMemberPath = "Должность";
         }
 
-            private void dgFill(string qr)
+        private void dgFill(string qr)
         {
             DBConnection connection = new DBConnection();
             DBConnection.qrPersonal = qr;
@@ -59,6 +59,7 @@ namespace KitchenBase.Pages
             dgPersonal.Columns[0].Visibility = Visibility.Collapsed;
             dgPersonal.Columns[6].Visibility = Visibility.Collapsed;
             dgPersonal.Columns[8].Visibility = Visibility.Collapsed;
+            dgPersonal.Columns[10].Visibility = Visibility.Collapsed;
         }
 
         private void DgPersonal_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -85,9 +86,6 @@ namespace KitchenBase.Pages
                     break;
                 case ("Login"):
                     e.Column.Header = "Логин";
-                    break;
-                case ("Password"):
-                    e.Column.Header = "Пароль";
                     break;
             }
 
@@ -351,8 +349,8 @@ namespace KitchenBase.Pages
                                                                                     break;
                                                                                 case (false):
                                                                                     tbPasswordConfirm.Background = Brushes.White;
-                                                                                    DataProcedure.spPersonal_insert(tbSurname.Text.ToString(), tbName.Text.ToString(), tbMiddleName.Text.ToString(), tbEmail.Text.ToString(), tbPhoneNumber.Text.ToString(), Convert.ToInt32(CbPosition.SelectedValue.ToString()));
-                                                                                    DataProcedure.spAuthorization_insert(tbLogin.Text.ToString(), tbPassword.Text.ToString());
+                                                                                    DataProcedure.PresonalAdd(tbLogin.Text.ToString(), tbPassword.Text.ToString(), tbSurname.Text.ToString(), tbName.Text.ToString(), tbMiddleName.Text.ToString(),
+                                                                                        tbEmail.Text.ToString(), tbPhoneNumber.Text.ToString(), Convert.ToInt32(CbPosition.SelectedValue.ToString()));
                                                                                     dgFill(QR);
                                                                                     CbPositionFill();
                                                                                     tbSurname.Text = "";
@@ -384,27 +382,191 @@ namespace KitchenBase.Pages
 
         private void BtUpdate_Click(object sender, RoutedEventArgs e)
         {
+            switch (tbSurname.Text == "")
+            {
+                case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                    tbSurname.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbSurname.Background = Brushes.White;
 
+                    switch (tbName.Text == "")
+                    {
+                        case (true):
+                            MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                            tbName.Background = Brushes.Red;
+                            break;
+                        case (false):
+                            tbName.Background = Brushes.White;
+
+                            switch (tbMiddleName.Text == "")
+                            {
+                                case (true):
+                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
+                                    tbMiddleName.Background = Brushes.Red;
+                                    break;
+                                case (false):
+                                    tbMiddleName.Background = Brushes.White;
+
+                                    switch (tbEmail.Text == "")
+                                    {
+                                        case (true):
+                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                 MessageBoxButton.OK, MessageBoxImage.Warning);
+                                            tbEmail.Background = Brushes.Red;
+                                            break;
+                                        case (false):
+                                            tbEmail.Background = Brushes.White;
+
+                                            switch (tbPhoneNumber.Text == "")
+                                            {
+                                                case (true):
+                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                    tbPhoneNumber.Background = Brushes.Red;
+                                                    break;
+                                                case (false):
+                                                    tbPhoneNumber.Background = Brushes.White;
+
+                                                    switch (CbPosition.SelectedIndex == -1)
+                                                    {
+                                                        case (true):
+                                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                                         "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                            CbPosition.Background = Brushes.Red;
+                                                            break;
+                                                        case (false):
+                                                            CbPosition.Background = Brushes.White;
+
+                                                            switch (tbLogin.Text == "")
+                                                            {
+                                                                case (true):
+                                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                    "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                       MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                    tbLogin.Background = Brushes.Red;
+                                                                    break;
+                                                                case (false):
+                                                                    tbLogin.Background = Brushes.White;
+
+                                                                    switch (tbPassword.Text == "")
+                                                                    {
+                                                                        case (true):
+                                                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                                MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                            tbPassword.Background = Brushes.Red;
+                                                                            break;
+                                                                        case (false):
+                                                                            tbPassword.Background = Brushes.White;
+
+                                                                            switch (tbPasswordConfirm.Text == "")
+                                                                            {
+                                                                                case (true):
+                                                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                                    tbPasswordConfirm.Background = Brushes.Red;
+                                                                                    break;
+                                                                                case (false):
+                                                                                    tbPasswordConfirm.Background = Brushes.White;
+                                                                                    DataRowView ID = (DataRowView)dgPersonal.SelectedItems[0];
+                                                                                    DataProcedure.PresonalUpdate(Convert.ToInt32(ID["ID_Personala"]), tbLogin.Text.ToString(), tbPassword.Text.ToString(), tbName.Text.ToString(), tbSurname.Text.ToString(), tbMiddleName.Text.ToString(),
+                                                                                        tbEmail.Text.ToString(), tbPhoneNumber.Text.ToString(), Convert.ToInt32(CbPosition.SelectedValue.ToString()));
+                                                                                    dgFill(QR);
+                                                                                    CbPositionFill();
+                                                                                    tbSurname.Text = "";
+                                                                                    tbName.Text = "";
+                                                                                    tbMiddleName.Text = "";
+                                                                                    tbEmail.Text = "";
+                                                                                    tbPhoneNumber.Text = "";
+                                                                                    tbLogin.Text = "";
+                                                                                    tbPassword.Text = "";
+                                                                                    break;
+                                                                            }
+                                                                            break;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                            }
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
         }
 
         private void BtDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            DataRowView ID = (DataRowView)dgPersonal.SelectedItems[0];
+            switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
+            {
+                case MessageBoxResult.OK:
+                    DataProcedure procedure = new DataProcedure();
+                    procedure.spPersonal_delete(Convert.ToInt32(ID["ID_Personala"]));
+                    procedure.spAuthorization_delete(Convert.ToInt32(ID["ID_Authorization"]));
+                    dgFill(QR);
+                    CbPositionFill();
+                    tbSurname.Text = "";
+                    tbName.Text = "";
+                    tbMiddleName.Text = "";
+                    tbEmail.Text = "";
+                    tbPhoneNumber.Text = "";
+                    tbLogin.Text = "";
+                    tbPassword.Text = "";
+                    break;
+            }
         }
-
+        //Поиск
         private void BtSearch_Click(object sender, RoutedEventArgs e)
         {
-
+            foreach (DataRowView dataRow in (DataView)dgPersonal.ItemsSource)
+            {
+                if (dataRow.Row.ItemArray[1].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[2].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[3].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[4].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[5].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[7].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[9].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[10].ToString() == tbSearch.Text)
+                {
+                    dgPersonal.SelectedItem = dataRow;
+                }
+            }
         }
-
+        //Фильтрация данных в таблице
         private void BtFilter_Click(object sender, RoutedEventArgs e)
         {
-
+            if (tbSearch.Text != "")
+            {
+                string newQR = QR + " where [Surname] like '%" + tbSearch.Text + "%' or [Name] like '%" + tbSearch.Text + "%' or [MiddleName] like '%" + tbSearch.Text + "%' or " +
+                    "[Email] like '%" + tbSearch.Text + "%' or [PhoneNumber] like '%" + tbSearch.Text + "%' or [Doljnost] like '%" + tbSearch.Text + "%'" +
+                    "or [Login] like '%" + tbSearch.Text + "%' or [Password] like '%" + tbSearch.Text + "%'";
+                dgFill(newQR);
+            }
         }
-
+        //Отмена поиска и фильтрации
         private void BtCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            tbSearch.Text = string.Empty;
+            dgFill(QR);
         }
     }
 }
