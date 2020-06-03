@@ -12,6 +12,21 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
+
+              //ПУТЬ САНИ
+              /*  @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
+               " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+               " User ID = sa; Password = \"psl14082001\""); */
+
+              //ПУТЬ МАКСА
+             // "Data Source=DESKTOP-2OC8HFJ\MYGRIT;Initial Catalog=KitchenBase;" +
+             //"Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
+             //"ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+
+             //ПУТЬ ДАНИЛЫ
+             //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
+             //    " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+             //    " User ID = sa; Password = \"pass13\"");
              // @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
              //" Initial Catalog = KitchenBase; Persist Security Info = true;" +
              //" User ID = sa; Password = \"psl14082001\"");
@@ -166,6 +181,20 @@ namespace KitchenBase.Classes
             DoljnostID = command.ExecuteScalar().ToString();
             connection.Close();
             return DoljnostID;
+        }
+        /// <summary>
+        /// Проверка уникальностии логина
+        /// </summary>
+        /// <param name="login">Логин</param>
+        /// <returns>Количество найденных пользователей</returns>
+        public Int32 LoginCheck(string login)
+        {
+            int loginCheck;
+            command.CommandText = "select count (*) from [Authorization] where Login like '%" + login + "%'";
+            connection.Open();
+            loginCheck = Convert.ToInt32(command.ExecuteScalar().ToString());
+            connection.Close();
+            return loginCheck;
         }
     }
 }

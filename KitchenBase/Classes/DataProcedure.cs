@@ -384,6 +384,50 @@ namespace KitchenBase.Classes
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
-     }
+        //Добавление пользователя
+        public void UsersRegistration(string Login, string Password, string Name, string Surname, string MiddleName,
+            string Email, string PhoneNumber)
+        {
+            Password = Crypt.Encrypt(Password);
+            commandConfig("Users_Registration");
+            command.Parameters.AddWithValue("@Login", Login);
+            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@Name", Name);
+            command.Parameters.AddWithValue("@Surname", Surname);
+            command.Parameters.AddWithValue("@MiddleName", MiddleName);
+            command.Parameters.AddWithValue("@Email", Email);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Обновление данных пользователя
+        public void UsersRegistrationUpdate(int ID_InformationOKliente, string Login, string Password, string Name, string Surname, string MiddleName,
+            string Email, string PhoneNumber)
+        {
+            Password = Crypt.Encrypt(Password);
+            commandConfig("Users_RegistrationUpdate");
+            command.Parameters.AddWithValue("@ID_InformationOKliente", ID_InformationOKliente);
+            command.Parameters.AddWithValue("@Login", Login);
+            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@Name", Name);
+            command.Parameters.AddWithValue("@Surname", Surname);
+            command.Parameters.AddWithValue("@MiddleName", MiddleName);
+            command.Parameters.AddWithValue("@Email", Email);
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+        //Удаление пользователя
+        public void LichnieDannieKlientaDelete(int ID_InformationOKliente)
+        {
+            commandConfig("LichnieDannieKlienta_delete");
+            command.Parameters.AddWithValue("@ID_InformationOKliente", ID_InformationOKliente);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
+    }
 }
     
