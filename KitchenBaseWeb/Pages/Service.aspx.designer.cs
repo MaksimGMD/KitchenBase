@@ -204,13 +204,13 @@ namespace KitchenBaseWeb.Pages
         protected global::System.Web.UI.WebControls.Button btFilter;
 
         /// <summary>
-        /// btCansel элемент управления.
+        /// btCanсel элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btCansel;
+        protected global::System.Web.UI.WebControls.Button btCanсel;
 
         /// <summary>
         /// btCheckout элемент управления.

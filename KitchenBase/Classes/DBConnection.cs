@@ -12,6 +12,7 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
+<<<<<<< HEAD
 
              //ПУТЬ САНИ
              /*  @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
@@ -27,6 +28,21 @@ namespace KitchenBase.Classes
              "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
                  " Initial Catalog = KitchenBase; Persist Security Info = true;" +
                  " User ID = sa; Password = \"pass13\"");
+=======
+             // @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
+             //" Initial Catalog = KitchenBase; Persist Security Info = true;" +
+             //" User ID = sa; Password = \"psl14082001\"");
+
+
+             "Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
+                 "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
+                  "ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+        //ПУТЬ ДАНИЛЫ
+        //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
+        //    " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+        //    " User ID = sa; Password = \"pass13\"");
+>>>>>>> 3023b0e5930a124f62d0e8dc706e56bb7c08c480
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
@@ -83,6 +99,8 @@ namespace KitchenBase.Classes
 
 
         private SqlCommand command = new SqlCommand("", connection);
+
+        public static int idUser; //id Авторизации
         private void dtFill(DataTable table, string query)
         {
             command.CommandText = query;
@@ -125,6 +143,47 @@ namespace KitchenBase.Classes
         public void LichnieDannieKlientaFill()
         {
             dtFill(dtLichnieDannieKlienta, qrLichnieDannieKlienta);
+        }
+
+        /// <summary>
+        /// Авторизация
+        /// </summary>
+        /// <param name="login">Логин</param>
+        /// <returns>Возвращает id записи</returns>
+        public Int32 Authorization(string login)
+        {
+            try
+            {
+                command.CommandType = CommandType.Text;
+                command.CommandText = "select [ID_Authorization] from" +
+                    "[Authorization] where [Login] = '" + login + "'";
+                connection.Open();
+                idUser = Convert.ToInt32(command.ExecuteScalar().ToString());
+                return (idUser);
+            }
+            catch
+            {
+                idUser = 0;
+                return (idUser);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        /// <summary>
+        /// Должность
+        /// </summary>
+        /// <param name="userID">id Авторизованного пользователя</param>
+        /// <returns>Роль пользователя</returns>
+        public string userDoljnost(Int32 userID)
+        {
+            string DoljnostID;
+            command.CommandText = "select [ID_Doljnosti] from [Personal] where [ID_Personala]  like '%" + idUser + "%'";
+            connection.Open();
+            DoljnostID = command.ExecuteScalar().ToString();
+            connection.Close();
+            return DoljnostID;
         }
     }
 }

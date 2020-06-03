@@ -60,42 +60,51 @@
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbSurname" FontSize="24"></TextBox>
+                    <TextBox Name="tbSurname" FontSize="24" Text="{Binding SelectedItem.Фамилия,
+                                 ElementName=dgPersonal}"></TextBox>
             </Border>
 
             <Label Name="lblName" Content="Имя"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbName" FontSize="24"></TextBox>
+                    <TextBox Name="tbName" FontSize="24"  Text="{Binding SelectedItem.Имя,
+                                 ElementName=dgPersonal}"></TextBox>
             </Border>
 
             <Label Name="lblMiddleName" Content="Отчество"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbMiddleName" FontSize="24"></TextBox>
+                    <TextBox Name="tbMiddleName" FontSize="24" Text="{Binding SelectedItem.Отчество,
+                                 ElementName=dgPersonal}"></TextBox>
             </Border>
 
             <Label Name="lblEmail" Content="Элетронная почта"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
-                <TextBox Name="tbEmail" FontSize="24"></TextBox>
+                    <TextBox Name="tbEmail" FontSize="24" Text="{Binding SelectedItem.Почта,
+                                 ElementName=dgPersonal}"></TextBox>
             </Border>
 
             <Label Name="lblPhoneNumber" Content="Номер телефона"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
+<<<<<<< HEAD
+                    <TextBox Name="tbPhoneNumber" FontSize="24" Text="{Binding SelectedItem.Номер телефона,
+                                 ElementName=dgPersonal}"></TextBox>
+=======
                     <TextBox Name="tbPhoneNumber" FontSize="24" TextChanged="TbPhoneNumber_TextChanged" GotFocus="TbPhoneNumber_GotFocus"  ></TextBox>
+>>>>>>> ef8f155601eb13027e1d75f77b05032bf8c9553c
             </Border>
 
             <Label Name="lblPosition" Content="Должность"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
-                    <ComboBox Name="CbPosition" FontSize="24">
+                    <ComboBox Name="CbPosition" FontSize="24" SelectedValue="{Binding SelectedItem.ID_Doljnosti, ElementName=dgPersonal}">
                         <ComboBox.Background>
                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                 <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -109,14 +118,19 @@
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1" >
+<<<<<<< HEAD
+                    <TextBox Name="tbLogin" FontSize="24" Text="{Binding SelectedItem.Логин,
+                                 ElementName=dgPersonal}"></TextBox>
+=======
                     <TextBox Name="tbLogin" FontSize="24" GotFocus="TbLogin_GotFocus"></TextBox>
+>>>>>>> ef8f155601eb13027e1d75f77b05032bf8c9553c
             </Border>
 
             <Label Name="lblPassword" Content="Пароль"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
             </Label>
             <Border BorderBrush="#6c43af" BorderThickness="1">
-                <TextBox Name="tbPassword" FontSize="24"></TextBox>
+                    <TextBox Name="tbPassword" FontSize="24"></TextBox>
             </Border>
 
             <Label Name="lblPasswordConfirm" Content="Подтверждения пароля"  

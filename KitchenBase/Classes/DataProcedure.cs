@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Crypt_Library;
 
 namespace KitchenBase.Classes
 {
@@ -310,9 +311,12 @@ namespace KitchenBase.Classes
 
         //Процедуры для персонала
 
-        public void spPersonal_insert(string Surname, string Name, string MiddleName, string Email, string PhoneNumber, Int32 ID_Doljnosti)
+        public void PresonalAdd(string Login, string Password, string Surname, string Name, string MiddleName, string Email, string PhoneNumber, int ID_Doljnosti)
         {
-            commandConfig("Personal_insert");
+            Password = Crypt.Encrypt(Password);
+            commandConfig("PresonalAdd");
+            command.Parameters.AddWithValue("@Login", Login);
+            command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@Surname", Surname);
             command.Parameters.AddWithValue("@Name", Name);
             command.Parameters.AddWithValue("@MiddleName", MiddleName);
@@ -323,9 +327,12 @@ namespace KitchenBase.Classes
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
-        public void spPersonal_update(Int32 ID_Personala, string Name, string Surname, string MiddleName, string Email, string PhoneNumber, Int32 ID_Doljnosti)
+        public void PresonalUpdate(Int32 ID_Personala, string Login, string Password, string Name, string Surname, string MiddleName, string Email, string PhoneNumber, Int32 ID_Doljnosti)
         {
-            commandConfig("Personal_update");
+            Password = Crypt.Encrypt(Password);
+            commandConfig("PresonalUpdate");
+            command.Parameters.AddWithValue("@Login", Login);
+            command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@ID_Personala", ID_Personala);
             command.Parameters.AddWithValue("@Name", Name);
             command.Parameters.AddWithValue("@Surname", Surname);
