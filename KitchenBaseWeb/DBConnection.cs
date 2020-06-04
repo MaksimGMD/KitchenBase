@@ -27,7 +27,13 @@ namespace KitchenBaseWeb
             "inner join[KlientBronirovanie] on[KlientBronirovanie].[ID_Bronirovaniya] = [InformationOBronirovanie].[ID_Bronirovaniya] " +
             "inner join[LichnieDannieKlienta] on[LichnieDannieKlienta].[ID_InformationOKliente] = [KlientBronirovanie].[ID_InformationOKliente]";
 
-        public static int idUser, idKlient, idRecord; 
+        public static int idUser,
+            idKlient,
+            idRecord, //id Выбранной записи
+            idPersonal, //id Сотрудника
+            idBludaSelected, //id Выбранного блюда
+            idOffic; //id официанта для обслуживания клиентов
+
         private SqlCommand command = new SqlCommand("", connection);
         /// <summary>
         /// Авторизация
@@ -72,6 +78,29 @@ namespace KitchenBaseWeb
             {
                 idKlient = 0;
                 
+            }
+            finally
+            {
+                DBConnection.connection.Close();
+            }
+        }
+        /// <summary>
+        /// id сотрудника
+        /// </summary>
+        /// <param name="idUser">id из авторизации</param>
+        public void getIDPersonal(int idUser)
+        {
+            try
+            {
+                command.CommandType = CommandType.Text;
+                command.CommandText = "select [ID_Personala] from [Personal] where [ID_Authorization] = '" + idUser + "'";
+                connection.Open();
+                idPersonal = Convert.ToInt32(command.ExecuteScalar().ToString());
+            }
+            catch
+            {
+                idPersonal = 0;
+
             }
             finally
             {
