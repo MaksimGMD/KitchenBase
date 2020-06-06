@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
-
+        xmlns:ExportToExcelTools="clr-namespace:KitchenBase.Classes"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
               Title="ProductRecords" Height="900" Width="1280" Background="#20202A" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
@@ -84,7 +83,10 @@
                    <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af"  Height="40" Grid.Row="2" Grid.Column="4" FontSize="30" FontFamily="Century Gothic" Click="btSearch_Click" ></Button>
         <Button Name="btFilter" Content="Фильтр" Foreground="#eeebf5" Background="#6c43af" Height="40" Grid.Row="2" Grid.Column="5" FontSize="30" FontFamily="Century Gothic" Click="btFilter_Click" ></Button>
         <Button Name="btCancel" Content="Отмена" Foreground="#eeebf5" Background="#6c43af" Height="40" Grid.Row="2" Grid.Column="6" FontSize="30" FontFamily="Century Gothic" Click="btCancel_Click" ></Button>
-        <DataGrid Name="dgYchetProductovNaSklade" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="7" IsReadOnly="True" ColumnWidth="auto" FontSize="16" AutoGeneratingColumn="dgYchetProductovNaSklade_AutoGeneratingColumn"></DataGrid>
+
+        <DataGrid  Name="dgYchetProductovNaSklade" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="4" Grid.RowSpan="7" IsReadOnly="True" ColumnWidth="auto" FontSize="16" AutoGeneratingColumn="dgYchetProductovNaSklade_AutoGeneratingColumn">
+            
+        </DataGrid>
     </Grid>
 </Window>
 

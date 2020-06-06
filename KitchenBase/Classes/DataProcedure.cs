@@ -207,25 +207,23 @@ namespace KitchenBase.Classes
 
         //Процедуры для меню 
 
-        public void spMenu_insert(string NameBluda, string TimePrigorovleniy, string CenaBluda, Int32 ID_SostavaBluda)
+        public void spMenu_insert(string NameBluda, string TimePrigorovleniy, string CenaBluda)
         {
             commandConfig("Menu_insert");
             command.Parameters.AddWithValue("@NameBluda", NameBluda);
             command.Parameters.AddWithValue("@TimePrigorovleniy", TimePrigorovleniy);
             command.Parameters.AddWithValue("@CenaBluda", CenaBluda);
-            command.Parameters.AddWithValue("@ID_SostavaBluda", ID_SostavaBluda);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
-        public void spMenu_update(Int32 ID_Menu, string NameBluda, string TimePrigorovleniy, string CenaBluda, Int32 ID_SostavaBluda)
+        public void spMenu_update(Int32 ID_Menu, string NameBluda, string TimePrigorovleniy, string CenaBluda)
         {
             commandConfig("Menu_update");
             command.Parameters.AddWithValue("@ID_Menu", ID_Menu);
             command.Parameters.AddWithValue("@NameBluda", NameBluda);
             command.Parameters.AddWithValue("@TimePrigorovleniy", TimePrigorovleniy);
             command.Parameters.AddWithValue("@CenaBluda", CenaBluda);
-            command.Parameters.AddWithValue("@ID_SostavaBluda", ID_SostavaBluda);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
@@ -242,21 +240,23 @@ namespace KitchenBase.Classes
 
         //Процедуры для ингридиента
 
-        public void spIngridient_insert(Int32 ID_SostaveBluda, Int32 ID_Producta)
+        public void spIngridient_insert(Int32 ID_Menu, Int32 ID_Producta, Int32 ID_SostaveBluda)
         {
             commandConfig("Ingridient_insert");
-            command.Parameters.AddWithValue("@ID_SostaveBluda", ID_SostaveBluda);
+            command.Parameters.AddWithValue("@ID_Menu", ID_Menu);
             command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
+            command.Parameters.AddWithValue("@ID_SostaveBluda", ID_SostaveBluda);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
-        public void spIngridient_update(Int32 ID_Ingridientov, Int32 ID_SostaveBluda, Int32 ID_Producta)
+        public void spIngridient_update(Int32 ID_Ingridientov, Int32 ID_Menu, Int32 ID_Producta, Int32 ID_SostaveBluda)
         {
             commandConfig("Ingridient_update");
             command.Parameters.AddWithValue("@ID_Ingridientov", ID_Ingridientov);
-            command.Parameters.AddWithValue("@ID_SostaveBluda", ID_SostaveBluda);
+            command.Parameters.AddWithValue("@ID_Menu", ID_Menu);
             command.Parameters.AddWithValue("@ID_Producta", ID_Producta);
+            command.Parameters.AddWithValue("@ID_SostaveBluda", ID_SostaveBluda);
             DBConnection.connection.Open();
             command.ExecuteNonQuery();
             DBConnection.connection.Close();

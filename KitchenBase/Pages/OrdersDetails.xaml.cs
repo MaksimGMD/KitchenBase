@@ -25,5 +25,33 @@ namespace KitchenBase.Pages
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+        //    QR = DBConnection.qrRabotaKuhni;
+        //    dgFill(QR);
+        }
+
+        //private void DgTypeProduct_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        //{
+        //    switch (e.Column.Header)
+        //    {
+        //        case ("TypeProduct"):
+        //            e.Column.Header = "НазваниеТипаПродукта";
+        //            break;
+        //    }
+
+        //}
+
+        //private void dgFill(string qr)
+        //{
+        //    DBConnection connection = new DBConnection();
+        //    DBConnection.qrRabotaKuhni = qr;
+        //    connection.RabotaKuhniFill();
+        //    dgOrderDetails.ItemsSource = connection.dtOrderMore_View.DefaultView;
+        //    //dgOrderDetails.Columns[0].Visibility = Visibility.Collapsed;
+
+        //}
+
     }
 }

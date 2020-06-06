@@ -16,6 +16,7 @@ using System.Windows.Media.Effects;
 using KitchenBase.Classes;
 using System.Data;
 
+
 namespace KitchenBase.Pages
 {
     /// <summary>
@@ -216,14 +217,19 @@ namespace KitchenBase.Pages
             dgFill(QR);
         }
 
+        public void Message()
+        {
+            MessageBox.Show("Поле не может быть пустым!! " +
+             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+             MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
         private void BtInsert_Click(object sender, RoutedEventArgs e)
         {
             switch (tbNameType.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbNameType.Background = Brushes.Red;
                     break;
                 case (false):
@@ -240,9 +246,7 @@ namespace KitchenBase.Pages
             switch (tbNameType.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbNameType.Background = Brushes.Red;
                     break;
                 case (false):

@@ -212,14 +212,19 @@ namespace KitchenBase
             dgFill(QR);
         }
 
+        public void Message()
+        {
+            MessageBox.Show("Поле не может быть пустым!! " +
+             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+             MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
         private void btInsert_Click(object sender, RoutedEventArgs e)
         {
             switch (tbName.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbName.Background = Brushes.Red;
                     break;
                 case (false):
@@ -236,9 +241,7 @@ namespace KitchenBase
             switch (tbName.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbName.Background = Brushes.Red;
                     break;
                 case (false):
