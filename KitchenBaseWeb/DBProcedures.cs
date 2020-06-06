@@ -154,5 +154,14 @@ namespace KitchenBaseWeb
             command.ExecuteNonQuery();
             DBConnection.connection.Close();
         }
+        //Доюавление статуса заказа
+        public void RabotaKuhni_Insert(int NomerZakaza)
+        {
+            commandConfig("RabotaKuhni_Insert");
+            command.Parameters.AddWithValue("NomerZakaza", NomerZakaza);
+            DBConnection.connection.Open();
+            command.ExecuteNonQuery();
+            DBConnection.connection.Close();
+        }
     }
 }

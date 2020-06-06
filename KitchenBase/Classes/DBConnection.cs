@@ -17,15 +17,15 @@ namespace KitchenBase.Classes
               // " Initial Catalog = KitchenBase; Persist Security Info = true;" +
               // " User ID = sa; Password = \"psl14082001\""); 
 
-             //ПУТЬ МАКСА
-             // "Data Source=DESKTOP-2OC8HFJ\MYGRIT;Initial Catalog=KitchenBase;" +
-             //"Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
-             //"ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+              //ПУТЬ МАКСА
+              "Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
+             "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
+             "ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
              //ПУТЬ ДАНИЛЫ
-             "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
-                " Initial Catalog = KitchenBase Pre-Test; Persist Security Info = true;" +
-                " User ID = sa; Password = \"pass13\"");
+             //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
+             //   " Initial Catalog = KitchenBase Pre-Test; Persist Security Info = true;" +
+             //   " User ID = sa; Password = \"pass13\"");
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
