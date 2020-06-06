@@ -365,6 +365,7 @@ namespace KitchenBase.Pages
 
         }
 
+<<<<<<< HEAD
         //private static void Excel(string fileName, List<IDirectoryInventoryDataCollector> list)
         //{
         //    try
@@ -429,5 +430,7 @@ namespace KitchenBase.Pages
 
 
 
+=======
+>>>>>>> 950e4ec18a9b690aff1091ec0ebf039a246ba0ea
     }        
 }

@@ -25,7 +25,7 @@ namespace KitchenBase.Pages
         }
 
         private void btProductsWeight_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             ProductsWeight ProductsWeight = new ProductsWeight();
             ProductsWeight.Show();
             Close();
@@ -63,6 +63,14 @@ namespace KitchenBase.Pages
         {
             Customers Customers = new Customers();
             Customers.Show();
+            Close();
+        }
+
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            Authorization Authorization = new Authorization();
+            Authorization.Show();
             Close();
         }
     }

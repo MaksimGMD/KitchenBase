@@ -438,6 +438,5 @@ namespace KitchenBase.Pages
             Close();
         }
 
-
     }
 }

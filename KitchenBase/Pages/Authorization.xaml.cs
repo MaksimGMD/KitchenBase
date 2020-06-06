@@ -31,7 +31,6 @@ namespace KitchenBase.Pages
             try
             {
                 Assembly.LoadFrom("Crypt_Library.dll");
-                MessageBox.Show("Отлично!! Библиотека Crypt_Library.dll обнаружена, продолжайте работу!!", "Подтверждение наличия библиотеки.", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             catch (Exception)
             {

@@ -24,17 +24,22 @@
             <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
+<<<<<<< HEAD
         <Label Name="lblAuthorization" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Content="Авторизация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="35" Foreground="White">
+=======
+        <Label Name="lblAuthorization" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="Авторизация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+               FontSize="30" Foreground="White">
+>>>>>>> 950e4ec18a9b690aff1091ec0ebf039a246ba0ea
         </Label>
         <Label Name="lblLogin" Grid.Row="2" Grid.Column="1" Content="Логин" FontFamily="Century Gothic" 
-               FontSize="35" Foreground="White">
+               FontSize="30" Foreground="White">
         </Label>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="3" Grid.Column="1">
             <TextBox Name="tbLogin" FontSize="30" ></TextBox>
         </Border>
         <Label Name="lblPassword" Grid.Row="4" Grid.Column="1" Content="Пароль" FontFamily="Century Gothic" 
-               FontSize="35" Foreground="White">
+               FontSize="30" Foreground="White">
         </Label>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="5" Grid.Column="1">
             <PasswordBox Name="tbPassword" FontSize="30" PasswordChar="*" ></PasswordBox>
