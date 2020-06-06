@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using KitchenBase;
+using KitchenBase.Pages;
 using System;
 using System.Diagnostics;
 using System.Windows;
