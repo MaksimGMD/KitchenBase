@@ -24,6 +24,9 @@
             <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
+        <Button Name="Home" Background="#6c43af" BorderBrush="Transparent" Grid.Column="3"  Margin="137,-1,-1,1" Click="Home_Click" >
+            <Image Source="C:\KitchenBase\KitchenBase\Assets/close_icon.png" Stretch="None"/>
+        </Button>
         <Label Name="lblNavigation" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Навигация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>

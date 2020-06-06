@@ -552,5 +552,6 @@ namespace KitchenBase.Pages
         {
             MessageBox.Show("Минимальная длина логина составляет 8 символов ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
+
     }
 }

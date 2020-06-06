@@ -31,7 +31,6 @@ namespace KitchenBase.Pages
             try
             {
                 Assembly.LoadFrom("Crypt_Library.dll");
-                MessageBox.Show("Отлично!! Библиотека Crypt_Library.dll обнаружена, продолжайте работу!!", "Подтверждение наличия библиотеки.", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             catch (Exception)
             {
@@ -39,6 +38,7 @@ namespace KitchenBase.Pages
                 Environment.Exit(-1);
             }
             InitializeComponent();
+           
         }
         bool startup = true;
         private void SystemCheck()
@@ -161,7 +161,7 @@ namespace KitchenBase.Pages
                     DBConnection.connection.Open();
                     Password = command.ExecuteScalar().ToString(); //Строка (пароль) из базы данных
                     DBConnection.connection.Close();
-                    if (tbPassword.Text.ToString() == Crypt.Decrypt(Password))
+                    if (tbPassword.Password.ToString() == Crypt.Decrypt(Password))
                     {
                         //Проверка должности
                         switch (connection.userDoljnost(DBConnection.idUser))

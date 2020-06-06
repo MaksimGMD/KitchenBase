@@ -3,4 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KitchenBase"
              StartupUri="Pages/Navigation.xaml">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 950e4ec18a9b690aff1091ec0ebf039a246ba0ea
+    <Application.Resources>
+
+    </Application.Resources>
+    
+>>>>>>> 5eac2d5e21db8ad4468726391b3208717b5d7d1c
 </Application>

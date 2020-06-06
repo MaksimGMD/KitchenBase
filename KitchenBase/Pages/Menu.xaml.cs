@@ -89,8 +89,8 @@ namespace KitchenBase.Pages
                 case ("NameProduct"):
                     e.Column.Header = "Название продукта";
                     break;
-                case ("VesProducta"):
-                    e.Column.Header = "Вес Продукта";
+                case ("[VesProducta"):
+                    e.Column.Header = "Вес продукта для приготовления";
                     break;
             }
         }
@@ -437,7 +437,6 @@ namespace KitchenBase.Pages
             navigation.Show();
             Close();
         }
-
 
     }
 }

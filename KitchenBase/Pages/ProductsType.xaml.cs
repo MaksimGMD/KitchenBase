@@ -268,8 +268,9 @@ namespace KitchenBase.Pages
                     procedures.spTypeProduct_delete(Convert.ToInt32(ID["ID_TypeProduct"]));
                     dgFill(QR);
                     tbNameType.Text = "";
-                    break;
+                break;
             }
+            
         }
     }
 }
