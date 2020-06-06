@@ -12,9 +12,9 @@ namespace KitchenBaseWeb
     {
 
         //Подключение к базе данных 
-        public static SqlConnection connection = new SqlConnection("Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
-            "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
-            "ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        public static SqlConnection connection = new SqlConnection(@"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
+              " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+              " User ID = sa; Password = \"psl14082001\"");
 
         public static string qrNameBluda = "select [ID_Menu], [NameBluda] as 'Название блюда', [TimePrigorovleniy] as 'Время приготовления', [CenaBluda] as 'Цена блюда'" +
             "from [Menu]",
