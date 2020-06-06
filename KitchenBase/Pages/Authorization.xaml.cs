@@ -13,7 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using KitchenBase.Classes;
 using Crypt_Library;
+using Microsoft.Win32;
 using System.Data.SqlClient;
+using System.IO;
+using System.Reflection;
 
 namespace KitchenBase.Pages
 {
@@ -22,12 +25,121 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Authorization : Window
     {
-        private string QR = "";
-        //Определяет есть подключение к БД или нет
+           //Определяет есть подключение к БД или нет
         public Authorization()
         {
+            try
+            {
+                Assembly.LoadFrom("Crypt_Library.dll");
+                MessageBox.Show("Отлично!! Библиотека Crypt_Library.dll обнаружена, продолжайте работу!!", "Подтверждение наличия библиотеки.", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка. Не обнаружена библиотека Crypt_Library.dll. Приложение будет закрыто", "Критическая ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                Environment.Exit(-1);
+            }
             InitializeComponent();
         }
+        bool startup = true;
+        private void SystemCheck()
+        {
+            int Major = Environment.OSVersion.Version.Major;
+            int Minor = Environment.OSVersion.Version.Minor;
+            if ((Major >= 6) && (Minor >= 0))
+            {
+                RegistryKey registrySQL =
+                Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server");
+                RegistryKey registryNET =
+                Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\.NETFramework");
+                RegistryKey registryWord =
+                Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Office\16.0\Word");
+                RegistryKey registryEdge =
+                Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\MicrosoftEdge");
+                RegistryKey registryChrome =
+                Registry.CurrentUser.OpenSubKey(@"Software\Google\Chrome");
+                RegistryKey registryExcel =
+                    Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Office\Excel");
+
+                if (registrySQL == null)
+                {
+                    MessageBox.Show("Программа не может быть запущенна, так как в системе отсутствует Microsoft SQL Server");
+                    startup = false;
+                }
+                else if (registryNET == null)
+                {
+                    MessageBox.Show("Программа не может быть запущенна, так как в системе отсутствует .NETFramework");
+                    startup = false;
+                }
+                else if (registryWord == null)
+                {
+                    MessageBox.Show("Программа не может быть запущена, так как  в системе отсутствует Microsoft Word");
+                    startup = false;
+                }
+                else if (registryExcel == null)
+                {
+                    MessageBox.Show("Программа не может быть запущена, так как в системе отсутствует Microsoft Excel");
+                    startup = false;
+                }
+                else if (registryEdge == null)
+                {
+                    MessageBox.Show("Программа не может быть запущена, так как в системе отсутствует Microsoft Edge");
+                    startup = false;
+                }
+                else if (registryChrome == null)
+                {
+                    MessageBox.Show("Программа не может быть запущена, так как в системе отсутствует брауер Google Chrome");
+                    startup = false;
+                }
+                else
+                {
+                    try
+                    {
+                        DBConnection.connection.Open();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Не возможно подключиться к источнику данных");
+                        startup = false;
+                    }
+                    finally
+                    {
+                        DBConnection.connection.Close();
+                    }
+                }
+
+                RegistryKey freckey = Registry.LocalMachine;
+                freckey = freckey.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0", false);
+                string str = freckey.GetValue("~MHz").ToString();             
+                if (Convert.ToInt32(str) <= 1000)
+                {
+                    MessageBox.Show(String.Format("Очень низкая тактовая частота процессора: {0}", str));
+                    startup = false;
+                }
+                double free = 0;
+                double a = 0;
+                string Vol = "";
+                DriveInfo[] allDrives = DriveInfo.GetDrives();
+                foreach (DriveInfo MyDriveInfo in allDrives)
+                {
+                    if (MyDriveInfo.IsReady == true)
+                    {
+                        free = MyDriveInfo.AvailableFreeSpace;
+                        a = (free / 1024) / 1024;
+                        Vol += MyDriveInfo.Name + ": " + a.ToString("#.##") + Environment.NewLine;
+                    }
+                }
+                if (a < 1000)
+                {
+                    MessageBox.Show("Недостаточно памяти на жёстком диске");
+                    startup = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Невозможно запустить приложение на данной Операционной системе.");
+            }
+        }
+
 
         //Авторизация
         private void btAccept_Click(object sender, RoutedEventArgs e)
