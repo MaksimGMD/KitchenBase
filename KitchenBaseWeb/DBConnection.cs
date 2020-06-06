@@ -19,6 +19,10 @@ namespace KitchenBaseWeb
         public static string qrNameBluda = "select [ID_Menu], [NameBluda] as 'Название блюда', [TimePrigorovleniy] as 'Время приготовления', [CenaBluda] as 'Цена блюда'" +
             "from [Menu]",
             qrService = "select * from [ObslujivanieKlienta_View]",
+            qrOrders = "select [ObslujivanieKlienta].[NomerZakaza], [VremyZakaza] from [ObslujivanieKlienta] " +
+            "inner join [RabotaKuhni] on [RabotaKuhni].[NomerZakaza] = [ObslujivanieKlienta].[NomerZakaza] " +
+            "where [StatusZakaza] = 0",
+            qrOrdersMore = "select * from [OrderMore_View]",
             qrTime = "select * from [VremyBronirovanie]",
             qrReservation = "select[InformationOBronirovanie].[ID_Vremeni_Bronirovaniy], [VremyaBronirovaniy] as 'Время бронирования', [DateBronirovaniy] as 'Дата бронирования', " +
             "[KolichestvoGostey] as 'Количество гостей', [ID_Stola] as 'Номер стола', [InformationOBronirovanie].[ID_Bronirovaniya] as 'Номер бронирования', [Kommentariy] as 'Комментарий' " +

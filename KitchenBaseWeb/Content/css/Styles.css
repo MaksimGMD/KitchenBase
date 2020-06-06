@@ -148,43 +148,54 @@ a {
         outline: none;
     }
 
-.table{
+.table {
     background: #ffffff;
 }
-.table tr {
-    text-align: center;
-}
-.table a {
-    color: #007bff;
-    font-size: 18px;
-}
+
+    .table tr {
+        text-align: center;
+    }
+
+    .table a {
+        color: #007bff;
+        font-size: 18px;
+    }
 
 /*Orders pages*/
 .List {
     overflow-y: scroll;
-    width: 1020px;
+    max-width: 1020px;
     height: 535px;
     border: 3px solid #eeebf5;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     padding: 35px 30px;
+    vertical-align: middle;
 }
+
 .Order-block {
-    border-radius: 5px;
-    border: 2px #222440;
+    border-radius: 10px;
+    border: 3px solid #31335b;
     width: 950px;
     height: 115px;
+    padding: 5px 20px;
+    margin-bottom: 40px;
 }
+
 .Order-Text {
     color: #eeebf5;
     font-size: 24px;
 }
-.Order-block-data{
+
+.Order-block-data {
     float: left;
 }
-.Order-block-button{
-    float:right;
+
+.Order-block-button {
+    float: right;
+    margin-top: 15px;
 }
+
 .btDetails {
     height: 60px;
     width: 410px;
@@ -192,4 +203,11 @@ a {
     font-size: 26px;
     background: #6c43af;
     border: none;
+}
+.btDetails:hover {
+    background: #441f81;
+    transition: 0.5s;
+}
+.OrdersTitle{
+    text-align: center;
 }

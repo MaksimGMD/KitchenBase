@@ -12,25 +12,27 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:SqlDataSource runat="server" ID="sdsOrders"></asp:SqlDataSource>
         <div class="container">
             <center>
                 <h1 class="title">Активные заказы</h1>
             </center>
             <div class="List">
-                <%--<asp:Repeater ID="rpOrdersList" runat="server">
+                <asp:Repeater ID="rpOrdersList" runat="server">
                     <ItemTemplate>
+                        <div class="Order-block">
+                            <div class="Order-block-data">
+                                <asp:Label ID="lblNomer" runat="server" CssClass="Order-Text">Номер заказа - <%#Eval("NomerZakaza") %></asp:Label>
+                                <br />
+                                <label class="Order-Text">Время заказа - <%#Eval("VremyZakaza") %></label>
+                            </div>
+                            <div class="Order-block-button">
+                                <asp:Label ID="lblID" runat="server" Text='<%#Eval("NomerZakaza") %>' Style="display: none" />
+                                <asp:Button ID="btDetails" runat="server" Text="Подробнее" CssClass="btDetails" OnClick="btDetails_Click"/>
+                            </div>
+                        </div>
                     </ItemTemplate>
-                </asp:Repeater>--%>
-                <div class="Order-block">
-                    <div class="Order-block-data">
-                        <label class="Order-Text">Номер заказа - 20</label>
-                        <br />
-                        <label class="Order-Text">Время заказа - 17:20</label>
-                    </div>
-                    <div class="Order-block-button">
-                        <asp:Button ID="btDetails" runat="server" Text="Подробнее" CssClass="btDetails"/>
-                    </div>
-                </div>
+                </asp:Repeater>
             </div>
         </div>
     </form>

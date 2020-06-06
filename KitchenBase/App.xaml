@@ -2,13 +2,5 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KitchenBase"
-<<<<<<< HEAD
              StartupUri="Pages/Navigation.xaml">
-=======
-             StartupUri="Pages/ProductRecords.xaml">
->>>>>>> 5d4794f304f4339c4f1e5a4d52eb52d33617dc1f
-    <Application.Resources>
-
-    </Application.Resources>
-    
 </Application>
