@@ -24,13 +24,10 @@
             <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
-<<<<<<< HEAD
+
         <Label Name="lblAuthorization" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Content="Авторизация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="35" Foreground="White">
-=======
-        <Label Name="lblAuthorization" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="Авторизация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
-               FontSize="30" Foreground="White">
->>>>>>> 950e4ec18a9b690aff1091ec0ebf039a246ba0ea
+
         </Label>
         <Label Name="lblLogin" Grid.Row="2" Grid.Column="1" Content="Логин" FontFamily="Century Gothic" 
                FontSize="30" Foreground="White">

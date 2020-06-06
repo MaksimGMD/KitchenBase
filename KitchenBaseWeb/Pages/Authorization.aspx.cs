@@ -47,7 +47,7 @@ namespace KitchenBaseWeb.Pages
                                 Response.Redirect("Reservation.aspx");
                                 break;
                             case ("Employee"):
-                                switch (connection.userDoljnost(DBConnection.idUser))
+                                switch (connection.userDoljnost(DBConnection.idPersonal))
                                 {
                                     //Официант
                                     case ("3"):
@@ -56,6 +56,11 @@ namespace KitchenBaseWeb.Pages
                                     //Повар
                                     case ("4"):
                                         Response.Redirect("Orders.aspx");
+                                        break;
+                                    default:
+                                            tbLogin.BackColor = ColorTranslator.FromHtml("#cc0000");
+                                            tbPassword.BackColor = ColorTranslator.FromHtml("#cc0000");
+                                            lblAuthorization.Visible = true;
                                         break;
                                 }
                                 break;
