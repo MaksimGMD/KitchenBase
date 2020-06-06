@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
+<<<<<<< HEAD
+        Title="OrdersDetails" Height="720" Width="1080" Background="#20202A" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" >
+=======
         Title="OrdersDetails" Height="720" Width="1080" Background="#20202A" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+>>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25*"></RowDefinition>
@@ -19,6 +23,36 @@
             <RowDefinition Height="20*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+<<<<<<< HEAD
+            <ColumnDefinition Width="357*"></ColumnDefinition>
+            <ColumnDefinition Width="181*"></ColumnDefinition>
+            <ColumnDefinition Width="177*"/>
+            <ColumnDefinition Width="273*"/>
+            <ColumnDefinition Width="84*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="lblOrdersDetails" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Content="Подробная информация о заказе" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+               FontSize="35" Foreground="White">
+        </Label>
+        <Label Name="lblOrderNumber" Grid.Row="1" Grid.Column="0"  Content="Номер заказа - " FontFamily="Century Gothic" HorizontalContentAlignment="Center" 
+               FontSize="35" Foreground="White" Grid.ColumnSpan="3">
+        </Label>
+        <Border  BorderThickness="1" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" >
+            <TextBox Name="tbOrderNumber" Foreground="White" Height="50" FontSize="30"></TextBox>
+        </Border>
+        <Label Name="lblOrderTime" Grid.Row="2" Grid.Column="0"  Content="Время заказа - " FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+               FontSize="35" Foreground="White" Grid.ColumnSpan="3">
+        </Label>
+        <Border  BorderThickness="1" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1" >
+            <TextBox Name="tbOrderTime" Foreground="White" Height="50" FontSize="30"></TextBox>
+        </Border>
+        <Label Name="lblNumberTable" Grid.Row="3" Grid.Column="0" Content="Номер стола - " FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+               FontSize="35" Foreground="White" Grid.ColumnSpan="3">
+        </Label>
+        <Border  BorderThickness="1" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" >
+            <TextBox Name="tbNumberTable" Foreground="White" Height="50" FontSize="30"></TextBox>
+        </Border>
+        <DataGrid Name="dgOrderDetails" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="3" IsReadOnly="True" ColumnWidth="auto" FontSize="16" AutoGeneratingColumn="DgTypeProduct_AutoGeneratingColumn" ></DataGrid>
+=======
             <ColumnDefinition Width="18*"></ColumnDefinition>
             <ColumnDefinition Width="339*"/>
             <ColumnDefinition Width="358*"></ColumnDefinition>
@@ -37,5 +71,6 @@
                FontSize="25" Foreground="White">
         </Label>
         <DataGrid Name="dgOrderDetails" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" IsReadOnly="True" ColumnWidth="auto" FontSize="16"/>
+>>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
     </Grid>
 </Window>

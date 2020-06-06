@@ -20,10 +20,26 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class Orders : Window
     {
-        private string QR = "";
         public Orders()
         {
             InitializeComponent();
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) 
+        {
+            var converter = new BrushConverter();
+            var azaz7 = (Brush)converter.ConvertFromString("#00000000");
+            btZakaz.Background = azaz7;
+            btZakaz2.Background = azaz7;
+            tbnz.Background = azaz7;
+            tbvz.Background = azaz7;
+            tbnz1.Background = azaz7;
+            tbvz1.Background = azaz7;
+            tbnz.BorderBrush = azaz7;
+            tbvz.BorderBrush = azaz7;
+            tbnz1.BorderBrush = azaz7;
+            tbvz1.BorderBrush = azaz7;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -31,4 +47,6 @@ namespace KitchenBase.Pages
 
         }
     }
+
+    
 }
