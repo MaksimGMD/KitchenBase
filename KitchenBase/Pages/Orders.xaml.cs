@@ -26,7 +26,7 @@ namespace KitchenBase.Pages
 
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e) 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             var converter = new BrushConverter();
             var azaz7 = (Brush)converter.ConvertFromString("#00000000");
@@ -42,11 +42,6 @@ namespace KitchenBase.Pages
             tbvz1.BorderBrush = azaz7;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
-
-    
 }

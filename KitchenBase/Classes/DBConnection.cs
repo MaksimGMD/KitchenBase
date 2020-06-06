@@ -13,9 +13,9 @@ namespace KitchenBase.Classes
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
               //ПУТЬ САНИ
-                @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
-               " Initial Catalog = KitchenBase; Persist Security Info = true;" +
-               " User ID = sa; Password = \"psl14082001\""); 
+              //  @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
+              // " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+              // " User ID = sa; Password = \"psl14082001\""); 
 
              //ПУТЬ МАКСА
              // "Data Source=DESKTOP-2OC8HFJ\MYGRIT;Initial Catalog=KitchenBase;" +
@@ -23,36 +23,9 @@ namespace KitchenBase.Classes
              //"ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
 
              //ПУТЬ ДАНИЛЫ
-
              "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
-                 " Initial Catalog = KitchenBAse Pre-Test; Persist Security Info = true;" +
-                 " User ID = sa; Password = \"pass13\"");
-<<<<<<< HEAD
-
-
-=======
-=======
-             //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
-             //    " Initial Catalog = KitchenBase; Persist Security Info = true;" +
-             //    " User ID = sa; Password = \"pass13\"");
-<<<<<<< HEAD
-=======
-             // @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
-             //" Initial Catalog = KitchenBase; Persist Security Info = true;" +
-             //" User ID = sa; Password = \"psl14082001\"");
-
-
-             "Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
-                 "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
-                  "ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
-        //ПУТЬ ДАНИЛЫ
-        //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
-        //    " Initial Catalog = KitchenBase; Persist Security Info = true;" +
-        //    " User ID = sa; Password = \"pass13\"");
->>>>>>> 14bbf88fee636642ba74f24ddb3a491bdbcfc6f7
->>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
->>>>>>> 661885754945bd1625fbef27d6d8b05caffc846f
+                " Initial Catalog = KitchenBase Pre-Test; Persist Security Info = true;" +
+                " User ID = sa; Password = \"pass13\"");
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
@@ -103,11 +76,7 @@ namespace KitchenBase.Classes
 
         public static int NomerZakaza = new int();
         public DataTable dtOrderMore_View = new DataTable("OrderMore_View");
-<<<<<<< HEAD
         public static string qrRabotaKuhni = "select * from [OrderMore_View]";
-=======
-        // public static string qrRabotaKuhni = "select * from [OrderMore_View]";
->>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
 
 
         /// <summary>
@@ -175,12 +144,7 @@ namespace KitchenBase.Classes
         public void RabotaKuhniFill()
         {
             dtFill(dtOrderMore_View, qrRabotaKuhni);
-        }
-
-        public void RabotaKuhniFill()
-        {
-           // dtFill(dtOrderMore_View, qrRabotaKuhni);
-        }
+        }    
 
         /// <summary>
         /// Авторизация
