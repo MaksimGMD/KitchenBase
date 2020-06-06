@@ -12,17 +12,6 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 14bbf88fee636642ba74f24ddb3a491bdbcfc6f7
->>>>>>> 661885754945bd1625fbef27d6d8b05caffc846f
-
->>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
               //ПУТЬ САНИ
                 @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
                " Initial Catalog = KitchenBase; Persist Security Info = true;" +
