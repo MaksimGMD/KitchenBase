@@ -6,13 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Reflection;
-//using Word = Microsoft.Office.Interop.Word;
 using System.IO;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
-//using Microsoft.Office.Interop.Word;
-using Microsoft.Office.Core;
-using Word = Microsoft.Office.Interop.Word;
 using SautinSoft.Document;
 
 namespace KitchenBaseWeb.Pages
@@ -259,7 +255,7 @@ namespace KitchenBaseWeb.Pages
                 lblExportError.Visible = true;
             }
         }
-
+        //Создание документа .PDF
         protected void btPdf_Click(object sender, EventArgs e)
         {
             try

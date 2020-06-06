@@ -7,6 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Drawing;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
 
 namespace KitchenBaseWeb.Pages
 {
@@ -158,6 +161,7 @@ namespace KitchenBaseWeb.Pages
             tbTimeCoocking.Text = row.Cells[4].Text.ToString();
             DBConnection.idRecord = Convert.ToInt32(row.Cells[11].Text);
             DBConnection.idOffic = Convert.ToInt32(row.Cells[8].Text);
+            btCheckout.Enabled = true;
         }
         //Очистка полей
         private void Cleaner()
@@ -171,6 +175,7 @@ namespace KitchenBaseWeb.Pages
             tbSurname.Text = string.Empty;
             tbTimeCoocking.Text = string.Empty;
             ddlNameBluda.SelectedIndex = 0;
+            btCheckout.Enabled = false;
         }
 
         protected void btInsert_Click(object sender, EventArgs e)
@@ -279,7 +284,76 @@ namespace KitchenBaseWeb.Pages
         //Оформление заказа
         protected void btCheckout_Click(object sender, EventArgs e)
         {
+            DBProcedures procedures = new DBProcedures();
+            procedures.RabotaKuhni_Insert(DBConnection.idRecord);
+            Cleaner();
+            gvFill(QR);
+        }
+        
+        //Подтверждение заказа
+        protected void btConfirm_Click(object sender, EventArgs e)
+        {
+            int columnsCount = gvService.HeaderRow.Cells.Count;
+            // Create the PDF Table specifying the number of columns
+            PdfPTable pdfTable = new PdfPTable(columnsCount);
 
+            // Loop thru each cell in GrdiView header row
+            //foreach (TableCell gridViewHeaderCell in gvService.HeaderRow.Cells)
+            //{
+            //    // Create the Font Object for PDF document
+            //    iTextSharp.text.Font font = new iTextSharp.text.Font();
+            //    // Set the font color to GridView header row font color
+            //    font.Color = new BaseColor(gvService.HeaderStyle.ForeColor);
+
+            //    // Create the PDF cell, specifying the text and font
+            //    PdfPCell pdfCell = new PdfPCell(new Phrase(gridViewHeaderCell.Text, font));
+
+            //    // Set the PDF cell backgroundcolor to GridView header row BackgroundColor color
+            //    pdfCell.BackgroundColor = new BaseColor(gvService.HeaderStyle.BackColor);
+
+            //    // Add the cell to PDF table
+            //    pdfTable.AddCell(pdfCell);
+            //}
+
+            // Loop thru each datarow in GrdiView
+            foreach (GridViewRow gridViewRow in gvService.Rows)
+            {
+                if (gridViewRow.RowType == DataControlRowType.DataRow)
+                {
+                    // Loop thru each cell in GrdiView data row
+                    foreach (TableCell gridViewCell in gridViewRow.Cells)
+                    {
+                        iTextSharp.text.Font font = new iTextSharp.text.Font();
+                        font.Color = new BaseColor(0, 0, 0);
+
+                        PdfPCell pdfCell = new PdfPCell(new Phrase(gridViewCell.Text, font));
+
+                        pdfCell.BackgroundColor = new BaseColor(gvService.RowStyle.BackColor);
+
+                        pdfTable.AddCell(pdfCell);
+                    }
+                }
+            }
+
+            // Create the PDF document specifying page size and margins
+            Document pdfDocument = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+            // Roate page using Rotate() function, if you want in Landscape
+            // pdfDocument.SetPageSize(PageSize.A4.Rotate());
+
+            // Using PageSize.A4_LANDSCAPE may not work as expected
+            // Document pdfDocument = new Document(PageSize.A4_LANDSCAPE, 10f, 10f, 10f, 10f);
+
+            PdfWriter.GetInstance(pdfDocument, Response.OutputStream);
+
+            pdfDocument.Open();
+            pdfDocument.Add(pdfTable);
+            pdfDocument.Close();
+
+            Response.ContentType = "application/pdf";
+            Response.AppendHeader("content-disposition", "attachment;filename=Check.pdf");
+            Response.Write(pdfDocument);
+            Response.Flush();
+            Response.End();
         }
     }
 }

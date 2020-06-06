@@ -158,3 +158,38 @@ a {
     color: #007bff;
     font-size: 18px;
 }
+
+/*Orders pages*/
+.List {
+    overflow-y: scroll;
+    width: 1020px;
+    height: 535px;
+    border: 3px solid #eeebf5;
+    margin-left: auto;
+    margin-right:auto;
+    padding: 35px 30px;
+}
+.Order-block {
+    border-radius: 5px;
+    border: 2px #222440;
+    width: 950px;
+    height: 115px;
+}
+.Order-Text {
+    color: #eeebf5;
+    font-size: 24px;
+}
+.Order-block-data{
+    float: left;
+}
+.Order-block-button{
+    float:right;
+}
+.btDetails {
+    height: 60px;
+    width: 410px;
+    color: #eeebf5;
+    font-size: 26px;
+    background: #6c43af;
+    border: none;
+}

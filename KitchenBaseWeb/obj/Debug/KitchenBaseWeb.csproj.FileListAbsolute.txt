@@ -77,3 +77,6 @@ C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csprojAssemblyReference.c
 C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csproj.ResolveComReference.cache
 C:\KitchenBase\KitchenBaseWeb\bin\SautinSoft.Document.dll
 C:\KitchenBase\KitchenBaseWeb\bin\SautinSoft.Document.xml
+C:\KitchenBase\KitchenBaseWeb\bin\itextsharp.dll
+C:\KitchenBase\KitchenBaseWeb\bin\itextsharp.pdfa.dll
+C:\KitchenBase\KitchenBaseWeb\bin\itextsharp.xml
