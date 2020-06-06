@@ -47,7 +47,17 @@ namespace KitchenBaseWeb.Pages
                                 Response.Redirect("Reservation.aspx");
                                 break;
                             case ("Employee"):
-                                Response.Redirect("Service.aspx");
+                                switch (connection.userDoljnost(DBConnection.idUser))
+                                {
+                                    //Официант
+                                    case ("3"):
+                                        Response.Redirect("Service.aspx");
+                                        break;
+                                    //Повар
+                                    case ("4"):
+                                        Response.Redirect("Orders.aspx");
+                                        break;
+                                }
                                 break;
                         }
                         break;

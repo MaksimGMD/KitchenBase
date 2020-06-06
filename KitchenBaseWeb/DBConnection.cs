@@ -150,5 +150,19 @@ namespace KitchenBaseWeb
             connection.Close();
             return Data;
         }
+        /// <summary>
+        /// Должность
+        /// </summary>
+        /// <param name="userID">id Авторизованного пользователя</param>
+        /// <returns>Роль пользователя</returns>
+        public string userDoljnost(Int32 userID)
+        {
+            string DoljnostID;
+            command.CommandText = "select [ID_Doljnosti] from [Personal] where [ID_Personala]  like '%" + idUser + "%'";
+            connection.Open();
+            DoljnostID = command.ExecuteScalar().ToString();
+            connection.Close();
+            return DoljnostID;
+        }
     }
 }

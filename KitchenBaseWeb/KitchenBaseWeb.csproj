@@ -53,6 +53,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Crypt_Library.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.pdfa.5.5.13.1\lib\itextsharp.pdfa.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="SautinSoft.Document, Version=4.4.4.8, Culture=neutral, PublicKeyToken=e759c76c7515592a, processorArchitecture=MSIL">
       <HintPath>..\packages\sautinsoft.document.4.4.4.8\lib\net47\SautinSoft.Document.dll</HintPath>
@@ -129,6 +135,8 @@
     <Content Include="Global.asax" />
     <Content Include="Pages\Account.aspx" />
     <Content Include="Pages\Authorization.aspx" />
+    <Content Include="Pages\Orders.aspx" />
+    <Content Include="Pages\OrdersDetails.aspx" />
     <Content Include="Pages\Registration.aspx" />
     <Content Include="Pages\Reservation.aspx" />
     <Content Include="Pages\Service.aspx" />
@@ -300,6 +308,20 @@
     </Compile>
     <Compile Include="Pages\Authorization.aspx.designer.cs">
       <DependentUpon>Authorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrdersDetails.aspx.cs">
+      <DependentUpon>OrdersDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OrdersDetails.aspx.designer.cs">
+      <DependentUpon>OrdersDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>

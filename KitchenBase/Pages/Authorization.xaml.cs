@@ -183,13 +183,6 @@ namespace KitchenBase.Pages
                                 tbPassword.Background = Brushes.Red;
                                 lblAuthoriCheck.Visibility = Visibility.Visible;
                                 break;
-                            //Повар
-                            case ("4"):
-                                //Добавить страницу для повара
-                                Orders Orders = new Orders();
-                                Orders.Show();
-                                Visibility = Visibility.Collapsed;
-                                break;
                         }
                         break;
                     }

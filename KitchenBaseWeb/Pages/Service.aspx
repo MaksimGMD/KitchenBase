@@ -86,9 +86,9 @@
             </div>
             <div class="row">
                 <asp:Button ID="btCheckout" runat="server" Text="Оформить заказ" CssClass="button-Reserv"
-                    Style="font-size: 18px; white-space: normal; word-wrap: break-word; width: 130px; margin-left: 15px;" OnClick="btCheckout_Click" />
+                    Style="font-size: 18px; white-space: normal; word-wrap: break-word; width: 130px; margin-left: 15px;" OnClick="btCheckout_Click" Enabled="false"/>
                 <asp:Button ID="btConfirm" runat="server" Text="Подтверждение оплаты" CssClass="button-Reserv"
-                    Style="font-size: 18px; white-space: normal; word-wrap: break-word; width: 160px;" />
+                    Style="font-size: 18px; white-space: normal; word-wrap: break-word; width: 160px;" OnClick="btConfirm_Click" />
             </div>
             <div class="Table mt-3" style="overflow-x: auto; width: 90%">
                 <asp:GridView ID="gvService" runat="server" CssClass="table table-condensed table-hover" AllowSorting="true" UseAccessibleHeader="true" CurrentSortDirection="ASC" Font-Size="14px"

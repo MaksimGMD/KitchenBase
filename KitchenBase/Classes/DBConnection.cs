@@ -13,9 +13,9 @@ namespace KitchenBase.Classes
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
                 //ПУТЬ САНИ
-                @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
-               " Initial Catalog = KitchenBase; Persist Security Info = true;" +
-               " User ID = sa; Password = \"psl14082001\"");
+               // @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
+               //" Initial Catalog = KitchenBase; Persist Security Info = true;" +
+               //" User ID = sa; Password = \"psl14082001\"");
 
         //ПУТЬ МАКСА
         // "Data Source=DESKTOP-2OC8HFJ\MYGRIT;Initial Catalog=KitchenBase;" +
