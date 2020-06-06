@@ -270,9 +270,9 @@ namespace KitchenBase.Pages
         {
            
             DataRowView ID = (DataRowView)dgMenu.SelectedItems[0];
-            switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
+            switch (MessageBox.Show("Удалить блюдо", "Удаление!", MessageBoxButton.YesNoCancel, MessageBoxImage.Question))
             {
-                case MessageBoxResult.OK:
+                case MessageBoxResult.Yes:
                     DataProcedure.spMenu_delete(Convert.ToInt32(ID["ID_Menu"]));
                     DataProcedure.spIngridient_delete(Convert.ToInt32(ID["ID_Ingridientov"]));
                     dgFill(QR);
@@ -281,6 +281,20 @@ namespace KitchenBase.Pages
                     tbNameBluda.Text = "";
                     tbTime.Text = "";
                     tbCena.Text = "";
+                    break;
+                case MessageBoxResult.No:
+                    switch (MessageBox.Show("Удалить продукт?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
+                    {
+                        case MessageBoxResult.OK:
+                            DataProcedure.spIngridient_delete(Convert.ToInt32(ID["ID_Ingridientov"]));
+                            dgFill(QR);
+                            cbFill();
+                            cbFill2();
+                            tbNameBluda.Text = "";
+                            tbTime.Text = "";
+                            tbCena.Text = "";
+                            break;
+                    }
                     break;
             }
         }

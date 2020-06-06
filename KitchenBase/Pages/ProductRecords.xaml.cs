@@ -25,6 +25,7 @@ namespace KitchenBase.Pages
     /// </summary>
     public partial class ProductRecords : System.Windows.Window
     {
+
         DataProcedure DataProcedure = new DataProcedure();
         private string QR = "";
         public ProductRecords()
@@ -262,7 +263,7 @@ namespace KitchenBase.Pages
 
         private void btCreatingBillLading_Click(object sender, RoutedEventArgs e)
         {
-            /* Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
             worksheet = workbook.Sheets["Sheet1"];
@@ -278,17 +279,18 @@ namespace KitchenBase.Pages
             {
                 for (int j = 0; j < dgYchetProductovNaSklade.Columns.Count; j++)
                 {
-                    worksheet.Cells[i + 2, j + 1] = dgYchetProductovNaSklade.Items[i].Columns[j].Value.Tostring();
+                    worksheet.Cells[j + 1] = dgYchetProductovNaSklade.Columns[j].ToString();
+                    worksheet.Cells[i + 2] = dgYchetProductovNaSklade.Items[i].ToString();
                 }
             }
 
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.FileName = "output";
             saveFileDialog.DefaultExt = ".xlsx";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog.ShowDialog() == true)
             {
-                workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-            } */
+                workbook.SaveAs(saveFileDialog.FileName, Object., Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            } 
 
             /* Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
              Microsoft.Office.Interop.Excel._Workbook wb;
@@ -317,32 +319,9 @@ namespace KitchenBase.Pages
                  Marshal.ReleaseComObject(excel);
                  // Вызываем сборщик мусора для немедленной очистки памяти
                  GC.GetTotalMemory(true);
-             } */
+             } 
 
-            /*
-            string extension = "xlsx";
-
-            Microsoft.Win32.SaveFileDialog dialog = new Microsoft.Win32.SaveFileDialog()
-            {
-                DefaultExt = extension,
-                Filter = String.Format("{1} files (.{0})|.{0}|All files (.)|.", extension, "Excel"),
-                FilterIndex = 1
-            };
-
-            if (dialog.ShowDialog() == true)
-            {
-                using (Stream stream = dialog.OpenFile())
-                {
-                    gridViewExport.ExportToXlsx(stream,
-                        new GridViewDocumentExportOptions()
-                        {
-                            ShowColumnFooters = true,
-                            ShowColumnHeaders = true,
-                            ShowGroupFooters = true
-                        });
-                }
-            } 
-            ExportToExcel(); */
+            
 
             //dgYchetProductovNaSklade.ExportToExcel();
 
@@ -368,115 +347,6 @@ namespace KitchenBase.Pages
                     myRange.Value2 = b.Text;
                 } 
             } */
-
-            //Создание процесса Excel
-            excel.Application application_ex
-                = new excel.Application();
-            //Создание книги
-            excel.Workbook workbook
-                = application_ex.Workbooks.Add();
-            //Создание страницы
-            excel.Worksheet worksheet
-                = (excel.Worksheet)workbook.ActiveSheet;
-            try
-            {
-                switch (type)
-                {
-                    case Document_Type.Report:
-                        //Название страницы
-                        worksheet.Name = "Отчёт";
-                        for (int row = 0; row < table.Rows.Count; row++)
-                            for (int col = 0; col < table.Columns.Count; col++)
-                            {
-                                //ЗАнесение данных в ячейку
-                                worksheet.Cells[row + 1][col + 1]
-                                    = table.Rows[row][col].ToString();
-                            }
-                        //Указание диапазона работы с ячеёками листа
-                        excel.Range border
-                            //Начало диапазона
-                            = worksheet.Range[worksheet.Cells[1, 1],
-                            //Динамический конец диапазона в зависимости от
-                            //выдодимых данных
-                            worksheet.Cells[table.Rows.Count + 1]
-                            [table.Columns.Count + 1]];
-                        //Стиль линий границ ячеек
-                        border.Borders.LineStyle = excel.XlLineStyle.xlContinuous;
-                        //Выравнивание во высоте
-                        border.VerticalAlignment = excel.XlHAlign.xlHAlignCenter;
-                        //Выравнивание по ширине
-                        border.HorizontalAlignment = excel.XlHAlign.xlHAlignCenter;
-                        //Внесение даты создания документа
-                        worksheet.Cells[table.Rows.Count + 3][2]
-                            = string.Format("Дата создания {0}",
-                            DateTime.Now.ToString());
-                        //Объединение ячеек
-                        worksheet.Range[worksheet.Cells[table.Rows.Count + 3, 2],
-                            worksheet.Cells[table.Rows.Count + 2,
-                            table.Columns.Count + 2]].Merge();
-                        break;
-                    case Document_Type.Statistic:
-                        worksheet.Name = "Статистический отчёт";
-                        for (int row = 0; row < table.Rows.Count; row++)
-                            for (int col = 0; col < table.Columns.Count; col++)
-                            {
-                                worksheet.Cells[row + 1][col + 1]
-                                    = table.Rows[row][col].ToString();
-                            }
-                        excel.Range border1
-                            = worksheet.Range[worksheet.Cells[1, 1],
-                            worksheet.Cells[table.Rows.Count + 1]
-                            [table.Columns.Count + 1]];
-                        border1.Borders.LineStyle
-                            = excel.XlLineStyle.xlContinuous;
-                        border1.VerticalAlignment
-                            = excel.XlHAlign.xlHAlignCenter;
-                        border1.HorizontalAlignment
-                            = excel.XlHAlign.xlHAlignCenter;
-                        worksheet.Cells[table.Rows.Count + 3][2]
-                            = string.Format("Дата создания {0}",
-                            DateTime.Now.ToString());
-                        worksheet.Range[worksheet.Cells[table.Rows.Count + 3, 2],
-                            worksheet.Cells[table.Rows.Count + 2,
-                            table.Columns.Count + 2]].Merge();
-                        //Класс области графиков
-                        excel.ChartObjects chartObjects
-                            = (excel.ChartObjects)worksheet.ChartObjects(
-                                Type.Missing);
-                        //Область размещения графиков: отступы слева сверху,
-                        //размер ширина и высота
-                        excel.ChartObject chartObject
-                            = chartObjects.Add(300, 50, 250, 250);
-                        //Объявление области графика
-                        excel.Chart chart = chartObject.Chart;
-                        //Объявление колекции построений графиков
-                        excel.SeriesCollection seriesCollection
-                            = (excel.SeriesCollection)chart.SeriesCollection(
-                                Type.Missing);
-                        //Объявление посторения графика
-                        excel.Series series = seriesCollection.NewSeries();
-                        //Тип графика
-                        chart.ChartType = excel.XlChartType.xl3DColumn;
-                        //Диапазон значений по оси X
-                        series.XValues =
-                            worksheet.get_Range("B2", "B" + table.Rows.Count + 1);
-                        //Диапазон значений по оси Y
-                        series.Values =
-                            worksheet.get_Range("C2", "C" + table.Rows.Count + 1);
-                        break;
-                 catch
-            {
-
-            }
-            finally
-            {
-                //Сохранение книги
-                workbook.SaveAs(string.Format("{0}\\{1}", Environment.CurrentDirectory, name), application_ex.DefaultSaveFormat);
-                //Закрытие книги
-                workbook.Close();
-                //Завершение процесса
-                application_ex.Quit();
-            }
 
 
             /* dgYchetProductovNaSklade.SelectAllCells();
