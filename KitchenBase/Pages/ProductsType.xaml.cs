@@ -261,32 +261,16 @@ namespace KitchenBase.Pages
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
         {
-            DataGrid dg = sender as DataGrid;
-            if (dg.SelectedCells != null && dg.SelectedCells.Count > 0)
+            DataRowView ID = (DataRowView)dgTypeProduct.SelectedItems[0];
+            switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
             {
-                var cell = dg.SelectedCells[0];
-                var row = dg.ItemContainerGenerator.ContainerFromItem(cell.Item) as DataGridRow;
-                if (row != null && row.IsSelected)
-                {
-                    DataRowView ID = (DataRowView)dgTypeProduct.SelectedItems[0];
-                    switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
-                    {
-                        case MessageBoxResult.OK:
-                            procedures.spTypeProduct_delete(Convert.ToInt32(ID["ID_TypeProduct"]));
-                            dgFill(QR);
-                            tbNameType.Text = "";
-                            break;
-                    }
-                }
-                else
-                {
-                    switch (MessageBox.Show("Запись не выбрана!", "Ошибка!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
-                    {
-                        case MessageBoxResult.OK:
-                            break;
-                    }
-                }
+                case MessageBoxResult.OK:
+                    procedures.spTypeProduct_delete(Convert.ToInt32(ID["ID_TypeProduct"]));
+                    dgFill(QR);
+                    tbNameType.Text = "";
+                break;
             }
+            
         }
     }
 }

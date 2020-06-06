@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
-        Title="Authorization" Height="480" Width="640" Background="#20202A" WindowStartupLocation="CenterScreen">
+        Title="Authorization" Height="500" Width="640" Background="#20202A" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"></RowDefinition>
@@ -24,7 +24,7 @@
             <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
-        <Label Name="lblAuthorization" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="Авторизация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+        <Label Name="lblAuthorization" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Content="Авторизация" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="35" Foreground="White">
         </Label>
         <Label Name="lblLogin" Grid.Row="2" Grid.Column="1" Content="Логин" FontFamily="Century Gothic" 
@@ -37,7 +37,7 @@
                FontSize="35" Foreground="White">
         </Label>
         <Border BorderBrush="#6c43af" BorderThickness="1" Height="50" Grid.Row="5" Grid.Column="1">
-            <TextBox Name="tbPassword" FontSize="30" ></TextBox>
+            <PasswordBox Name="tbPassword" FontSize="30" PasswordChar="*" ></PasswordBox>
         </Border>
         <Button Name="btAccept" Content="Войти" Foreground="#eeebf5" Background="#6c43af"  Grid.Row="7" Grid.Column="1"  FontSize="40" FontFamily="Century Gothic" Click="btAccept_Click"></Button>
         <Label Name="lblAuthoriCheck" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" Content="Неверный логин или пароль" FontFamily="Century Gothic" HorizontalContentAlignment="Center"

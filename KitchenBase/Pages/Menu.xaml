@@ -92,7 +92,7 @@
                 <Button Name="btDelete" Content="Удалить" Foreground="#eeebf5" Background="#6c43af"   Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3" FontSize="25" FontFamily="Century Gothic" Click="btDelete_Click" ></Button>
 
                 <Border BorderBrush="#6c43af" BorderThickness="1" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="1">
-                    <TextBox Name="tbSearch" FontSize="40"></TextBox>
+                    <TextBox Name="tbSearch" FontSize="28"></TextBox>
                 </Border>
 
                 <Button Name="btSearch" Content="Поиск" Foreground="#eeebf5" Background="#6c43af" Grid.Row="3" Grid.Column="4"  FontSize="30" FontFamily="Century Gothic" Click="btSearch_Click"  ></Button>
