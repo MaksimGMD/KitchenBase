@@ -250,15 +250,19 @@ namespace KitchenBase.Pages
             Close();
         }
 
-  
-            private void BtInsert_Click(object sender, RoutedEventArgs e)
+        public void Message()
+        {
+            MessageBox.Show("Поле не может быть пустым!! " +
+             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+             MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void BtInsert_Click(object sender, RoutedEventArgs e)
         {
             switch (tbSurname.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbSurname.Background = Brushes.Red;
                     break;
                 case (false):
@@ -267,31 +271,16 @@ namespace KitchenBase.Pages
                     switch (tbName.Text == "")
                     {
                         case (true):
-                            MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                            Message();
                             tbName.Background = Brushes.Red;
                             break;
                         case (false):
                             tbName.Background = Brushes.White;
 
-                            switch (tbMiddleName.Text == "")
-                            {
-                                case (true):
-                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
-                                    tbMiddleName.Background = Brushes.Red;
-                                    break;
-                                case (false):
-                                    tbMiddleName.Background = Brushes.White;
-
                                     switch (tbEmail.Text == "")
                                     {
                                         case (true):
-                                            MessageBox.Show("Поле не может быть пустым!! " +
-                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                 MessageBoxButton.OK, MessageBoxImage.Warning);
+                                            Message();
                                             tbEmail.Background = Brushes.Red;
                                             break;
                                         case (false):
@@ -300,9 +289,7 @@ namespace KitchenBase.Pages
                                             switch (tbPhoneNumber.Text == "")
                                             {
                                                 case (true):
-                                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                    Message();
                                                     tbPhoneNumber.Background = Brushes.Red;
                                                     break;
                                                 case (false):
@@ -311,9 +298,7 @@ namespace KitchenBase.Pages
                                                     switch (CbPosition.SelectedIndex == -1)
                                                     {
                                                         case (true):
-                                                            MessageBox.Show("Поле не может быть пустым!! " +
-                                                                         "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                            Message();
                                                             CbPosition.Background = Brushes.Red;
                                                             break;
                                                         case (false):
@@ -322,9 +307,7 @@ namespace KitchenBase.Pages
                                                             switch (tbLogin.Text == "")
                                                             {
                                                                 case (true):
-                                                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                                                                    "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                                       MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                    Message();
                                                                     tbLogin.Background = Brushes.Red;
                                                                     break;
                                                                 case (false):
@@ -333,24 +316,25 @@ namespace KitchenBase.Pages
                                                                     switch (tbPassword.Text == "")
                                                                     {
                                                                         case (true):
-                                                                            MessageBox.Show("Поле не может быть пустым!! " +
-                                                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                                                MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                            Message();
                                                                             tbPassword.Background = Brushes.Red;
                                                                             break;
                                                                         case (false):
                                                                             tbPassword.Background = Brushes.White;
 
-                                                                            switch (tbPasswordConfirm.Text == "")
+                                                                            switch (tbPasswordConfirm.Text != tbPassword.Text)
                                                                             {
                                                                                 case (true):
-                                                                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                                    MessageBox.Show("Пароли не совпадают", "KitchenBase",
+                                                                                    MessageBoxButton.OK, MessageBoxImage.Warning);
                                                                                     tbPasswordConfirm.Background = Brushes.Red;
+                                                                                    tbPassword.Background = Brushes.Red;
+                                                                                    tbPasswordConfirm.Text = "";
+                                                                                    tbPassword.Text = "";
                                                                                     break;
                                                                                 case (false):
                                                                                     tbPasswordConfirm.Background = Brushes.White;
+                                                                                    tbPassword.Background = Brushes.White;
                                                                                     DataProcedure.PresonalAdd(tbLogin.Text.ToString(), tbPassword.Text.ToString(), tbSurname.Text.ToString(), tbName.Text.ToString(), tbMiddleName.Text.ToString(),
                                                                                         tbEmail.Text.ToString(), tbPhoneNumber.Text.ToString(), Convert.ToInt32(CbPosition.SelectedValue.ToString()));
                                                                                     dgFill(QR);
@@ -377,9 +361,7 @@ namespace KitchenBase.Pages
                                     }
                                     break;
                             }
-                            break;
-                    }
-                    break;
+                            break;                 
             }
         }
 
@@ -388,9 +370,7 @@ namespace KitchenBase.Pages
             switch (tbSurname.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbSurname.Background = Brushes.Red;
                     break;
                 case (false):
@@ -399,31 +379,16 @@ namespace KitchenBase.Pages
                     switch (tbName.Text == "")
                     {
                         case (true):
-                            MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                            Message();
                             tbName.Background = Brushes.Red;
                             break;
                         case (false):
-                            tbName.Background = Brushes.White;
-
-                            switch (tbMiddleName.Text == "")
-                            {
-                                case (true):
-                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
-                                    tbMiddleName.Background = Brushes.Red;
-                                    break;
-                                case (false):
-                                    tbMiddleName.Background = Brushes.White;
+                            tbName.Background = Brushes.White;                        
 
                                     switch (tbEmail.Text == "")
                                     {
                                         case (true):
-                                            MessageBox.Show("Поле не может быть пустым!! " +
-                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                 MessageBoxButton.OK, MessageBoxImage.Warning);
+                                            Message();
                                             tbEmail.Background = Brushes.Red;
                                             break;
                                         case (false):
@@ -432,9 +397,7 @@ namespace KitchenBase.Pages
                                             switch (tbPhoneNumber.Text == "")
                                             {
                                                 case (true):
-                                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                    Message();
                                                     tbPhoneNumber.Background = Brushes.Red;
                                                     break;
                                                 case (false):
@@ -443,9 +406,7 @@ namespace KitchenBase.Pages
                                                     switch (CbPosition.SelectedIndex == -1)
                                                     {
                                                         case (true):
-                                                            MessageBox.Show("Поле не может быть пустым!! " +
-                                                                         "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                            Message();
                                                             CbPosition.Background = Brushes.Red;
                                                             break;
                                                         case (false):
@@ -454,9 +415,7 @@ namespace KitchenBase.Pages
                                                             switch (tbLogin.Text == "")
                                                             {
                                                                 case (true):
-                                                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                                                                    "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                                       MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                    Message();
                                                                     tbLogin.Background = Brushes.Red;
                                                                     break;
                                                                 case (false):
@@ -465,24 +424,25 @@ namespace KitchenBase.Pages
                                                                     switch (tbPassword.Text == "")
                                                                     {
                                                                         case (true):
-                                                                            MessageBox.Show("Поле не может быть пустым!! " +
-                                                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                                                MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                            Message();
                                                                             tbPassword.Background = Brushes.Red;
                                                                             break;
                                                                         case (false):
                                                                             tbPassword.Background = Brushes.White;
 
-                                                                            switch (tbPasswordConfirm.Text == "")
+                                                                            switch (tbPasswordConfirm.Text != tbPassword.Text)
                                                                             {
                                                                                 case (true):
-                                                                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                                                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                                    MessageBox.Show("Пароли не совпадают", "KitchenBase",
+                                                                                    MessageBoxButton.OK, MessageBoxImage.Warning);
                                                                                     tbPasswordConfirm.Background = Brushes.Red;
+                                                                                    tbPassword.Background = Brushes.Red;
+                                                                                    tbPasswordConfirm.Text = "";
+                                                                                    tbPassword.Text = "";
                                                                                     break;
                                                                                 case (false):
                                                                                     tbPasswordConfirm.Background = Brushes.White;
+                                                                                    tbPassword.Background = Brushes.White;
                                                                                     DataRowView ID = (DataRowView)dgPersonal.SelectedItems[0];
                                                                                     DataProcedure.PresonalUpdate(Convert.ToInt32(ID["ID_Personala"]), tbLogin.Text.ToString(), tbPassword.Text.ToString(), tbName.Text.ToString(), tbSurname.Text.ToString(), tbMiddleName.Text.ToString(),
                                                                                         tbEmail.Text.ToString(), tbPhoneNumber.Text.ToString(), Convert.ToInt32(CbPosition.SelectedValue.ToString()));
@@ -511,8 +471,6 @@ namespace KitchenBase.Pages
                                     break;
                             }
                             break;
-                    }
-                    break;
             }
         }
 

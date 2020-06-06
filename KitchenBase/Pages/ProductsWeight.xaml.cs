@@ -187,14 +187,19 @@ namespace KitchenBase.Pages
             Close();
         }
 
+        public void Message()
+        {
+            MessageBox.Show("Поле не может быть пустым!! " +
+             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+             MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
         private void btInsert_Click(object sender, RoutedEventArgs e)
         {
             switch (tbWeight.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbWeight.Background = Brushes.Red;
                     break;
                 case (false):
@@ -211,9 +216,7 @@ namespace KitchenBase.Pages
             switch (tbWeight.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbWeight.Background = Brushes.Red;
                     break;
                 case (false):

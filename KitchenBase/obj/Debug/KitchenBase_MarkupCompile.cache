@@ -12,8 +12,13 @@ DEBUG;TRACE
 C:\KitchenBase\KitchenBase\App.xaml
 12-1244732996
 
+<<<<<<< HEAD
 18407083639
 19-1684878663
+=======
+22-1914559079
+21526239902
+>>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
 MainWindow.xaml;Pages\Authorization.xaml;Pages\Customers.xaml;Pages\Menu.xaml;Pages\Navigation.xaml;Pages\Orders.xaml;Pages\OrdersDetails.xaml;Pages\Positions.xaml;Pages\ProductRecords.xaml;Pages\ProductsType.xaml;Pages\ProductsWeight.xaml;Pages\Stuff.xaml;
 
 False

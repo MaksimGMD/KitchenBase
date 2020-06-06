@@ -12,6 +12,14 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 14bbf88fee636642ba74f24ddb3a491bdbcfc6f7
+
+>>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
               //ПУТЬ САНИ
                 @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
                " Initial Catalog = KitchenBase; Persist Security Info = true;" +
@@ -23,9 +31,31 @@ namespace KitchenBase.Classes
              //"ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
 
              //ПУТЬ ДАНИЛЫ
+<<<<<<< HEAD
+             "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
+                 " Initial Catalog = KitchenBAse Pre-Test; Persist Security Info = true;" +
+                 " User ID = sa; Password = \"pass13\"");
+=======
              //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
              //    " Initial Catalog = KitchenBase; Persist Security Info = true;" +
              //    " User ID = sa; Password = \"pass13\"");
+<<<<<<< HEAD
+=======
+             // @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
+             //" Initial Catalog = KitchenBase; Persist Security Info = true;" +
+             //" User ID = sa; Password = \"psl14082001\"");
+
+
+             "Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
+                 "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
+                  "ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+        //ПУТЬ ДАНИЛЫ
+        //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
+        //    " Initial Catalog = KitchenBase; Persist Security Info = true;" +
+        //    " User ID = sa; Password = \"pass13\"");
+>>>>>>> 14bbf88fee636642ba74f24ddb3a491bdbcfc6f7
+>>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
@@ -53,16 +83,13 @@ namespace KitchenBase.Classes
         public DataTable dtDoljnost = new DataTable("Doljnost");
         public static string qrDoljnost = "SELECT [ID_Doljnosti], [Doljnost] as \"Должность\" FROM [dbo].[Doljnost]";
 
-
-
-
         //Таблица меню (Запрос работает)
         public DataTable dtMenu = new DataTable("Menu");
-        public static string qrMenu = "SELECT[ID_Menu], [NameBluda] as \"Наименование Блюда\", [TimePrigorovleniy] as \"Время приготовления\", [CenaBluda] as \"Цена блюда\", "+
+        public static string qrMenu = "SELECT [dbo].[Menu].[ID_Menu], [NameBluda] as \"Наименование Блюда\", [TimePrigorovleniy] as \"Время приготовления\", [CenaBluda] as \"Цена блюда\", " +
         "[dbo].[Ingridient].[ID_Ingridientov], [dbo].[Ingridient].[ID_Producta], [dbo].[YchetProductovNaSklade].[NameProduct] as \"Название продукта\", " +
 		"[dbo].[Ingridient].[ID_SostaveBluda],  [dbo].[SostavaBluda].[VesProducta] as \"Вес продукта\" FROM[dbo].[Ingridient] "+
         "INNER JOIN [dbo].[SostavaBluda] ON [dbo].[Ingridient].[ID_SostaveBluda] = [dbo].[SostavaBluda].[ID_SostavaBluda] "+
-        "INNER JOIN [dbo].[Menu] ON [dbo].[Menu].[ID_SostavaBluda] = [dbo].[SostavaBluda].[ID_SostavaBluda] " +
+        "INNER JOIN [dbo].[Menu] ON [dbo].[Ingridient].[ID_Menu] = [dbo].[Menu].[ID_Menu] " +
         "INNER JOIN [dbo].[YchetProductovNaSklade] ON [dbo].[Ingridient].[ID_Producta] = [dbo].[YchetProductovNaSklade].[ID_Producta]";
             
             /*  Старый запрос на всякий случай
@@ -79,8 +106,27 @@ namespace KitchenBase.Classes
 
         public static int NomerZakaza = new int();
         public DataTable dtOrderMore_View = new DataTable("OrderMore_View");
+<<<<<<< HEAD
         public static string qrRabotaKuhni = "select * from [OrderMore_View]";
+=======
+        // public static string qrRabotaKuhni = "select * from [OrderMore_View]";
+>>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
 
+
+        /// <summary>
+        /// Количество блюд
+        /// </summary>
+        /// <param name="Nazvanie">Название блюда</param>
+        /// <returns>Количество найденных записей</returns>
+        public int MenuFind(string Nazvanie)
+        {
+            int Found;
+            command.CommandText = "SELECT count(*) FROM [Menu] where [NameBluda] like '%" + Nazvanie + "%'";
+            connection.Open();
+            Found = Convert.ToInt32(command.ExecuteScalar().ToString());
+            connection.Close();
+            return Found;        
+        }
 
         private SqlCommand command = new SqlCommand("", connection);
 
@@ -132,6 +178,11 @@ namespace KitchenBase.Classes
         public void RabotaKuhniFill()
         {
             dtFill(dtOrderMore_View, qrRabotaKuhni);
+        }
+
+        public void RabotaKuhniFill()
+        {
+           // dtFill(dtOrderMore_View, qrRabotaKuhni);
         }
 
         /// <summary>

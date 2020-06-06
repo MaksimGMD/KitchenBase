@@ -6,6 +6,24 @@
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
         Title="Orders" Height="720" Width="1280" Background="#20202A" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+<<<<<<< HEAD
+=======
+    <Window.Resources>
+        <ControlTemplate TargetType="Button" x:Key="btTemplate">
+            <StackPanel Orientation="Vertical" >
+                <Border CornerRadius="25" BorderBrush="MediumBlue" BorderThickness="2" IsEnabled="False"
+                 Background="#6c43af" Grid.ColumnSpan="2" Margin="27,0,27,10"   >
+                    <ContentControl Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                <Label  Content="Номер заказа -" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
+               FontSize="35" Foreground="White"></Label>
+                <Label  Grid.ColumnSpan="1" Content="Время заказа -" FontFamily="Century Gothic"  HorizontalContentAlignment="Center"
+               FontSize="35" Foreground="White"></Label>
+                <Button Content="Подробнее" Foreground="#eeebf5" Background="#6c43af"  FontSize="25" FontFamily="Century Gothic" Grid.Column="2" Margin="87,38,53,37" ></Button>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
+>>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"></RowDefinition>
@@ -24,6 +42,7 @@
             <ColumnDefinition Width="150*"></ColumnDefinition>
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
+<<<<<<< HEAD
         <Label Name="lblActiveOrders" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Активные заказы" FontFamily="Century Gothic" HorizontalContentAlignment="Center"
                FontSize="60" Foreground="White">
         </Label>
@@ -63,5 +82,12 @@
         <Button Name="btPodrobnee" Content="Подробнее" Foreground="#eeebf5" Background="#6c43af"  FontSize="45" FontFamily="Century Gothic" Grid.Column="2" Margin="87,38,53,37" Grid.Row="2" Grid.RowSpan="2" ></Button>
 
         <Button Name="btPodrobnee2" Content="Подробнее" Foreground="#eeebf5" Background="#6c43af"  FontSize="45" FontFamily="Century Gothic" Grid.Column="2" Margin="87,38,53,37" Grid.Row="4" Grid.RowSpan="2" ></Button>
+=======
+
+            <StackPanel Name="ConfigsBox">
+            
+            </StackPanel>
+
+>>>>>>> 07e4dd7d0bfc197575ab7cfedb152b5a67a0c74f
     </Grid>
 </Window>

@@ -18,6 +18,7 @@ using KitchenBase.Classes;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace KitchenBase.Pages
 {
     /// <summary>
@@ -26,6 +27,8 @@ namespace KitchenBase.Pages
     public partial class Menu : Window
     {
         DataProcedure DataProcedure = new DataProcedure();
+        private SqlCommand command
+           = new SqlCommand("", DBConnection.connection);
         private string QR = "";
         public Menu()
         {
@@ -46,10 +49,10 @@ namespace KitchenBase.Pages
             DBConnection.qrMenu = qr;
             connection.MenuFill();
             dgMenu.ItemsSource = connection.dtMenu.DefaultView;
-            dgMenu.Columns[0].Visibility = Visibility.Collapsed;
-            dgMenu.Columns[4].Visibility = Visibility.Collapsed;
-            dgMenu.Columns[5].Visibility = Visibility.Collapsed;
-            dgMenu.Columns[7].Visibility = Visibility.Collapsed;
+            //dgMenu.Columns[0].Visibility = Visibility.Collapsed;
+            //dgMenu.Columns[4].Visibility = Visibility.Collapsed;
+            //dgMenu.Columns[5].Visibility = Visibility.Collapsed;
+            //dgMenu.Columns[7].Visibility = Visibility.Collapsed;
         }
 
         //private void Dependency_OnChange1(object sender, SqlNotificationEventArgs e)
@@ -129,14 +132,20 @@ namespace KitchenBase.Pages
             dgFill(QR);
         }
 
+        public void Message()
+        {
+            MessageBox.Show("Поле не может быть пустым!! " +
+             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+             MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+        
+        public static string qrSQL = "SELECT [NameBluda] FROM [Menu]";
         private void btInsert_Click(object sender, RoutedEventArgs e)
         {
             switch (tbNameBluda.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbNameBluda.Background = Brushes.Red;
                     break;
                 case (false):
@@ -144,9 +153,7 @@ namespace KitchenBase.Pages
                     switch (tbTime.Text == "")
                     {
                         case (true):
-                            MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                            Message();
                             tbTime.Background = Brushes.Red;
                             break;
                         case (false):
@@ -154,9 +161,7 @@ namespace KitchenBase.Pages
                             switch (tbCena.Text == "")
                             {
                                 case (true):
-                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                                    Message();
                                     tbCena.Background = Brushes.Red;
                                     break;
                                 case (false):
@@ -164,9 +169,7 @@ namespace KitchenBase.Pages
                                     switch (cbNameProducta.SelectedIndex == -1)
                                     {
                                         case (true):
-                                            MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                                            Message();
                                             cbNameProducta.Background = Brushes.Red;
                                             break;
                                         case (false):
@@ -174,15 +177,22 @@ namespace KitchenBase.Pages
                                             switch (cbVesProducta.SelectedIndex == -1)
                                             {
                                                 case (true):
-                                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                    Message();
                                                     cbVesProducta.Background = Brushes.Red;
                                                     break;
                                                 case (false):
-                                                    cbVesProducta.Background = Brushes.White; 
-                                                    DataProcedure.spMenu_insert(tbNameBluda.Text.ToString(), tbTime.Text.ToString(), tbCena.Text.ToString(), Convert.ToInt32(cbVesProducta.SelectedValue.ToString()));
-                                                    DataProcedure.spIngridient_insert(Convert.ToInt32(cbVesProducta.SelectedValue.ToString()), Convert.ToInt32(cbNameProducta.SelectedValue.ToString()));
+                                                    cbVesProducta.Background = Brushes.White;
+                                                    DBConnection connection = new DBConnection();                                                    
+                                                        if (connection.MenuFind(tbNameBluda.Text) > 0)
+                                                        {
+                                                            DataRowView ID = (DataRowView)dgMenu.SelectedItems[0];
+                                                            DataProcedure.spIngridient_insert(Convert.ToInt32(ID["ID_Menu"]), Convert.ToInt32(cbNameProducta.SelectedValue.ToString()), Convert.ToInt32(cbVesProducta.SelectedValue.ToString()));
+                                                        }
+                                                        else
+                                                        {
+                                                            DataProcedure.spMenu_insert(tbNameBluda.Text.ToString(), tbTime.Text.ToString(), tbCena.Text.ToString());
+                                                           DataProcedure.spIngridient_insert(0, Convert.ToInt32(cbNameProducta.SelectedValue.ToString()), Convert.ToInt32(cbVesProducta.SelectedValue.ToString()));
+                                                        }                                                                        
                                                     dgFill(QR);
                                                     tbNameBluda.Text = "";
                                                     tbTime.Text = "";
@@ -201,14 +211,13 @@ namespace KitchenBase.Pages
             }
         }
 
+        public static string intID = "";
         private void btUpdate_Click(object sender, RoutedEventArgs e)
         {
             switch (tbNameBluda.Text == "")
             {
                 case (true):
-                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Message();
                     tbNameBluda.Background = Brushes.Red;
                     break;
                 case (false):
@@ -216,9 +225,7 @@ namespace KitchenBase.Pages
                     switch (tbTime.Text == "")
                     {
                         case (true):
-                            MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                            Message();
                             tbTime.Background = Brushes.Red;
                             break;
                         case (false):
@@ -226,9 +233,7 @@ namespace KitchenBase.Pages
                             switch (tbCena.Text == "")
                             {
                                 case (true):
-                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                                    Message();
                                     tbCena.Background = Brushes.Red;
                                     break;
                                 case (false):
@@ -236,9 +241,7 @@ namespace KitchenBase.Pages
                                     switch (cbNameProducta.SelectedIndex == -1)
                                     {
                                         case (true):
-                                            MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                                            Message();
                                             cbNameProducta.Background = Brushes.Red;
                                             break;
                                         case (false):
@@ -246,16 +249,14 @@ namespace KitchenBase.Pages
                                             switch (cbVesProducta.SelectedIndex == -1)
                                             {
                                                 case (true):
-                                                    MessageBox.Show("Поле не может быть пустым!! " +
-                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
-                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                    Message();
                                                     cbVesProducta.Background = Brushes.Red;
                                                     break;
                                                 case (false):
                                                     cbVesProducta.Background = Brushes.White;
                                                     DataRowView ID = (DataRowView)dgMenu.SelectedItems[0];
-                                                    DataProcedure.spMenu_update(Convert.ToInt32(ID["ID_Menu"]), tbNameBluda.Text.ToString(), tbTime.Text.ToString(), tbCena.Text.ToString(), Convert.ToInt32(cbVesProducta.SelectedValue.ToString()));
-                                                    DataProcedure.spIngridient_update(Convert.ToInt32(ID["ID_Ingridientov"]),Convert.ToInt32(cbVesProducta.SelectedValue.ToString()), Convert.ToInt32(cbNameProducta.SelectedValue.ToString()));
+                                                    DataProcedure.spMenu_update(Convert.ToInt32(ID["ID_Menu"]), tbNameBluda.Text.ToString(), tbTime.Text.ToString(), tbCena.Text.ToString());
+                                                    DataProcedure.spIngridient_update(Convert.ToInt32(ID["ID_Ingridientov"]), Convert.ToInt32(ID["ID_Menu"]), Convert.ToInt32(cbNameProducta.SelectedValue.ToString()), Convert.ToInt32(cbVesProducta.SelectedValue.ToString()));
                                                     dgFill(QR);
                                                     tbNameBluda.Text = "";
                                                     tbTime.Text = "";

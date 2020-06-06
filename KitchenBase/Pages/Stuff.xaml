@@ -90,8 +90,16 @@
 
                 <Label Name="lblPhoneNumber" Content="Номер телефона"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
+<<<<<<< HEAD
+            </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1">
+                    <TextBox Name="tbPhoneNumber" FontSize="24" Text="{Binding SelectedItem.Номер телефона,
+                                 ElementName=dgPersonal}" TextChanged="TbPhoneNumber_TextChanged" GotFocus="TbPhoneNumber_GotFocus"></TextBox>
+                </Border>
+=======
                 </Label>
                 <Border BorderBrush="#6c43af" BorderThickness="1">
+>>>>>>> 14bbf88fee636642ba74f24ddb3a491bdbcfc6f7
 
                     <TextBox Name="tbPhoneNumber" FontSize="24" Text="{Binding SelectedItem.Номер телефона,
                                  ElementName=dgPersonal}" TextChanged="TbPhoneNumber_TextChanged" GotFocus="TbPhoneNumber_GotFocus"></TextBox>
@@ -112,9 +120,14 @@
 
                 <Label Name="lblLogin" Content="Логин"  
                FontSize="24" Foreground="White" FontFamily="Century Gothic">
+<<<<<<< HEAD
+            </Label>
+                <Border BorderBrush="#6c43af" BorderThickness="1" >
+=======
                 </Label>
                 <Border BorderBrush="#6c43af" BorderThickness="1" >
 
+>>>>>>> 14bbf88fee636642ba74f24ddb3a491bdbcfc6f7
                     <TextBox Name="tbLogin" FontSize="24" Text="{Binding SelectedItem.Логин,
                                  ElementName=dgPersonal}" GotFocus="TbLogin_GotFocus"></TextBox>
                 </Border>
