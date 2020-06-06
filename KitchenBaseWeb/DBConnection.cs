@@ -162,7 +162,7 @@ namespace KitchenBaseWeb
         public string userDoljnost(Int32 userID)
         {
             string DoljnostID;
-            command.CommandText = "select [ID_Doljnosti] from [Personal] where [ID_Personala]  like '%" + idUser + "%'";
+            command.CommandText = "select [ID_Doljnosti] from [Personal] where [ID_Personala]  like '%" + userID + "%'";
             connection.Open();
             DoljnostID = command.ExecuteScalar().ToString();
             connection.Close();
