@@ -90,7 +90,7 @@
                 <asp:Button ID="btConfirm" runat="server" Text="Подтверждение оплаты" CssClass="button-Reserv"
                     Style="font-size: 18px; white-space: normal; word-wrap: break-word; width: 160px;" />
             </div>
-            <div class="Table mt-5" style="overflow-x: auto; width: 90%">
+            <div class="Table mt-3" style="overflow-x: auto; width: 90%">
                 <asp:GridView ID="gvService" runat="server" CssClass="table table-condensed table-hover" AllowSorting="true" UseAccessibleHeader="true" CurrentSortDirection="ASC" Font-Size="14px"
                     AlternatingRowStyle-Wrap="false" HeaderStyle-HorizontalAlign="Center" OnSorting="gvService_Sorting" OnRowDataBound="gvService_RowDataBound" OnSelectedIndexChanged="gvService_SelectedIndexChanged">
                     <Columns>

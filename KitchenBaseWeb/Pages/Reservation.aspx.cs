@@ -5,6 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Reflection;
+//using Word = Microsoft.Office.Interop.Word;
+using System.IO;
+using System.Diagnostics;
+using System.Drawing.Drawing2D;
+//using Microsoft.Office.Interop.Word;
+using Microsoft.Office.Core;
+using Word = Microsoft.Office.Interop.Word;
+using SautinSoft.Document;
 
 namespace KitchenBaseWeb.Pages
 {
@@ -38,7 +47,7 @@ namespace KitchenBaseWeb.Pages
             ddlTime.DataValueField = "ID_Vremeni_Bronirovaniy";
             ddlTime.DataBind();
         }
-
+        //Очистка полей                               
         protected void Cleaner()
         {
             tbComment.Text = string.Empty;
@@ -47,18 +56,20 @@ namespace KitchenBaseWeb.Pages
             ddlNumber.SelectedIndex = 0;
             ddlTime.SelectedIndex = 0;
             DBConnection.idRecord = 0;
+            btWord.Visible = false;
+            btPdf.Visible = false;
         }
         protected void btInsert_Click(object sender, EventArgs e)
         {
             string Comment;
-            if(DBConnection.idUser == 0)
+            if (DBConnection.idUser == 0)
             {
                 Response.Redirect("Authorization.aspx");
             }
             else
             {
 
-                if(tbComment.Text == "")
+                if (tbComment.Text == "")
                 {
                     Comment = Convert.ToString(DBNull.Value);
                 }
@@ -152,6 +163,8 @@ namespace KitchenBaseWeb.Pages
             tbDate.Text = Convert.ToDateTime(row.Cells[3].Text.ToString()).ToString("yyyy-MM-dd");
             tbQuantity.Text = row.Cells[4].Text.ToString();
             DBConnection.idRecord = Convert.ToInt32(row.Cells[6].Text);
+            btWord.Visible = true;
+            btPdf.Visible = true;
         }
 
         protected void btUpdate_Click(object sender, EventArgs e)
@@ -181,6 +194,84 @@ namespace KitchenBaseWeb.Pages
             procedures.InformationOBronirovanieDelete(DBConnection.idRecord);
             Cleaner();
             gvFill(QR);
+        }
+        /// <summary>
+        /// Создание нового документа
+        /// </summary>
+        /// <param name="Format">Формат файла</param>
+        protected void CreateDocx(string Format)
+        {
+            DBConnection connection = new DBConnection();
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Reservation information № " + Convert.ToString(DBConnection.idRecord) + Format;
+            // Путь для скачивания документа
+            DocumentCore dc = new DocumentCore();
+            Section section = new Section(dc);
+            dc.Sections.Add(section);
+            section.PageSetup.PaperType = PaperType.A4;
+            //Добавление строк
+            dc.Content.End.Insert("\nИНФОРМАЦИЯ О БРОНИРОВАНИИ", new CharacterFormat() { FontName = "Times New Roman", Size = 18, FontColor = Color.Black, Bold = true });
+            SpecialCharacter lBr = new SpecialCharacter(dc, SpecialCharacterType.LineBreak);
+            dc.Content.End.Insert(lBr.Content);
+            dc.Content.End.Insert("Вы забронировали стол №" + ddlNumber.SelectedItem.Text + ". Стол забронирован на " + tbDate.Text + " " +
+                "в " + Convert.ToString(ddlTime.SelectedItem.Text) + ". Количество гостей " + tbQuantity.Text + ".",
+                new CharacterFormat() { FontName = "Times New Roman", Size = 16, FontColor = Color.Black, });
+            SpecialCharacter lBr2 = new SpecialCharacter(dc, SpecialCharacterType.LineBreak);
+            dc.Content.End.Insert(lBr2.Content);
+            dc.Content.End.Insert("Ваш номер бронирования " + Convert.ToString(DBConnection.idRecord) + ".",
+                new CharacterFormat() { FontName = "Times New Roman", Size = 16, FontColor = Color.Black, });
+            SpecialCharacter lBr3 = new SpecialCharacter(dc, SpecialCharacterType.LineBreak);
+            dc.Content.End.Insert(lBr2.Content);
+            dc.Content.End.Insert("Кому, " + connection.KlientData(DBConnection.idKlient) + ".",
+                new CharacterFormat() { FontName = "Times New Roman", Size = 14, FontColor = Color.Black });
+            //Документ в формате .docx
+            if (Format == ".docx")
+            {
+                // Сохраняем документ в формате .docx
+                dc.Save(docPath, new DocxSaveOptions());
+
+                // Открываем документ
+                Process.Start(new ProcessStartInfo(docPath) { UseShellExecute = true });
+            }
+            //Документ в другом формате (тут .pdf)
+            else
+            {
+                dc.Save(docPath, new PdfSaveOptions()
+                {
+                    Compliance = PdfCompliance.PDF_A,
+                    PreserveFormFields = true
+                });
+
+                // Open the result for demonstration purposes.
+                Process.Start(new ProcessStartInfo(docPath) { UseShellExecute = true });
+            }
+        }
+        //Создание документа .Word
+        protected void btWord_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreateDocx(".docx");
+                Cleaner();
+                lblExportError.Visible = false;
+            }
+            catch
+            {
+                lblExportError.Visible = true;
+            }
+        }
+
+        protected void btPdf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CreateDocx(".pdf");
+                Cleaner();
+                lblExportError.Visible = false;
+            }
+            catch
+            {
+                lblExportError.Visible = true;
+            }
         }
     }
 }
