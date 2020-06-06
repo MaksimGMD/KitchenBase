@@ -42,6 +42,11 @@ namespace KitchenBase.Pages
             tbvz1.BorderBrush = azaz7;
         }
 
-
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Navigation Navigation = new Navigation();
+            Navigation.Show();
+            Visibility = Visibility.Collapsed;
+        }
     }
 }
