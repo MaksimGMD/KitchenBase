@@ -346,6 +346,7 @@ namespace KitchenBase.Pages
                                                                                     tbPhoneNumber.Text = "";
                                                                                     tbLogin.Text = "";
                                                                                     tbPassword.Text = "";
+                                                                                    tbPasswordConfirm.Text = "";
                                                                                     break;
                                                                             }
                                                                             break;
@@ -454,6 +455,7 @@ namespace KitchenBase.Pages
                                                                                     tbPhoneNumber.Text = "";
                                                                                     tbLogin.Text = "";
                                                                                     tbPassword.Text = "";
+                                                                                    tbPasswordConfirm.Text = "";
                                                                                     break;
                                                                             }
                                                                             break;
@@ -490,6 +492,7 @@ namespace KitchenBase.Pages
                     tbPhoneNumber.Text = "";
                     tbLogin.Text = "";
                     tbPassword.Text = "";
+                    tbPasswordConfirm.Text = "";
                     break;
             }
         }

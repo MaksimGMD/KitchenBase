@@ -74,3 +74,6 @@ C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csproj.CopyComplete
 C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.dll
 C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.pdb
 C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csprojAssemblyReference.cache
+C:\KitchenBase\KitchenBaseWeb\obj\Debug\KitchenBaseWeb.csproj.ResolveComReference.cache
+C:\KitchenBase\KitchenBaseWeb\bin\SautinSoft.Document.dll
+C:\KitchenBase\KitchenBaseWeb\bin\SautinSoft.Document.xml

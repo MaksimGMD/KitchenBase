@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 using KitchenBase.Classes;
+using System.Data;
 
 namespace KitchenBase.Pages
 {
@@ -27,7 +28,21 @@ namespace KitchenBase.Pages
         {
             InitializeComponent();
         }
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            QR = DBConnection.qrLichnieDannieKlienta;
+            dgFill(QR);
+        }
+        private void dgFill(string qr)
+        {
+            DBConnection connection = new DBConnection();
+            DBConnection.qrLichnieDannieKlienta = qr;
+            connection.LichnieDannieKlientaFill();
+            dgLichnieDannieKlienta.ItemsSource = connection.dtLichnieDannieKlienta.DefaultView;
+            dgLichnieDannieKlienta.Columns[0].Visibility = Visibility.Collapsed;
+            dgLichnieDannieKlienta.Columns[6].Visibility = Visibility.Collapsed;
+            dgLichnieDannieKlienta.Columns[8].Visibility = Visibility.Collapsed;
+        }
         private void btnRightMenuHide_Click(object sender, RoutedEventArgs e)
         {
             ShowHideMenu("sbHideRightMenu", btnRightMenuHide, btnRightMenuShow, pnlRightMenu);
@@ -185,5 +200,357 @@ namespace KitchenBase.Pages
             Close();
         }
 
+        private void dgLichnieDannieKlienta_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.Column.Header)
+            {
+                case ("Surname"):
+                    e.Column.Header = "Фамилия";
+                    break;
+                case ("Name"):
+                    e.Column.Header = "Имя";
+                    break;
+                case ("MiddleName"):
+                    e.Column.Header = "Отчество";
+                    break;
+                case ("Email"):
+                    e.Column.Header = "Почта";
+                    break;
+                case ("PhoneNumber"):
+                    e.Column.Header = "НомерТелефона";
+                    break;
+                case ("Doljnost"):
+                    e.Column.Header = "Должность";
+                    break;
+                case ("Login"):
+                    e.Column.Header = "Логин";
+                    break;
+            }
+        }
+
+        private void btInsert_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbSurname.Text == "")
+            {
+                case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                    tbSurname.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbSurname.Background = Brushes.White;
+
+                    switch (tbName.Text == "")
+                    {
+                        case (true):
+                            MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                            tbName.Background = Brushes.Red;
+                            break;
+                        case (false):
+                            tbName.Background = Brushes.White;
+
+                            switch (tbMiddleName.Text == "")
+                            {
+                                case (true):
+                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
+                                    tbMiddleName.Background = Brushes.Red;
+                                    break;
+                                case (false):
+                                    tbMiddleName.Background = Brushes.White;
+
+                                    switch (tbEmail.Text == "")
+                                    {
+                                        case (true):
+                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                 MessageBoxButton.OK, MessageBoxImage.Warning);
+                                            tbEmail.Background = Brushes.Red;
+                                            break;
+                                        case (false):
+                                            tbEmail.Background = Brushes.White;
+
+                                            switch (tbPhoneNumber.Text == "")
+                                            {
+                                                case (true):
+                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                    tbPhoneNumber.Background = Brushes.Red;
+                                                    break;
+                                                case (false):
+                                                    tbPhoneNumber.Background = Brushes.White;
+                                                    switch (tbLogin.Text == "")
+                                                    {
+                                                        case (true):
+                                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                                            "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                               MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                            tbLogin.Background = Brushes.Red;
+                                                            break;
+                                                        case (false):
+                                                            tbLogin.Background = Brushes.White;
+
+                                                            switch (tbPassword.Text == "")
+                                                            {
+                                                                case (true):
+                                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                     "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                    tbPassword.Background = Brushes.Red;
+                                                                    break;
+                                                                case (false):
+                                                                    tbPassword.Background = Brushes.White;
+
+                                                                    switch (tbPasswordConfirm.Text == "")
+                                                                    {
+                                                                        case (true):
+                                                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                           "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                            tbPasswordConfirm.Background = Brushes.Red;
+                                                                            break;
+                                                                        case (false):
+                                                                            DBConnection connection = new DBConnection();
+                                                                            //Проверка уникальности логина
+                                                                            if (connection.LoginCheck(tbLogin.Text) > 0 & tbLogin.Text != "")
+                                                                            {
+                                                                                MessageBox.Show("Логин уже занят", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                tbPasswordConfirm.Background = Brushes.White;
+                                                                                DataProcedure procedures = new DataProcedure();
+                                                                                procedures.UsersRegistration(tbLogin.Text.ToString(), tbPassword.Text.ToString(), tbName.Text.ToString(), tbSurname.Text.ToString(),
+                                                                                    tbMiddleName.Text.ToString(), tbEmail.Text.ToString(), tbPhoneNumber.Text.ToString());
+                                                                                dgFill(QR);
+                                                                                tbSurname.Text = "";
+                                                                                tbName.Text = "";
+                                                                                tbMiddleName.Text = "";
+                                                                                tbEmail.Text = "";
+                                                                                tbPhoneNumber.Text = "";
+                                                                                tbLogin.Text = "";
+                                                                                tbPassword.Text = "";
+                                                                                tbPasswordConfirm.Text = "";
+                                                                            }
+                                                                            break;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                            }
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        private void btUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            switch (tbSurname.Text == "")
+            {
+                case (true):
+                    MessageBox.Show("Поле не может быть пустым!! " +
+                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                    tbSurname.Background = Brushes.Red;
+                    break;
+                case (false):
+                    tbSurname.Background = Brushes.White;
+
+                    switch (tbName.Text == "")
+                    {
+                        case (true):
+                            MessageBox.Show("Поле не может быть пустым!! " +
+                                          "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                            tbName.Background = Brushes.Red;
+                            break;
+                        case (false):
+                            tbName.Background = Brushes.White;
+
+                            switch (tbMiddleName.Text == "")
+                            {
+                                case (true):
+                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                  "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                      MessageBoxButton.OK, MessageBoxImage.Warning);
+                                    tbMiddleName.Background = Brushes.Red;
+                                    break;
+                                case (false):
+                                    tbMiddleName.Background = Brushes.White;
+                                    switch (tbEmail.Text == "")
+                                    {
+                                        case (true):
+                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                             "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                 MessageBoxButton.OK, MessageBoxImage.Warning);
+                                            tbEmail.Background = Brushes.Red;
+                                            break;
+                                        case (false):
+                                            tbEmail.Background = Brushes.White;
+
+                                            switch (tbPhoneNumber.Text == "")
+                                            {
+                                                case (true):
+                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                   "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                     MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                    tbPhoneNumber.Background = Brushes.Red;
+                                                    break;
+                                                case (false):
+                                                    tbPhoneNumber.Background = Brushes.White;
+                                                    switch (tbLogin.Text == "")
+                                                    {
+                                                        case (true):
+                                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                                            "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                               MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                            tbLogin.Background = Brushes.Red;
+                                                            break;
+                                                        case (false):
+                                                            tbLogin.Background = Brushes.White;
+
+                                                            switch (tbPassword.Text == "")
+                                                            {
+                                                                case (true):
+                                                                    MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                     "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                    tbPassword.Background = Brushes.Red;
+                                                                    break;
+                                                                case (false):
+                                                                    tbPassword.Background = Brushes.White;
+
+                                                                    switch (tbPasswordConfirm.Text == "")
+                                                                    {
+                                                                        case (true):
+                                                                            MessageBox.Show("Поле не может быть пустым!! " +
+                                                                                           "\n Заполните все поля и попробуйте снова!", "KitchenBase",
+                                                                                              MessageBoxButton.OK, MessageBoxImage.Warning);
+                                                                            tbPasswordConfirm.Background = Brushes.Red;
+                                                                            break;
+                                                                        case (false):
+                                                                            DBConnection connection = new DBConnection();
+                                                                            //Проверка уникальности логина
+                                                                                tbPasswordConfirm.Background = Brushes.White;
+                                                                                DataRowView ID = (DataRowView)dgLichnieDannieKlienta.SelectedItems[0];
+                                                                                DataProcedure procedures = new DataProcedure();
+                                                                                procedures.UsersRegistrationUpdate(Convert.ToInt32(ID["ID_InformationOKliente"]), tbLogin.Text.ToString(), tbPassword.Text.ToString(), tbName.Text.ToString(), tbSurname.Text.ToString(),
+                                                                                    tbMiddleName.Text.ToString(), tbEmail.Text.ToString(), tbPhoneNumber.Text.ToString());
+                                                                                dgFill(QR);
+                                                                                tbSurname.Text = "";
+                                                                                tbName.Text = "";
+                                                                                tbMiddleName.Text = "";
+                                                                                tbEmail.Text = "";
+                                                                                tbPhoneNumber.Text = "";
+                                                                                tbLogin.Text = "";
+                                                                                tbPassword.Text = "";
+                                                                                tbPasswordConfirm.Text = "";
+                                                                            break;
+                                                                    }
+                                                                    break;
+                                                            }
+                                                            break;
+                                                    }
+                                                    break;
+                                            }
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        private void btDelete_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView ID = (DataRowView)dgLichnieDannieKlienta.SelectedItems[0];
+            switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
+            {
+                case MessageBoxResult.OK:
+                    DataProcedure procedure = new DataProcedure();
+                    procedure.LichnieDannieKlientaDelete(Convert.ToInt32(ID["ID_InformationOKliente"]));
+                    procedure.spAuthorization_delete(Convert.ToInt32(ID["ID_Authorization"]));
+                    dgFill(QR);
+                    tbSurname.Text = "";
+                    tbName.Text = "";
+                    tbMiddleName.Text = "";
+                    tbEmail.Text = "";
+                    tbPhoneNumber.Text = "";
+                    tbLogin.Text = "";
+                    tbPassword.Text = "";
+                    tbPasswordConfirm.Text = "";
+                    break;
+            }
+        }
+        //Поиск
+        private void btSearch_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (DataRowView dataRow in (DataView)dgLichnieDannieKlienta.ItemsSource)
+            {
+                if (dataRow.Row.ItemArray[1].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[2].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[3].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[4].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[5].ToString() == tbSearch.Text ||
+                    dataRow.Row.ItemArray[7].ToString() == tbSearch.Text)
+                {
+                    dgLichnieDannieKlienta.SelectedItem = dataRow;
+                }
+            }
+        }
+        //Фильтрация данных
+        private void btFilter_Click(object sender, RoutedEventArgs e)
+        {
+            if (tbSearch.Text != "")
+            {
+                string newQR = QR + " where [Surname] like '%" + tbSearch.Text + "%' or [Name] like '%" + tbSearch.Text + "%' or [MiddleName] like '%" + tbSearch.Text + "%' or " +
+                    "[Email] like '%" + tbSearch.Text + "%' or [PhoneNumber] like '%" + tbSearch.Text + "%'" +
+                    "or [Login] like '%" + tbSearch.Text + "%' or [Password] like '%" + tbSearch.Text + "%'";
+                dgFill(newQR);
+            }
+        }
+
+        private void btCancel_Click(object sender, RoutedEventArgs e)
+        {
+            tbSearch.Text = string.Empty;
+            dgFill(QR);
+        }
+
+        //маска для номера телефона
+        private void TbPhoneNumber_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string a;
+            a = tbPhoneNumber.Text;
+            tbPhoneNumber.MaxLength = 12;
+            if (a.Length == 1)
+            {
+                tbPhoneNumber.Text = "+7" + tbPhoneNumber.Text;//добавляет +7
+                tbPhoneNumber.SelectionStart = tbPhoneNumber.Text.Length; //перенос в конец строки
+            }
+        }
+        //всплывающее оповещение
+        private void TbPhoneNumber_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Начинайте вводить номер телефона без +7 ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void TbLogin_GotFocus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Минимальная длина логина составляет 8 символов ", "KitchenBase", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
     }
 }

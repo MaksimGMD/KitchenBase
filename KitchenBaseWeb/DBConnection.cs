@@ -135,5 +135,20 @@ namespace KitchenBaseWeb
             connection.Close();
             return loginCheck;
         }
+        /// <summary>
+        /// Возвращает фамилию и имя
+        /// </summary>
+        /// <param name="idKlient">id авторизованного клиента</param>
+        /// <returns>Фамилия и имя клиента</returns>
+        public string KlientData(Int32 idKlient)
+        {
+            string Data;
+            command.CommandText = "select [Surname] + ' ' + [Name] from [LichnieDannieKlienta] " +
+                "where [ID_InformationOKliente] like '%" + idKlient + "%'";
+            connection.Open();
+            Data = command.ExecuteScalar().ToString();
+            connection.Close();
+            return Data;
+        }
     }
 }

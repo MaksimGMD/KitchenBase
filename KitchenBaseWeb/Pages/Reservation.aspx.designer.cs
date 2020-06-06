@@ -132,6 +132,33 @@ namespace KitchenBaseWeb.Pages
         protected global::System.Web.UI.WebControls.Button btDelete;
 
         /// <summary>
+        /// btWord элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btWord;
+
+        /// <summary>
+        /// btPdf элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btPdf;
+
+        /// <summary>
+        /// lblExportError элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblExportError;
+
+        /// <summary>
         /// gvReservation элемент управления.
         /// </summary>
         /// <remarks>
