@@ -37,3 +37,5 @@ C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.exe
 C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.pdb
 C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.csprojAssemblyReference.cache
 C:\KitchenBase\KitchenBase\obj\Debug\KitchenBase.csproj.ResolveComReference.cache
+C:\KitchenBase\KitchenBase\bin\Debug\log4net.dll
+C:\KitchenBase\KitchenBase\bin\Debug\log4net.xml

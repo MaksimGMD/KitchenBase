@@ -262,34 +262,36 @@ namespace KitchenBase.Pages
 
         private void btCreatingBillLading_Click(object sender, RoutedEventArgs e)
         {
-             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
-            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-            worksheet = workbook.Sheets["Sheet1"];
-            worksheet = workbook.ActiveSheet;
-            worksheet.Name = "YchetProductov";
 
-            for (int i = 1; i < dgYchetProductovNaSklade.Columns.Count + 1; i++)
-            {
-                worksheet.Cells[i, 1] = dgYchetProductovNaSklade.Columns[i - 1].Header;
-            }
 
-            for (int i = 0; i < dgYchetProductovNaSklade.Items.Count; i++)
-            {
-                for (int j = 0; j < dgYchetProductovNaSklade.Columns.Count; j++)
-                {
-                    worksheet.Cells[j + 1] = dgYchetProductovNaSklade.Columns[j].ToString();
-                    worksheet.Cells[i + 2] = dgYchetProductovNaSklade.Items[i].ToString();
-                }
-            }
+            /* Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+           Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+           Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+           worksheet = workbook.Sheets["Sheet1"];
+           worksheet = workbook.ActiveSheet;
+           worksheet.Name = "YchetProductov";
 
-            var saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = "output";
-            saveFileDialog.DefaultExt = ".xlsx";
-            if (saveFileDialog.ShowDialog() == true)
-            {
-               // workbook.SaveAs(saveFileDialog.FileName, Object., Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-            } 
+           for (int i = 1; i < dgYchetProductovNaSklade.Columns.Count + 1; i++)
+           {
+               worksheet.Cells[i, 1] = dgYchetProductovNaSklade.Columns[i - 1].Header;
+           }
+
+           for (int i = 0; i < dgYchetProductovNaSklade.Items.Count; i++)
+           {
+               for (int j = 0; j < dgYchetProductovNaSklade.Columns.Count; j++)
+               {
+                   worksheet.Cells[j + 1] = dgYchetProductovNaSklade.Columns[j].ToString();
+                   worksheet.Cells[i + 2] = dgYchetProductovNaSklade.Items[i].ToString();
+               }
+           }
+
+           var saveFileDialog = new SaveFileDialog();
+           saveFileDialog.FileName = "output";
+           saveFileDialog.DefaultExt = ".xlsx";
+           if (saveFileDialog.ShowDialog() == true)
+           {
+               workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive);
+           } */
 
             /* Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
              Microsoft.Office.Interop.Excel._Workbook wb;
@@ -347,7 +349,6 @@ namespace KitchenBase.Pages
                 } 
             } */
 
-
             /* dgYchetProductovNaSklade.SelectAllCells();
             dgYchetProductovNaSklade.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
             ApplicationCommands.Copy.Execute(null, dgYchetProductovNaSklade);
@@ -357,7 +358,6 @@ namespace KitchenBase.Pages
             System.IO.StreamWriter file = new System.IO.StreamWriter(@"D:\test2.xlsx");
             file.WriteLine(result.Replace(',', ' '));
             file.Close(); */
-
         }
 
     }        

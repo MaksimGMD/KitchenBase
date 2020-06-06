@@ -25,7 +25,7 @@ namespace KitchenBase.Pages
         }
 
         private void btProductsWeight_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             ProductsWeight ProductsWeight = new ProductsWeight();
             ProductsWeight.Show();
             Close();
@@ -66,20 +66,12 @@ namespace KitchenBase.Pages
             Close();
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+
+        private void Home_Click(object sender, RoutedEventArgs e)
         {
-            switch (MessageBox.Show("Покинуть приложение?", "KitchenBase", MessageBoxButton.YesNo, MessageBoxImage.Question))
-            {
-                case MessageBoxResult.Yes:
-                    e.Cancel = false;
-                    break;
-                case MessageBoxResult.No:
-                    e.Cancel = true;
-                    break;
-            }
             Authorization Authorization = new Authorization();
             Authorization.Show();
-
+            Close();
         }
     }
 }
