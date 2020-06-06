@@ -24,12 +24,21 @@ namespace KitchenBaseWeb.Pages
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// btDetails элемент управления.
+        /// sdsOrders элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btDetails;
+        protected global::System.Web.UI.WebControls.SqlDataSource sdsOrders;
+
+        /// <summary>
+        /// rpOrdersList элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpOrdersList;
     }
 }
