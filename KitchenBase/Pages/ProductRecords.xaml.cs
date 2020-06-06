@@ -115,7 +115,7 @@ namespace KitchenBase.Pages
             dgFill(QR);
         }
 
-       public void Message()
+        public void Message()
         {
             MessageBox.Show("Поле не может быть пустым!! " +
              "\n Заполните все поля и попробуйте снова!", "KitchenBase",
@@ -164,7 +164,7 @@ namespace KitchenBase.Pages
                                                     break;
                                                 case (false):
                                                     cbTypeProduct.Background = Brushes.White;
-                                                    DataProcedure.spYchetProductovNaSklade_insert(tbNameProduct.Text.ToString(), tbWeightProduct.Text.ToString(), tbQuantityStock.Text.ToString(), tbShelfLife.Text.ToString(), 
+                                                    DataProcedure.spYchetProductovNaSklade_insert(tbNameProduct.Text.ToString(), tbWeightProduct.Text.ToString(), tbQuantityStock.Text.ToString(), tbShelfLife.Text.ToString(),
                                                         Convert.ToInt32(cbTypeProduct.SelectedValue.ToString()));
                                                     dgFill(QR);
                                                     cbTypeProductFill();
@@ -267,103 +267,8 @@ namespace KitchenBase.Pages
         private void btCreatingBillLading_Click(object sender, RoutedEventArgs e)
         {
 
-
-            /* Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
-           Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
-           Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-           worksheet = workbook.Sheets["Sheet1"];
-           worksheet = workbook.ActiveSheet;
-           worksheet.Name = "YchetProductov";
-
-           for (int i = 1; i < dgYchetProductovNaSklade.Columns.Count + 1; i++)
-           {
-               worksheet.Cells[i, 1] = dgYchetProductovNaSklade.Columns[i - 1].Header;
-           }
-
-           for (int i = 0; i < dgYchetProductovNaSklade.Items.Count; i++)
-           {
-               for (int j = 0; j < dgYchetProductovNaSklade.Columns.Count; j++)
-               {
-                   worksheet.Cells[j + 1] = dgYchetProductovNaSklade.Columns[j].ToString();
-                   worksheet.Cells[i + 2] = dgYchetProductovNaSklade.Items[i].ToString();
-               }
-           }
-
-           var saveFileDialog = new SaveFileDialog();
-           saveFileDialog.FileName = "output";
-           saveFileDialog.DefaultExt = ".xlsx";
-           if (saveFileDialog.ShowDialog() == true)
-           {
-               workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive);
-           } */
-
-            /* Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
-             Microsoft.Office.Interop.Excel._Workbook wb;
-             Microsoft.Office.Interop.Excel._Worksheet ws;
-             XlReferenceStyle RefStyle = Excel.ReferenceStyle;
-             wb = (Microsoft.Office.Interop.Excel._Workbook)Excel.Workbooks.Add(1);
-             ws = (Microsoft.Office.Interop.Excel._Worksheet)wb.ActiveSheet;
-             for (int j = 0; j < dgYchetProductovNaSklade.Columns.Count; ++j)
-             {
-                 (ws.Cells[1, j + 1] as Range).Value2 = dgYchetProductovNaSklade.Columns[j].Header;
-                 for (int i = 0; i < dgYchetProductovNaSklade.Items.Count; ++i)
-                 {
-                     object Val = dgYchetProductovNaSklade.Items[i].Cells.[j].Value;
-                     if (Val != null)
-                         (ws.Cells[i + 2, j + 1] as Range).Value2 = Val.ToString();
-                 }
-             }
-             Excel.Visible = true;
-             ws.Columns.EntireColumn.AutoFit();
-             Excel.ReferenceStyle = RefStyle;
-             ReleaseExcel(Excel as Object);
-
-             private void ReleaseExcel(object excel)
-             {
-                 // Уничтожение объекта Excel.
-                 Marshal.ReleaseComObject(excel);
-                 // Вызываем сборщик мусора для немедленной очистки памяти
-                 GC.GetTotalMemory(true);
-             } 
-
-            
-
-            //dgYchetProductovNaSklade.ExportToExcel();
-
-            /*
-            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-            excel.Visible = true;
-            Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
-            Worksheet sheet1 = (Worksheet)workbook.Sheets[1];
-
-            for (int j = 0; j < dgYchetProductovNaSklade.Columns.Count; j++)
-            {
-                Range myRange = (Range)sheet1.Cells[1, j + 1];
-                sheet1.Cells[1, j + 1].Font.Bold = true;
-                sheet1.Columns[j + 1].ColumnWidth = 15;
-                myRange.Value2 = dgYchetProductovNaSklade.Columns[j].Header;
-            }
-            for (int i = 0; i < dgYchetProductovNaSklade.Columns.Count; i++)
-            {
-                for (int j = 0; j < dgYchetProductovNaSklade.Items.Count; j++)
-                {
-                    TextBlock b = dgYchetProductovNaSklade.Columns[i].GetCellContent(dgYchetProductovNaSklade.Items[j]) as TextBlock;
-                    Microsoft.Office.Interop.Excel.Range myRange = (Microsoft.Office.Interop.Excel.Range)sheet1.Cells[j + 2, i + 1];
-                    myRange.Value2 = b.Text;
-                } 
-            } */
-
-            /* dgYchetProductovNaSklade.SelectAllCells();
-            dgYchetProductovNaSklade.ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader;
-            ApplicationCommands.Copy.Execute(null, dgYchetProductovNaSklade);
-            String resultat = (string)Clipboard.GetData(DataFormats.CommaSeparatedValue);
-            String result = (string)Clipboard.GetData(DataFormats.Text);
-            dgYchetProductovNaSklade.UnselectAllCells();
-            System.IO.StreamWriter file = new System.IO.StreamWriter(@"D:\test2.xlsx");
-            file.WriteLine(result.Replace(',', ' '));
-            file.Close(); */
-
         }
+<<<<<<< HEAD
 
         //private static void Excel(string fileName, List<IDirectoryInventoryDataCollector> list)
         //{
@@ -426,4 +331,7 @@ namespace KitchenBase.Pages
         //    }
         //}
     }        
+=======
+    }
+>>>>>>> 788e8f072d67f4a9abf4a9f2177ca1a48d325f04
 }

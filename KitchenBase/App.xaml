@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KitchenBase"
              StartupUri="Pages/Navigation.xaml">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 950e4ec18a9b690aff1091ec0ebf039a246ba0ea
+>>>>>>> 8957f5eeac1d90454824e5b5308d70d2dac1e795
+>>>>>>> 788e8f072d67f4a9abf4a9f2177ca1a48d325f04
     <Application.Resources>
 
     </Application.Resources>
