@@ -17,7 +17,7 @@ using KitchenBase.Pages;
 using KitchenBase.Classes;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Linq.Expressions;
 
 namespace KitchenBase.Pages
 {
@@ -49,20 +49,11 @@ namespace KitchenBase.Pages
             DBConnection.qrMenu = qr;
             connection.MenuFill();
             dgMenu.ItemsSource = connection.dtMenu.DefaultView;
-            //dgMenu.Columns[0].Visibility = Visibility.Collapsed;
-            //dgMenu.Columns[4].Visibility = Visibility.Collapsed;
-            //dgMenu.Columns[5].Visibility = Visibility.Collapsed;
-            //dgMenu.Columns[7].Visibility = Visibility.Collapsed;
+            dgMenu.Columns[0].Visibility = Visibility.Collapsed;
+            dgMenu.Columns[4].Visibility = Visibility.Collapsed;
+            dgMenu.Columns[5].Visibility = Visibility.Collapsed;
+            dgMenu.Columns[7].Visibility = Visibility.Collapsed;
         }
-
-        //private void Dependency_OnChange1(object sender, SqlNotificationEventArgs e)
-        //{
-        //    if (e.Info != SqlNotificationInfo.Invalid)
-        //    {
-        //        lbFill();
-        //        lbFill2();
-        //    }
-        //}
 
         private void cbFill()
         {
@@ -277,6 +268,7 @@ namespace KitchenBase.Pages
 
         private void btDelete_Click(object sender, RoutedEventArgs e)
         {
+           
             DataRowView ID = (DataRowView)dgMenu.SelectedItems[0];
             switch (MessageBox.Show("Хотите удалить запись?", "Удаление!", MessageBoxButton.OKCancel, MessageBoxImage.Question))
             {

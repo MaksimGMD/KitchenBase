@@ -12,10 +12,6 @@ namespace KitchenBase.Classes
         //                                                     ||||||||||||||||||||||||||||||||||||ВНИМАНИЕ!!!!||||||||||||||||||||||||||||||||||||
         //Подключение к базе данных |||||||||||||||||||||||||||||||||||| Пока хз как для всех сразу путь прописать, поэтому меняйте сами! ||||||||||||||||||||||||||||||||||||
         public static SqlConnection connection = new SqlConnection(
-<<<<<<< HEAD
-
-=======
->>>>>>> 14bbf88fee636642ba74f24ddb3a491bdbcfc6f7
 
               //ПУТЬ САНИ
               /*  @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
@@ -28,28 +24,12 @@ namespace KitchenBase.Classes
              //"ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
 
              //ПУТЬ ДАНИЛЫ
-<<<<<<< HEAD
+
              "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
                  " Initial Catalog = KitchenBAse Pre-Test; Persist Security Info = true;" +
                  " User ID = sa; Password = \"pass13\"");
-=======
-             //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
-             //    " Initial Catalog = KitchenBase; Persist Security Info = true;" +
-             //    " User ID = sa; Password = \"pass13\"");
-             // @"Data Source = DESKTOP-T819KVA\SQLEXPRESS; " +
-             //" Initial Catalog = KitchenBase; Persist Security Info = true;" +
-             //" User ID = sa; Password = \"psl14082001\"");
 
 
-             "Data Source=DESKTOP-2OC8HFJ\\MYGRIT;Initial Catalog=KitchenBase;" +
-                 "Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;" +
-                  "ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
-        //ПУТЬ ДАНИЛЫ
-        //"Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
-        //    " Initial Catalog = KitchenBase; Persist Security Info = true;" +
-        //    " User ID = sa; Password = \"pass13\"");
->>>>>>> 14bbf88fee636642ba74f24ddb3a491bdbcfc6f7
 
         //Таблица персонал (Запрос работает)
         public DataTable dtPersonal = new DataTable("Personal");
