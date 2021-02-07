@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenBase", "KitchenBase\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenBaseWeb", "KitchenBaseWeb\KitchenBaseWeb.csproj", "{CBBCA07C-5C4D-472F-AD40-F215D55EDCDF}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupKitchenBase", "..\Kitchen\SetupKitchenBase\SetupKitchenBase.vdproj", "{0D6D09F2-7AA0-48D5-B6FE-FDF32BF701F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,9 +20,9 @@ Global
 		{152A5002-09CE-4FE6-B138-EAD0AABADB15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{152A5002-09CE-4FE6-B138-EAD0AABADB15}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBBCA07C-5C4D-472F-AD40-F215D55EDCDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBBCA07C-5C4D-472F-AD40-F215D55EDCDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBBCA07C-5C4D-472F-AD40-F215D55EDCDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBBCA07C-5C4D-472F-AD40-F215D55EDCDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D6D09F2-7AA0-48D5-B6FE-FDF32BF701F2}.Debug|Any CPU.ActiveCfg = Debug
+		{0D6D09F2-7AA0-48D5-B6FE-FDF32BF701F2}.Release|Any CPU.ActiveCfg = Debug
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

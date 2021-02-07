@@ -6,7 +6,7 @@
         xmlns:ExportToExcelTools="clr-namespace:KitchenBase.Classes"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
-              Title="ProductRecords" Height="900" Width="1280" Background="#20202A" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" >
+              Title="ProductRecords" Height="900" Width="1280" Background="#20202A" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Icon="/KitchenBase;component/Assets/KitchenBase.ico" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"></RowDefinition>

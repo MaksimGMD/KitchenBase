@@ -25,7 +25,7 @@ namespace KitchenBase.Classes
 
              //ПУТЬ ДАНИЛЫ
              "Data Source = DESKTOP-RV6IQJS\\SQLEXPRESS; " +
-                " Initial Catalog = KitchenBase Pre-Relize; Persist Security Info = true;" +
+                " Initial Catalog = KitchenBase Final; Persist Security Info = true;" +
                 " User ID = sa; Password = \"pass13\"");
 
         //Таблица персонал (Запрос работает)

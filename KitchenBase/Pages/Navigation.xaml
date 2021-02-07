@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KitchenBase.Pages"
         mc:Ignorable="d"
-        Title="Navigation" Height="720" Width="1280" Background="#20202A" WindowStartupLocation="CenterScreen">
+        Title="Navigation" Height="720" Width="1280" Background="#20202A" WindowStartupLocation="CenterScreen" Icon="/KitchenBase;component/Assets/KitchenBase.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"></RowDefinition>
